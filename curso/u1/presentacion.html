@@ -1,0 +1,220 @@
+---
+layout: presentacion
+title: Infraestructura en la nube con OpenStack
+tema: white
+---
+<section data-background="img/openstack.png">
+  <h2>Introducción al Cloud Computing</h2>
+  <p>
+    <a href="http://albertomolina.wordpress.com">Alberto Molina Coballes</a> y
+    <a href="http://www.josedomingo.org">José Domingo Muñoz Rodríguez</a>
+  </p>
+  <p>
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/">
+      <img src="img/cc_by_sa.png" width="100px" border="0"/></a>
+  </p>
+  <p><small>Theme by: <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a></small></p>
+</section>
+<section>
+  <h2>Sobre nosotros</h2>
+  <ul>
+    <li>Profesores de Formación Profesional en el <a href="http://informatica.gonzalonazareno.org/portal/">IES Gonzalo Nazareno</a> de Dos Hermanas (Sevilla)</li>
+    <li>Administradores de Sistemas GNU/Linux</li>
+    <li>Detectamos demanda de formación en cloud computing</li>
+    <li>2011-2012: <a href="http://www.gonzalonazareno.org/cloud/">Proyecto de Innovación Mº Educación</a></li>
+    <li>Administramos un cloud privado OpenStack desde Abril 2012</li>
+  </ul>
+</section>
+<section>
+  <section>
+    <h2>Infraestructura: Evolución</h2>
+    <h3>¿A qué llamamos infraestructura?</h3>
+    <p>Equipos para procesamiento, conexión y almacenamiento de datos</p>
+    <h3>Evolución</h3>
+    <ol>
+      <li>Equipos físicos</li>
+      <li>Máquinas virtuales</li>
+      <li>Infraestructura en la nube</li>
+    </ol>
+  </section>
+  <section>
+    <h2>Infraestructura tradicional</h2>
+    <ul>
+      <li>Adquisición de equipos</li>
+      <li>Montaje físico</li>
+      <li>Instalación y configuración "manual"</li>
+      <li>Conexión a través de redes físicas</li>
+      <li>Gestión del almacenamiento NAS o SAN</li>
+      <li>Estática: Mismas configuraciones durante años</li>
+      <li>Usuarios sin acceso directo</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Virtualización de máquinas</h2>
+    <ul>
+      <li>Dentro de un solo equipo físico se ejecutan varias MVs</li>
+      <li>El sw para la gestión de MVs se denomina hipervisor</li>
+      <li>Se conectan las MVs entre sí en redes virtuales</li>
+      <li>Sin cambios relevantes en almacenamiento</li>
+      <li>Gestión similar a la infraestructura tradicional</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Infraestructura en nube</h2>
+    <ul>
+      <li>Virtualización de máquinas</li>
+      <li>Virtualización de la red</li>
+      <li>Virtualización del almacenamiento</li>
+      <li>Agrupamiento de los recursos</li>
+      <li>Dinámica</li>
+      <li>Configuración automática</li>
+      <li>El usuario sí puede gestionar su infraestructura</li>
+    </ul>
+  </section>
+  <section>
+    <a href="img/esquema-iaas.png"><img src="img/esquema-iaas.png" alt="esquema IaaS"/></a>
+  </section>
+</section>
+<section data-background="#FFCC99">
+  <h2>Cloud Computing</h2>
+</section>
+<section>
+  <section data-background="#FFCC99">
+    <h2>Cloud Computing. Características</h2>
+    <ul>
+      <li>Servicio disponible de forma automática y a demanda</li>
+      <li>Accesible a través de la red</li>
+      <li>Modelo multi-tenancy
+	<ul>
+	  <li>Se comparten los recursos con otros usuarios</li>
+	  <li>Debe garantizarse aislamiento y seguridad entre
+	    usuarios</li>
+	</ul>
+      </li>
+      <li>Los recursos se agrupan en <em>pools</em></li>
+      <li>Elasticidad</li>
+      <li>Pago por uso</li>
+    </ul>
+    <br/>
+    <p><small><a href="http://csrc.nist.gov/publications/nistpubs/800-145/SP800-145.pdf">The NIST Definition of Cloud Computing</a></small></p>
+  </section>
+  <section data-background="#FFCC99">
+    <h2>... as a Service (...aaS)</h2>
+    <ul>
+      <li>Modelo de negocio no basado en la venta de licencias o
+	hardware</li>
+      <li>Oferta de servicios con caracterísicas de cloud</li>
+      <li>Habitualmente se definen tres capas o niveles: SaaS, PaaS e
+	IaaS</li>
+    </ul>
+  </section>
+  <section data-background="#FFCC99">
+    <h3>Software as a Service (SaaS)</h3>
+    <p>Aplicación como servicio en la nube</p>
+    <ul>
+      <li class="fragment">El usuario utiliza una aplicación a través de la web en
+	lugar de tenerla instalada en el propio equipo.
+	Aviso: No todas las aplicaciones web son SaaS, deben cumplir
+	con las características.</li>
+      <li class="fragment">Utilizado por cualquier usuario</li>
+      <li class="fragment">Ya lo usamos, pero se prevé que se use cada vez más</li>
+      <li class="fragment">Ejemplos: Servicios de Google, Office365</li>
+    </ul>
+  </section>
+  <section data-background="#FFCC99">
+    <h3>Platform as a Service (PaaS)</h3>
+    <p>Plataforma de desarrollo web en la nube</p>
+    <ul>
+      <li class="fragment">Utilizado por desarrolladores de software</li>
+      <li class="fragment">Se proporciona toda la plataforma de desarrollo y despliegue
+	de una aplicación al desarrollador</li>
+      <li class="fragment">Ejemplos: Google App Engine, Windows Azure, Heroku,
+	Openshift, CloudFoundry
+    </ul>
+  </section>
+  <section data-background="#FFCC99">
+    <h3>Infrastructure as a Service (IaaS)</h3>
+    <p>Infraestructura como servicio en la nube</p>
+    <ul>
+      <li class="fragment">Utilizado principalmente por administradores de
+	sistemas</li>
+      <li class="fragment">Se proporciona principalmente capacidad de cómputo, redes y
+	diversos modos de almacenamiento</li>
+      <li class="fragment">Ejemplos: Amazon Web Services, Google Compute Engine</li>
+    </ul>
+  </section>
+  <section data-background="#FFCC99">
+    <a href="http://mschnlnine.vo.llnwd.net/d1/inetpub/kevinremde/Images/679669067395_DBE9/image_thumb.png"><img src="http://mschnlnine.vo.llnwd.net/d1/inetpub/kevinremde/Images/679669067395_DBE9/image_thumb.png" alt="iaas-paas-saas"/></a>
+    <p><small><a href="http://blogs.technet.com/b/kevinremde/archive/2011/04/03/saas-paas-and-iaas-oh-my-quot-cloudy-april-quot-part-3.aspx">Kevin Remde: SaaS, PaaS, and IaaS.. Oh my!</a></small></p>
+  </section>
+</section>
+<section data-background="#FFCC99">
+  <h2>Tipos de despliegues</h2>
+  <ul>
+    <li><strong>Público</strong> Una empresa ofrece servicios a terceros, encargándose
+      de toda la gestión del Cloud.</li>
+    <li><strong>Privado</strong> Una organización configura sus propios recursos de
+      forma mucho más flexible en una nube. En inglés también se
+      denomina "On premise cloud"</li>
+    <li><strong>Híbrido</strong> Se utilizan recursos de la nube privada o de una o
+      varias nubes públicas en función de las características de cada
+      caso o las necesidades puntuales que haya. Normalmente utilizan
+      una API común que permita una buena integración.</li>
+  </ul>
+</section>
+<section data-background="#FFCC99">
+  <h2>Cloud privado</h2>
+  <ul>
+    <li>Los clouds públicos están bien, pero tienen algunos aspectos negativos:
+      <ul>
+	<li>Privacidad</li>
+	<li>Seguridad</li>
+	<li><em>Vendor lock-in</em></li>
+	<li>Control sobre los datos</li>
+	<li>Personalización</li>
+	<li>¿Rendimiento?</li>
+	<li>¿Costes?</li>
+    </ul></li>
+    <li>Un cloud privado o híbrido es una opción a tener en cuenta si estos aspectos importan</li>
+    </ul>
+  </section>
+<section data-background="#FFCC99">
+  <section data-background="#FFCC99">
+    <h2>IaaS</h2>
+    <ul>
+      <li>Proveedores de cloud público IaaS: AWS, GCE y Azure. ¿Hay sitio para alguien más?</li>
+      <li>Cloud Privado: VMware y plataformas de Software Libre, principalmente OpenStack</li>
+      <li class="fragment">IaaS es muy adecuada para servicios con demanda variable como el web:</li>
+    </ul>
+    <a class="fragment" href="img/munin-memory-monitoring.jpg"><img src="img/munin-memory-monitoring.jpg" alt="Munin web" /></a>
+  </section>
+  <section data-background="#FFCC99">
+    <h3>Ejemplo de servicio en IaaS público</h3>
+    <h4>Servicio web de vídeo bajo demanda</h4>
+    <p><em>Problema: Requitos de hardware muy variables con grandes picos y
+	valles</em></p>
+    <p>Alto coste en infraestructura tradicional</p>
+    
+    <p><em>Solución: Clúster con un número de nodos variable en el
+	tiempo y que se ajuste a la demanda</em></p>
+    <ul>
+      <li>Se incluyen balanceadores para repartir la carga</li>
+      <li>Se crean de forma automática nuevos servidores cuando se
+        precisa</li>
+      <li>Cuando baja la demanda, se eliminan los servidores que
+        sobren.</li>
+    </ul>
+    
+  </section>
+  <section>
+  <h2>Amazon Web Services</h2>
+  <ul>
+    <li>Pionero y gran dominador en IaaS pública</li>
+    <li>Gran variedad de servicios: EC2, S3, Glacier, CloudFormation, RDS y un
+    largo etcétera</li> 
+    <li>SDKs: Android, iOS, Java, JavaScript, .NET, PHP, Python, Ruby, ...</li>
+    <li>APIs son estándares de facto</li>
+    <li>Lleva la iniciativa en IaaS</li>
+  </ul>
+  </section>
+</section>
