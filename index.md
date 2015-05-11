@@ -1,8 +1,8 @@
 ---
 layout: blog
-tittle: Administración de infraestructura en la nube con OpenStack
+tittle: Curso de Cloud con OpenStack
 ---
-## Curso de Cloud con OpenStack
+
 
 ### Cloud Computing y OpenStack
 
