@@ -6,6 +6,8 @@ tittle: Curso de Cloud con OpenStack
 
 ### Cloud Computing y OpenStack
 
+* [Presentación: Introducción al Cloud Computing](presentacion)
+
 ### OpenStack con Cirrusflex
 
 * [Trabajo con claves ssh](curso/u2/claves_ssh)
