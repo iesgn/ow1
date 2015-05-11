@@ -8,8 +8,8 @@ tittle: Curso de Cloud con OpenStack
 
 ### OpenStack con Cirrusflex
 
-* [Trabajo con claves ssh](curso/u1/claves_ssh)
-* [Conceptos previos](curso/u1/conceptos_previos)
+* [Trabajo con claves ssh](curso/u2/claves_ssh)
+* [Conceptos previos](curso/u2/conceptos_previos)
 
 ###Licencia
 
