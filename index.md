@@ -39,7 +39,6 @@ tittle: Curso de Cloud con OpenStack
 * [Instancias con varias interfaces](curso/u4/interfaces)
 * [Enlaces sobre redes](curso/u4/enlaces)
 
-### 
 
 ###Licencia
 
