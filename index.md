@@ -7,6 +7,10 @@ tittle: Curso de Cloud con OpenStack
 ### Cloud Computing y OpenStack
 
 * [Presentación: Introducción al Cloud Computing](curso/u1/presentacion)
+* [Enlaces sobre Cloud Computing](curso/u1/enlaces)
+* [Presentación: Introducción a OpenStack](curso/u1/presentacion_openstack)
+* [Enlaces sobre OpenStack](curso/u1/enlaces_openstack)
+* [Presentación: Introducción a StackOps Cirrusflex](curso/u1/presentacion_stackops)
 
 ### OpenStack con Cirrusflex
 

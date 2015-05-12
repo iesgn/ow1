@@ -1,0 +1,183 @@
+---
+layout: presentacion
+title: Introducción a OpenStack
+tema: white
+---
+<section data-background="img/openstack.png">
+  <h2>Introducción a OpenStack</h2>
+  <p>
+    <a href="http://albertomolina.wordpress.com">Alberto Molina Coballes</a> y
+    <a href="http://www.josedomingo.org">José Domingo Muñoz Rodríguez</a>
+  </p>
+  <p>
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/">
+      <img src="img/cc_by_sa.png" width="100px" border="0"/></a>
+  </p>
+  <p><small>Theme by: <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a></small></p>
+</section>
+<section data-background="#A9D0F5">
+  <h3>OpenStack</h3>
+  <p><em>&ldquo;Plataforma de cloud computing hecha con
+      software libre para desplegar nubes públicas y privadas,
+      desarrollada con la idea de ser sencilla de implementar,
+      masivamente escalable y con muchas prestaciones&rdquo;</em></p>
+  <img src="img/openstack-software-diagram.png" alt="openstack-diagram"/>
+</section>
+<section data-background="#A9D0F5">
+  <h2>¿Por qué OpenStack?</h2>
+  <ul>
+    <li>Porque queremos instalar nuestro propio software para
+      proporcionar IaaS</li>
+    <li>Porque es software libre</li>
+    <li>Porque es un proyecto estable, con muchos apoyos y muy
+      buenas perspectivas de futuro</li>
+    <li>Porque tiene muchas funcionalidades</li>
+    <li>Porque podemos utilizar hardware convencional</li>
+    <li>Porque cada vez es más fácil de instalar</li>
+  </ul>
+</section>
+<section data-background="#A9D0F5">
+  <h2>Otras alternativas</h2>
+  <ul>
+    <li><a href="http://opennebula.org/">OpenNebula</a>, <a href="http://cloudstack.apache.org/">CloudStack</a> y <a href="https://www.eucalyptus.com/">Eucalyptus</a>
+      <ul>
+        <li>Software libre</li>
+        <li>Más compatibles con AWS</li>
+        <li>Probablemente más sencillas de instalar</li>
+        <li>Algunos componentes más maduros</li>
+        <li>Proyectos más pequeños (ventajas e inconvenientes)</li>
+    </ul></li>
+    <li>VMware Vcloud
+      <ul>
+        <li>Software privativo</li>
+        <li>Optimizado para vSphere</li>
+        <li>No compite en IaaS pública</li>
+	<li>Acaba de publicarse <a href="http://www.vmware.com/products/openstack">VIO</a></li>
+      </ul>
+  </ul>
+</section>
+<section data-background="#A9D0F5">
+  <section data-background="#A9D0F5">
+    <h2>Inicios de OpenStack</h2>
+    <table>
+      <col style="width: 25%" />
+      <col style="width: 75%"/>
+      <tr>
+	<td style="text-align: center; vertical-align:middle;">
+	  <img src="img/rackspace.png" alt="rackspace" width="120"/></td>
+	<td>
+          <ul>
+            <li>Cloud propio desde 2005
+	      <ul>
+		<li>Cloud servers (IaaS)</li>
+		<li>Cloud files (StaaS)</li>
+	    </ul></li>
+            <li>Cambia a licencia libre en Abril 2010</li>
+          </ul>
+	</td>
+      </tr>
+      <tr>
+	<td style="text-align: center; vertical-align:middle;">
+	  <img src="img/nasa.png" alt="nasa" width="120"/></td>
+	<td>
+          <ul>
+            <li>Comienza a utilizar Eucalyptus, pero lo deja por
+	      ser ''open core''</li>
+            <li>Crea el software para IaaS Nebula</li>
+            <li>Cambia a licencia libre en Mayo 2010</li>
+          </ul>
+	</td>
+      </tr>
+      <tr>
+	<td style="text-align: center; vertical-align:middle;">
+	  <img src="img/openstack.jpg" alt="openstack"  width="120"/></td>
+	<td>
+          <ul>
+            <li>Ambas lo inician en Junio de 2010</li>
+            <li>OpenStack Nova &#8678; Nebula</li>
+            <li>OpenStack Swift &#8678; Cloud Files</li>
+          </ul>
+	</td>
+      </tr>
+    </table>
+  </section>
+  <section data-background="#A9D0F5">
+    <h2>Versiones de OpenStack</h2>
+    <p>Proyecto nuevo con un fuerte ritmo de desarrollo:</p>
+    <table>
+      <col style="width: 18%" />
+      <col style="width: 32%" />
+      <col style="width: 18%" />
+      <col style="width: 32%" />
+      <tr>
+	<th>Versión</th>
+	<th>Fecha</th>
+	<th>Versión</th>
+	<th>Fecha</th>
+      </tr>
+      <tr>
+	<td><a href="https://wiki.openstack.org/wiki/ReleaseNotes/Austin">Austin</a></td>
+	<td>Oct 2010</td>
+	<td>...</td>
+	<td></td>
+      </tr>
+      <tr>
+	<td><a href="https://wiki.openstack.org/wiki/ReleaseNotes/Essex">Essex</a></td>
+	<td>Abr 2012</td>
+	<td><a href="https://wiki.openstack.org/wiki/ReleaseNotes/Folsom">Folsom</a></td>
+	<td>Sep 2012</td>
+      </tr>
+      <tr>
+	<td><a href="https://wiki.openstack.org/wiki/ReleaseNotes/Grizzly">Grizzly</a></td>
+	<td>Abr 2013</td>
+	<td><a href="https://wiki.openstack.org/wiki/ReleaseNotes/Havana">Havana</a></td>
+	<td>Oct 2013</td>
+      </tr>
+      <tr>
+	<td><a href="https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse">Icehouse</a></td>
+	<td>Abr 2014</td>
+	<td><a href="https://wiki.openstack.org/wiki/ReleaseNotes/Juno">Juno</a></td>
+	<td>Oct 2014</td>
+      </tr>
+      <tr>
+	<td><a href="https://wiki.openstack.org/wiki/ReleaseNotes/Kilo">Kilo</a></td>
+	<td>Abr 2015</td>
+      </tr>
+    </table>
+    <p><a href="http://blog.bitergia.com/2014/10/15/the-openstack-juno-release-activity-and-organizations/">Bitergia - 
+	The OpenStack Juno release: activity and organizations</a></p>
+  </section>
+</section>
+<section data-background="#A9D0F5">
+  <section data-background="#A9D0F5">
+    <h2>Principios fundacionales</h2>
+    <p>En Septiembre de 2012 se cede el control del proyecto a
+      la <a href="http://www.openstack.org/foundation/">OpenStack
+	Foundation</a>
+      <ul>
+        <li><a href="http://www.apache.org/licenses/LICENSE-2.0.html">Licencia
+            Apache 2.0</a>, no existe versión "enterprise"</li>
+        <li>Proceso de <a href="https://blueprints.launchpad.net/openstack">diseño abierto</a></li>
+        <li><a href="https://github.com/openstack/">Repositorios públicos de código fuente</a></li>
+        <li>Todos los procesos de desarrollo deben estar documentados y
+	  ser transparentes</li>
+        <li>Orientado para adoptar estándares abiertos</li>
+        <li>Diseño modular que permite flexibilidad mediante el uso de
+          <a href="http://api.openstack.org/">APIs web</a></li>
+      </ul>
+  </section>
+  <section>
+    <h2>OpenStack Foundation</h2>
+    <img width="80%" src="img/openstack_industry_support.png"
+         alt="openstack_industry_support"/>
+    <p>
+      <small><a href="http://www.slideshare.net/randybias/state-of-the-stack-april-2013">Cloudscaling: State of the Stack</a></small><br/>
+      <small><a href="http://www.openstack.org/foundation/companies/">Empresas
+	  partipantes en la OpenStack Foundation</a></small></p>
+  </section>
+  <section>
+    <h2>Componentes de OpenStack</h2>
+    <a href="img/openstack-components.jpg"><img src="img/openstack-components.jpg" alt="openstack components" /></a>
+    <p><small><a href="http://www.cloudscaling.com/blog/openstack/vanilla-openstack-doesnt-exist-and-never-will/">Randy Bias - 'Vanilla OpenStack' Doesn’t Exist and Never Will</a></small></p>
+  </section>
+</section>
