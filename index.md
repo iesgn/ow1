@@ -48,9 +48,9 @@ tittle: Curso de Cloud con OpenStack
 * [Gestión de redes con neutron](curso/u5/red)
 * [Enlaces sobre CLI](curso/u5/enlaces)
 
-* [Introducción a la virtualización de redes](intro)
-* [Ejercicio avanzado de redes con CLI](router2)
-* [Creación automática de un escenario de red en OpenStack](demofinal)
+* [Introducción a la virtualización de redes](curso/u6/intro)
+* [Ejercicio avanzado de redes con CLI](curso/u6/router2)
+* [Creación automática de un escenario de red en OpenStack](curso/u6/demofinal)
 
 
 
