@@ -24,10 +24,12 @@ tittle: Curso de Cloud con OpenStack
 * [Redimensión de instancias](curso/u2/redimension)
 * [Rescate de instancias](curso/u2/rescate)
 * [Herramientas específicas de Cirrusflex](curso/u2/cirrusflex-tools)
+* [Enlaces sobre instancias](curso/u2/enlaces)
 
 * [Conceptos previos de volúmenes](curso/u3/conceptos_previos)
 * [Creación de volúmenes, asociación a instancias](curso/u3/volumen)
 * [Creación de instancia ejecutadas sobre volúmenes](curso/u3/instancias_volumen)
+* [Enlaces sobre volúmenes](curso/u3/enlaces)
 
 ### 
 
