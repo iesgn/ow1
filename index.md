@@ -38,6 +38,23 @@ tittle: Curso de Cloud con OpenStack
 * [Eliminación de la infraestructura de red creada](curso/u4/borrar)
 * [Instancias con varias interfaces](curso/u4/interfaces)
 * [Enlaces sobre redes](curso/u4/enlaces)
+* [Balanceador de carga](curso/u6/balanceador)
+
+### OpenStack con CLI
+
+* [Conceptos previos](curso/u5/previos)
+* [Gestión de instancias con nova](curso/u5/instancia)
+* [Gestión de volúmenes con nova](curso/u5/volumen)
+* [Gestión de redes con neutron](curso/u5/red)
+* [Enlaces sobre CLI](curso/u5/enlaces)
+
+* [Introducción a la virtualización de redes](intro)
+* [Ejercicio avanzado de redes con CLI](router2)
+* [Creación automática de un escenario de red en OpenStack](demofinal)
+
+
+
+### Conceptos avanzados
 
 
 ###Licencia
