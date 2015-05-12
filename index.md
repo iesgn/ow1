@@ -14,8 +14,16 @@ tittle: Curso de Cloud con OpenStack
 
 ### OpenStack con Cirrusflex
 
-* [Trabajo con claves ssh](curso/u2/claves_ssh)
 * [Conceptos previos](curso/u2/conceptos_previos)
+* [Trabajo con claves ssh](curso/u2/claves_ssh)
+* [Pasos previos](curso/u2/previos)
+* [Creación de instancias a partir de una imagen](curso/u2/instancias1)
+* [Operaciones sobre la instancia](curso/u2/instancias2)
+* [Administración de imágenes](curso/u2/imagenes)
+* [Trabajo con instantáneas y copias de seguridad](curso/u2/instantaneas)
+* [Redimensión de instancias](curso/u2/redimension)
+* [Rescate de instancias](curso/u2/rescate)
+* [Herramientas específicas de Cirrusflex](curso/u2/cirrusflex-tools)
 
 ###Licencia
 
