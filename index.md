@@ -10,10 +10,10 @@ tittle: Curso de Cloud con OpenStack
 * [Enlaces sobre Cloud Computing](curso/u1/enlaces)
 * [Presentación: Introducción a OpenStack](curso/u1/presentacion_openstack)
 * [Enlaces sobre OpenStack](curso/u1/enlaces_openstack)
-* [Presentación: Introducción a StackOps Cirrusflex](curso/u1/presentacion_stackops)
 
 ### OpenStack con Cirrusflex
 
+* [Presentación: Introducción a StackOps Cirrusflex](curso/u1/presentacion_stackops)
 * [Conceptos previos](curso/u2/conceptos_previos)
 * [Trabajo con claves ssh](curso/u2/claves_ssh)
 * [Pasos previos](curso/u2/previos)
