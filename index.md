@@ -52,10 +52,21 @@ tittle: Curso de Cloud con OpenStack
 * [Ejercicio avanzado de redes con CLI](curso/u6/router2)
 * [Creación automática de un escenario de red en OpenStack](curso/u6/demofinal)
 
-
-
 ### Conceptos avanzados
 
+## Sesiones
+Temas que se tratarán en cada sesión:
+
+* [21 de Mayo](curso/sesion1)
+* [26 de Mayo](curso/sesion2)
+* [28 de Mayo](curso/sesion3)
+* [2 de Junio](curso/sesion4)
+* [2 de Junio](curso/sesion5)
+* [2 de Junio](curso/sesion6)
+* [2 de Junio](curso/sesion7)
+* [2 de Junio](curso/sesion8)
+* [2 de Junio](curso/sesion9)
+* [2 de Junio](curso/sesion10)
 
 ###Licencia
 
