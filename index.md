@@ -61,12 +61,12 @@ Temas que se tratarán en cada sesión:
 * [26 de Mayo](curso/sesion2)
 * [28 de Mayo](curso/sesion3)
 * [2 de Junio](curso/sesion4)
-* [2 de Junio](curso/sesion5)
-* [2 de Junio](curso/sesion6)
-* [2 de Junio](curso/sesion7)
-* [2 de Junio](curso/sesion8)
-* [2 de Junio](curso/sesion9)
-* [2 de Junio](curso/sesion10)
+* [9 de Junio](curso/sesion5)
+* [11 de Junio](curso/sesion6)
+* [16 de Junio](curso/sesion7)
+* [18 de Junio](curso/sesion8)
+* [23 de Junio](curso/sesion9)
+* [25 de Junio](curso/sesion10)
 
 ###Licencia
 

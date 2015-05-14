@@ -11,3 +11,7 @@ tittle: Sesión 1
 # Ejercicios
 
 No hay previsto ningún ejercicio en esta sesión
+
+# Ponente
+
+Alberto
