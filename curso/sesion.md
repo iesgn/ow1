@@ -7,7 +7,7 @@ tittle: Sesiónes online
 |:---:|----------|--------|
 |21 de Mayo| 1,2 |Alberto |
 |26 de Mayo| 3,4,5,6,7,8,9 |José Domingo  |
-|28 de Mayo|  |  |
+|28 de Mayo| 10,11,12,13,14, |  |
 |2 de Junio|  |  |
 |9 de Junio|  |  |
 |11 de Junio|  |  |
@@ -45,8 +45,9 @@ tittle: Sesiónes online
 * Ej10: Ejercicio: Operaciones sobre la instancia
 * Ej11: Contenidos: Administración de imágenes
 * Ej12: Ejercicio: Subir una imagen de Debian Jessie stable
+	* He hecho la prueba y no funciona !!!!!!!!!!!!!!!!!
 * Ej13: Ejercicio: Instantáneas
-	* Lanzar una instancia e instalarle varios programas
+	* Lanzar una instancia e instalarle varios programas (Servidor web??)
 	* Crear una instantánea de la instancia
 	* Crear una o varias nuevas instancias a partir de la instantánea con otro sabor
 * Ej14: Ejercicio: Redimensionar una instancia (escalado vertical) hacia arriba y hacia abajo
@@ -54,3 +55,9 @@ tittle: Sesiónes online
 * Ej16: Ejercicio: Rescate de instancias
 	* Borrar el archivo authorized_keys, no podemos acceder a la instancia.
 	* Recuperar la instancia y crear un nuevo fichero authorized_keys
+* Ej17: Ejercicio: Creación de instantaneas con sistemas actualizados (por ejemplo Ubuntu 14.04) (tarde varios minútos)
+	* Actualizar los paquetes en una instancia y crear una instantanea
+	* Utilizar esa instantánea para crear instancias con los paquetes actualizados
+	* Debian 8 actualizado no vuelve a reiniciar!!!!!!!!!!!!!!!!! (hay que repetirlo, para comprobarlo)
+* Ej18: Ejercicio: Instalación de un servidor cache de paquete con approx
+
