@@ -27,3 +27,14 @@ tittle: Sesiónes online
 
 * Ej3: Contenidos: Introducción a StackOps Cirrusflex
 * Ej4: Contenidos: Conceptos previos
+* Ej5: Contenidos: Trabajo con claves ssh
+* Ej6: Ejercicio: trabajo con claves ssh
+	* Explicación de cómo funciona la autentificación ssh con claves ssh
+	* Crear un par de claves con frase de paso y utilizar ssh-add
+	* Putty?
+* Ej7: Ejercicio: Pasos previos
+	* Exportar la clave pública a Cirrusflex
+	* Crear una clave en Cirrusflex y guardar la clave privada
+	* Introducción a los grupos de seguridad
+	* Introducción a la gestión de IP flotantes
+	
