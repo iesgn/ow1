@@ -26,3 +26,4 @@ tittle: Sesiónes online
 	## OpenStack con Cirrusflex
 
 3. Contenidos: Introducción a StackOps Cirrusflex
+4. Contenidos: Conceptos previos
