@@ -6,7 +6,7 @@ tittle: Sesiónes online
 |Fecha|Ejercicios|Ponenete|
 |:---:|----------|--------|
 |21 de Mayo| 1,2 |Alberto |
-|26 de Mayo| 3,4,5,6,7,8,9,10 |José Domingo  |
+|26 de Mayo| 3,4,5,6,7,8,9 |José Domingo  |
 |28 de Mayo|  |  |
 |2 de Junio|  |  |
 |9 de Junio|  |  |
@@ -27,18 +27,30 @@ tittle: Sesiónes online
 
 * Ej3: Contenidos: Introducción a StackOps Cirrusflex
 * Ej4: Contenidos: Conceptos previos
-* Ej5: Contenidos: Trabajo con claves ssh
-* Ej6: Ejercicio: trabajo con claves ssh
+* Ej5: Ejercicio: Trabajo con claves ssh
 	* Explicación de cómo funciona la autentificación ssh con claves ssh
 	* Crear un par de claves con frase de paso y utilizar ssh-add
 	* Putty?
-* Ej7: Ejercicio: Pasos previos
+* Ej6: Ejercicio: Pasos previos
 	* Exportar la clave pública a Cirrusflex
 	* Crear una clave en Cirrusflex y guardar la clave privada
 	* Introducción a los grupos de seguridad
 	* Introducción a la gestión de IP flotantes
-* Ej8: Ejercicio: Crear una instancia desde una imagen Linux y acceder desde fuera
-* Ej9: Ejercicio: Crear una instancia desde una imagen Windows y acceder desde fuera
-* Ej10: Ejercicio: Intalación de Wordpress. Crear dos instancias, montar en una una BBDD y en la otra el servidor web. Abrir sólo el servidor web.
+* Ej7: Ejercicio: Crear una instancia desde una imagen Linux y acceder desde fuera
+	* Acceso con clave ssh, pero indicar que se podría crear contraseñas para los usuarios (menor seguridad)
+* Ej8: Ejercicio: Crear una instancia desde una imagen Windows y acceder desde fuera
+* Ej9: Ejercicio: Intalación de Wordpress. Crear dos instancias, montar en una una BBDD y en la otra el servidor web. Abrir sólo el servidor web.
 	* Utilizar dos grupos de seguridad, una para cada instancia y abrir sólo los puertos necesarios para cada uno.
 	* Acceso a la instancia de BD desde la instancia del servidor web
+* Ej10: Ejercicio: Operaciones sobre la instancia
+* Ej11: Contenidos: Administración de imágenes
+* Ej12: Ejercicio: Subir una imagen de Debian Jessie stable
+* Ej13: Ejercicio: Instantáneas
+	* Lanzar una instancia e instalarle varios programas
+	* Crear una instantánea de la instancia
+	* Crear una o varias nuevas instancias a partir de la instantánea con otro sabor
+* Ej14: Ejercicio: Redimensionar una instancia (escalado vertical) hacia arriba y hacia abajo
+* Ej15: Ejercicio: Copias de seguridad (instantáneas programadas)
+* Ej16: Ejercicio: Rescate de instancias
+	* Borrar el archivo authorized_keys, no podemos acceder a la instancia.
+	* Recuperar la instancia y crear un nuevo fichero authorized_keys
