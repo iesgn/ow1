@@ -5,6 +5,8 @@ tittle: Sesión 3
 
 # Presentaciones
 
+* Operaciones sobre la instancia
+* Administración de imágenes
 * Trabajo con instantáneas y copias de seguridad
 * Redimensión de instancias
 * Rescate de instancias
@@ -12,6 +14,8 @@ tittle: Sesión 3
 
 # Ejercicios
 
+* Operaciones sobre la instancia
+* Subir una imagen de Debian Jessie stable
 * Lanzar una instancia e instalarle varios programas
 * Crear una instantánea de la instancia
 * Crear una o varias nuevas instancias a partir de la instantánea con otro sabor

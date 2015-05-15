@@ -1,6 +1,6 @@
 ---
 layout: blog
-tittle: Sesión 1
+tittle: Sesión 2
 ---
 
 # Presentaciones
@@ -11,8 +11,6 @@ tittle: Sesión 1
 * Claves ssh con putty?
 * Pasos previos
 * Creación de instancias a partir de una imagen
-* Operaciones sobre la instancia
-* Administración de imágenes
 
 # Ejercicios
 
@@ -22,7 +20,7 @@ tittle: Sesión 1
 * Crear una instancia desde una imagen y acceder desde fuera
 * Crear dos instancias, montar en una una BBDD y en la otra el servidor web. Abrir sólo el servidor web.
 * Subir una imagen de Debian Jessie stable
-* Operaciones con instancias
+
 
 # Ponente
 
