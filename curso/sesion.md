@@ -6,7 +6,7 @@ tittle: Sesiónes online
 |Fecha|Ejercicios|Ponenete|
 |:---:|----------|--------|
 |21 de Mayo| 1,2 |Alberto |
-|26 de Mayo| 3,4,5,6 |José Domingo  |
+|26 de Mayo| 3,4,5,6,7,8,9,10 |José Domingo  |
 |28 de Mayo|  |  |
 |2 de Junio|  |  |
 |9 de Junio|  |  |
@@ -37,4 +37,8 @@ tittle: Sesiónes online
 	* Crear una clave en Cirrusflex y guardar la clave privada
 	* Introducción a los grupos de seguridad
 	* Introducción a la gestión de IP flotantes
-	
+* Ej8: Ejercicio: Crear una instancia desde una imagen Linux y acceder desde fuera
+* Ej9: Ejercicio: Crear una instancia desde una imagen Windows y acceder desde fuera
+* Ej10: Ejercicio: Intalación de Wordpress. Crear dos instancias, montar en una una BBDD y en la otra el servidor web. Abrir sólo el servidor web.
+	* Utilizar dos grupos de seguridad, una para cada instancia y abrir sólo los puertos necesarios para cada uno.
+	* Acceso a la instancia de BD desde la instancia del servidor web
