@@ -18,3 +18,11 @@ tittle: Sesiónes online
 
 #Ejercicios
 
+##Cloud Computing y OpenStack
+
+1. Contenidos: Introducción al Cloud Computing
+2. Contenidos: Introducción a OpenStac
+
+## OpenStack con Cirrusflex
+
+3. Contenidos: Introducción a StackOps Cirrusflex
