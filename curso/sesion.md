@@ -38,6 +38,7 @@ tittle: Sesiónes online
 	* Introducción a la gestión de IP flotantes
 * Ej7: Ejercicio: Crear una instancia desde una imagen Linux y acceder desde fuera
 	* Acceso con clave ssh, pero indicar que se podría crear contraseñas para los usuarios (menor seguridad)
+	* Mientras hacemos la instancia Windows actualizamos los paquetes 
 * Ej8: Ejercicio: Crear una instancia desde una imagen Windows y acceder desde fuera
 * Ej9: Ejercicio: Intalación de Wordpress. Crear dos instancias, montar en una una BBDD y en la otra el servidor web. Abrir sólo el servidor web.
 	* Utilizar dos grupos de seguridad, una para cada instancia y abrir sólo los puertos necesarios para cada uno.
@@ -50,14 +51,14 @@ tittle: Sesiónes online
 	* Lanzar una instancia e instalarle varios programas (Servidor web??)
 	* Crear una instantánea de la instancia
 	* Crear una o varias nuevas instancias a partir de la instantánea con otro sabor
-* Ej14: Ejercicio: Redimensionar una instancia (escalado vertical) hacia arriba y hacia abajo
-* Ej15: Ejercicio: Copias de seguridad (instantáneas programadas)
-* Ej16: Ejercicio: Rescate de instancias
-	* Borrar el archivo authorized_keys, no podemos acceder a la instancia.
-	* Recuperar la instancia y crear un nuevo fichero authorized_keys
-* Ej17: Ejercicio: Creación de instantaneas con sistemas actualizados (por ejemplo Ubuntu 14.04) (tarde varios minútos)
+* Ej14: Ejercicio: Creación de instantaneas con sistemas actualizados (por ejemplo Ubuntu 14.04) (tarde varios minútos)
 	* Actualizar los paquetes en una instancia y crear una instantanea
 	* Utilizar esa instantánea para crear instancias con los paquetes actualizados
 	* Debian 8 actualizado no vuelve a reiniciar!!!!!!!!!!!!!!!!! (hay que repetirlo, para comprobarlo)
+* Ej15: Ejercicio: Redimensionar una instancia (escalado vertical) hacia arriba y hacia abajo
+* Ej16: Ejercicio: Copias de seguridad (instantáneas programadas)
+* Ej17: Ejercicio: Rescate de instancias
+	* Borrar el archivo authorized_keys, no podemos acceder a la instancia.
+	* Recuperar la instancia y crear un nuevo fichero authorized_keys
 * Ej18: Ejercicio: Instalación de un servidor cache de paquete con approx
 
