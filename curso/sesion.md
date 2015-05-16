@@ -21,7 +21,7 @@ tittle: Sesiónes online
 ##Cloud Computing y OpenStack
 
 * Ej1: Contenidos: Introducción al Cloud Computing
-* Ej2: Contenidos: Introducción a OpenStac
+* Ej2: Contenidos: Introducción a OpenStack
 
 ## OpenStack con Cirrusflex
 
