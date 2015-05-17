@@ -78,3 +78,37 @@ tittle: Sesiones online
 * Punto 22: Ejercicio: Crear una nueva imagen desde un volumen con sistema operativo
 * Punto 23: Ejercicio: Instalación de owncloud
 
+* Punto 24: Contenidos: Conceptos previos de redes
+* Punto 25: Ejercicio: Estudiar la configuración de red por defecto de nuestrro proyecto
+	* Ver la red y subred definidad
+	* Ver el router que tiene nuestro proyecto
+	* Ver los puertos
+* Punto 26: Ejercicio 1 de red: dos redes privadas con dos routers:
+	* Creación de dos redes internas y sus subredes
+	* Creación de dos routers conectandos a la red externa
+	* Creación de dos instancias en cada una de lass redes
+	* Asignación de ip flotantes
+	* Comprobación de que no hay conectividad entre las instancias usando las ip fijas.
+* Punto 27: Ejercicio: Eliminación de la infraestructura de red creada
+* Punto 28: Ejercicio: Instancias con varias interfaces de red
+* Punto 29: Ejercicip 2 de red: dos redes privadas conectadas a un sólo router.
+* Punto 30: Ejercicio: Balanceador de carga
+* Punto 31: Ejercicio: Creación de un servidor VPN
+
+* Punto 32: Contenido: Concepto previo de CLI
+* Punto 33: Ejercicio: Instalación de los clientes
+* Punto 34: Ejercicio: Gestión de instancias con nova
+* Punto 35: Ejercicio: Gestión de volúmenes con nova
+* Punto 36: Ejercicio: Gestión de redes con neutron
+
+* Punto 37: Contenido: Introducción a la virtualización de redes
+* Punto 38: Ejercicio: Ejercicio avanzado con redes: Dos redes intenas conectar por un rputer intermedio
+	* Creación de la red y el router
+	* Añadir una nueva interfaz al router
+	* Añadir las rutas de encaminamiento
+	* Creación de instancias en las redes
+	* Asignación de IP flotante a la segunda instancia
+	* Accediendo a la segunda instancia
+	* Añadir reglas de encaminamiento al router
+
+
