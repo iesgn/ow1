@@ -7,9 +7,9 @@ tittle: Sesiones online
 |:---:|----------|--------|
 |21 de Mayo| 0,1,2 |Alberto |
 |26 de Mayo| 3,4,5,6,7,8,9 |José Domingo  |
-|28 de Mayo| 10,11,12,13,14, |  |
-|2 de Junio|  |  |
-|9 de Junio|  |  |
+|28 de Mayo| 10,11,12,13,14,15 | Alberto |
+|2 de Junio| 16,17,18,19,20 | Alberto |
+|9 de Junio| 21,22,23 | José Domingo |
 |11 de Junio|  |  |
 |16 de Junio|  |  |
 |18 de Junio|  |  |
@@ -59,11 +59,22 @@ tittle: Sesiones online
 	* Utilizar esa instantánea para crear instancias con los paquetes actualizados
 	* Debian 8 actualizado no vuelve a reiniciar!!!!!!!!!!!!!!!!! (hay que repetirlo, para comprobarlo)
 * Punto 15: Redimensión
-  	* Explicar lo que es la redimensión (escalado vertical) y explicar por qué no se reduce el sistema de ficheros
-  	* Ejercicio: Redimensionar una instancia (escalado vertical) hacia arriba y hacia abajo
+	* Explicar lo que es la redimensión (escalado vertical) y explicar por qué no se reduce el sistema de ficheros
+	* Ejercicio: Redimensionar una instancia (escalado vertical) hacia arriba y hacia abajo
 * Punto 16: Ejercicio: Copias de seguridad (instantáneas programadas)
 * Punto 17: Ejercicio: Rescate de instancias
 	* Borrar el archivo authorized_keys, no podemos acceder a la instancia.
 	* Recuperar la instancia y crear un nuevo fichero authorized_keys
 * Punto 18: Ejercicio: Instalación de un servidor cache de paquete con approx
+
+* Punto 19: Contenidos: Conceptos previos de volúmenes
+* Punto 20: Ejercicio: Crear un volumen y asociación a una instancia
+	* Formateo y particionado en XFS
+	* Formateo y particionado en NTFS
+	* Desasociar el volumen NTFS y asociarlo a una instancia windows
+	* Desasociar el volumen XFS y asociarlo a una instancia linux
+* Punto 21: Ejercicio: Crear una instancia con el sistema raiz en un volumen
+	* Terminar la instancia e instanciar una nueva
+* Punto 22: Ejercicio: Crear una nueva imagen desde un volumen con sistema operativo
+* Punto 23: Ejercicio: Instalación de owncloud
 
