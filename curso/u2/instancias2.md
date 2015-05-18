@@ -70,7 +70,7 @@ gestionar la asociación o desasociación de las IPs flotantes.
 
 
 Como estudiaremos en la unidad de
-[Volúmenes](http://iesgn.github.io/cloud2/curso/u3/), podemos **asociar o
+[Volúmenes](../../ow1/curso/u3/), podemos **asociar o
 desasociar un volumen a una instancia**. Además como veremos en la segunda
 sesión de la unidad de *Instancias* podemos realizar una **instantánea o una
 copia de seguridad** de nuestra instancia. 
