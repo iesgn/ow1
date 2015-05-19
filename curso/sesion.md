@@ -112,6 +112,10 @@ tittle: Sesiones online
 	* Añadir reglas de encaminamiento al router
 * Punto 40: Ejercicio: Utilizar una máquina Linux como router
 * Punto 41: Balanceador con CLI
+* Punto 42: Aprovisionamiento automático vs orquestación
+  	* Configurar automáticamente una instancia: ansible, puppet, chef, ...
+	* Montar automáticamente un escenario (aprovisionamiento): heat, shell, ansible, puppet, ...
+	* Gestionar un escenario dinámico y configurar cada nodo (orquestación)
 * Punto 42: Ejercicios:
   	* Creación de un entorno con bash paso a paso
 	* Mostrar el ejemplo demo.sh
@@ -124,5 +128,6 @@ tittle: Sesiones online
 * Punto 46: Uso de OpenStack
 * Punto 47: Modos de instalación
 
+* Punto ?: Hacer un despliegue de un cluster CoreOS: https://www.stackops.com/en/coreos-openstack/
 
 
