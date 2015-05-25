@@ -42,6 +42,7 @@ tittle: Sesiones online
 1. Ejercicio: Operaciones sobre la instancia
 1. Hacer un despliegue de un cluster CoreOS: https://www.stackops.com/en/coreos-openstack/
 1. OpenStack por dentro 1: Proceso de instanciación con KVM
+
    	* Hipervisores disponibles
         * Imágenes base
 	* Planificador
