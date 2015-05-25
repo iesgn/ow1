@@ -7,7 +7,7 @@ tittle: Sesiones online
 |:---:|----------|--------|
 |21 de Mayo| 0,1,2 |Alberto |
 |26 de Mayo| 3,4,5,6,7,8,9,10 |José Domingo  |
-|28 de Mayo| 10,11,12,13,14 | Alberto |
+|28 de Mayo| 11,12,13,14 | Alberto |
 |2 de Junio| 15,16,17,18,19 | Alberto |
 |9 de Junio| 20,21,22,23 | José Domingo |
 |11 de Junio|24,25,26,27,28,29,30,31  | José Domingo |
@@ -18,15 +18,10 @@ tittle: Sesiones online
 
 # Puntos
 
-##Cloud Computing y OpenStack
-
 1. Presentación y explicación de los objetivos del curso, las secciones en que está dividido y que la dificultad irá creciendo poco a poco.
 1. Contenidos: Introducción al Cloud Computing
 1. Contenidos: Introducción a OpenStack
-
-## OpenStack con Cirrusflex
-
-4. Contenidos: Introducción a StackOps Cirrusflex
+1. Contenidos: Introducción a StackOps Cirrusflex
 1. Contenidos: Conceptos previos
 1. Ejercicio: Trabajo con claves ssh
 	* Explicación de cómo funciona la autentificación ssh con claves ssh
@@ -47,6 +42,7 @@ tittle: Sesiones online
 1. Ejercicio: Operaciones sobre la instancia
 1. Hacer un despliegue de un cluster CoreOS: https://www.stackops.com/en/coreos-openstack/
 1. OpenStack por dentro 1: Proceso de instanciación con KVM
+   	* Hipervisores disponibles
         * Imágenes base
 	* Planificador
 	* Discos de las instancias
@@ -67,11 +63,11 @@ tittle: Sesiones online
 	* Explicar lo que es la redimensión (escalado vertical) y explicar por qué no se reduce el sistema de ficheros
 	* Ejercicio: Redimensionar una instancia (escalado vertical) hacia arriba y hacia abajo
 	* Explicar que al utilizar un sabor más pequeño el disco no se reduce
+1. Contenidos: Conceptos previos de volúmenes
 1. Ejercicio: Copias de seguridad (instantáneas programadas)
 1. Ejercicio: Rescate de instancias
   	* Borrar el archivo authorized_keys, no podemos acceder a la instancia.
   	* Recuperar la instancia y crear un nuevo fichero authorized_keys
-1. Contenidos: Conceptos previos de volúmenes
 1. Ejercicio: Crear un volumen y asociación a una instancia
   	* Formateo y particionado en XFS. Instalar xfsprogs
   	* Formateo y particionado en NTFS
@@ -82,7 +78,8 @@ tittle: Sesiones online
   	* Terminar la instancia e instanciar una nueva
 1. Ejercicio: Crear una nueva imagen desde un volumen con sistema operativo
 1. Ejercicio: Instalación de owncloud
-
+1. Contenidos: Cinder por dentro:
+   	* "
 1. Contenidos: Conceptos previos de redes
 1. Ejercicio: Estudiar la configuración de la red por defecto de nuestro proyecto
   	* Ver la red y subred definidas
