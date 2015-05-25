@@ -26,7 +26,7 @@ tittle: Sesiones online
 
 ## OpenStack con Cirrusflex
 
-1. Contenidos: Introducción a StackOps Cirrusflex
+4. Contenidos: Introducción a StackOps Cirrusflex
 1. Contenidos: Conceptos previos
 1. Ejercicio: Trabajo con claves ssh
 	* Explicación de cómo funciona la autentificación ssh con claves ssh
