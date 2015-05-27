@@ -7,9 +7,9 @@ tittle: Sesiones online
 |:---:|----------|--------|
 |21 de Mayo| 1,2,3 |Alberto |
 |26 de Mayo| 3,4,5,6,7,8,9,10,11 |José Domingo  |
-|28 de Mayo| 12,13,14,15,16,17,18,19 | Alberto |
-|2 de Junio| 15,16,17,18,19 | José Domingo |
-|9 de Junio| 20,21,22,23 | José Domingo |
+|28 de Mayo| 12,13,14,15,16,17,18,19,20 | Alberto |
+|2 de Junio| 21,22,23,24,25,26 | José Domingo |
+|9 de Junio| 27,28,29,30 | José Domingo |
 |11 de Junio|24,25,26,27,28,29,30,31  | Alberto |
 |16 de Junio|32,33,34,35,36,37,38 | José Domingo |
 |18 de Junio|39,40,41  | Alberto |
@@ -106,36 +106,33 @@ tittle: Sesiones online
 1. Ejercicio: Balanceador de carga
  * Explicar lo que es un balanceador de carga y la implementación en OpenStack
 1. Ejercicio: Creación de un servidor VPN
-
 1. Contenido: Concepto previo de CLI
 1. Ejercicio: Instalación de los clientes
 1. Ejercicio: Gestión de instancias con nova
 1. Ejercicio: Gestión de volúmenes con nova
 1. Ejercicio: Gestión de redes con neutron
-
 1. Contenido: Introducción a la virtualización de redes
 1. Ejercicio: Ejercicio avanzado con redes: Dos redes internas conectar por un router intermedio
-  	* Creación de la red y el router
-  	* Añadir una nueva interfaz al router
-  	* Añadir las rutas de encaminamiento
-  	* Creación de instancias en las redes
-  	* Asignación de IP flotante a la segunda instancia
-  	* Accediendo a la segunda instancia
-  	* Añadir reglas de encaminamiento al router
+ * Creación de la red y el router
+ * Añadir una nueva interfaz al router
+ * Añadir las rutas de encaminamiento
+ * Creación de instancias en las redes
+ * Asignación de IP flotante a la segunda instancia
+ * Accediendo a la segunda instancia
+ * Añadir reglas de encaminamiento al router
 1. Ejercicio: Utilizar una máquina Linux como router
 1. Balanceador con CLI
 1. Aprovisionamiento automático vs orquestación
-  	* Configurar automáticamente una instancia: ansible, puppet, chef, ...
-  	* Montar automáticamente un escenario (aprovisionamiento): heat, shell, ansible, puppet, ...
-  	* Gestionar un escenario dinámico y configurar cada nodo (orquestación)
+ * Configurar automáticamente una instancia: ansible, puppet, chef, ...
+ * Montar automáticamente un escenario (aprovisionamiento): heat, shell, ansible, puppet, ...
+ * Gestionar un escenario dinámico y configurar cada nodo (orquestación)
 1. Ejercicios:
-  	* Creación de un entorno con bash paso a paso
-  	* Mostrar el ejemplo demo.sh
-  	* Mostrar el demo-inv.sh
+ * Creación de un entorno con bash paso a paso
+ * Mostrar el ejemplo demo.sh
+ * Mostrar el demo-inv.sh
 1. Ejercicios:
-  	* Python
+ * Python
 1. Ejercicio de ansible
-
 1. Repaso de OpenStack. Arquitectura
 1. Uso de OpenStack
 1. Modos de instalación
