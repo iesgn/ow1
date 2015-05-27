@@ -7,12 +7,12 @@ tittle: Sesiones online
 |:---:|----------|--------|
 |21 de Mayo| 1,2,3 |Alberto |
 |26 de Mayo| 3,4,5,6,7,8,9,10,11 |José Domingo  |
-|28 de Mayo| 11,12,13,14 | Alberto |
-|2 de Junio| 15,16,17,18,19 | Alberto |
+|28 de Mayo| 12,13,14,15,16,17,18,19 | Alberto |
+|2 de Junio| 15,16,17,18,19 | José Domingo |
 |9 de Junio| 20,21,22,23 | José Domingo |
-|11 de Junio|24,25,26,27,28,29,30,31  | José Domingo |
-|16 de Junio|32,33,34,35,36,37,38 | Alberto |
-|18 de Junio|39,40,41  | José Domingo |
+|11 de Junio|24,25,26,27,28,29,30,31  | Alberto |
+|16 de Junio|32,33,34,35,36,37,38 | José Domingo |
+|18 de Junio|39,40,41  | Alberto |
 |23 de Junio|42,43,44  | José Domingo |
 |25 de Junio|45,46,47  | Alberto |
 
@@ -41,9 +41,12 @@ tittle: Sesiones online
  * Acceso a la instancia de BD desde la instancia del servidor web
 1. Ejercicio: Operaciones sobre la instancia
 1. Ejercicio: Levantar una instancia en jupiter para enseñar Horizon y utilizarla luego para ver OpenStack por dentro
-1. Contenidos: Administración de imágenes. Explicar lo que es una imagen, dónde se pueden obtener y las implicaciones de utilizarlas desde un punto de vista de seguridad (si se utilizan imágenes de sistemas para cloud, boxes de vagrant o contenedores docker de imágenes que no podamos verificar que no han sido manipuladas estamos asumiendo un importante riesgo. Todas las distros linux proporcionan imágenes y el mecanismo de creación para que se pueda verificar que el binario no contiene ningún tipo de software añadido).
-1. Hacer un despliegue de un cluster CoreOS: https://www.stackops.com/en/coreos-openstack/
-1. OpenStack por dentro 1: Proceso de instanciación con KVM
+1. Contenidos: Administración de imágenes.[http://docs.openstack.org/image-guide/content/ch_preface.html](http://docs.openstack.org/image-guide/content/ch_preface.html)
+ * Explicar lo que es una imagen
+ * Dónde se pueden obtener
+ * Implicaciones de utilizarlas desde un punto de vista de seguridad
+1. Hacer un despliegue de un cluster CoreOS: [https://www.stackops.com/en/coreos-openstack/](https://www.stackops.com/en/coreos-openstack/)
+1. OpenStack por dentro 1: Proceso de instanciación con KVM/Qemu
  * Hipervisores disponibles - ![https://blog.xenproject.org/wp-content/uploads/2015/05/NovaCILoopMay2015.png](https://blog.xenproject.org/wp-content/uploads/2015/05/NovaCILoopMay2015.png)
  * Imágenes base
  * Planificador
