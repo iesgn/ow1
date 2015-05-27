@@ -7,9 +7,9 @@ tittle: Sesiones online
 |:---:|----------|--------|
 |21 de Mayo| 1,2,3 |Alberto |
 |26 de Mayo| 3,4,5,6,7,8,9,10,11 |José Domingo  |
-|28 de Mayo| 12,13,14,15,16,17,18,19,20 | Alberto |
-|2 de Junio| 21,22,23,24,25,26 | José Domingo |
-|9 de Junio| 27,28,29,30 | José Domingo |
+|28 de Mayo| 12,13,14,15,16,17,18,19,20,21 | Alberto |
+|2 de Junio| 22,23,24,25,26,27 | José Domingo |
+|9 de Junio| 27,28,29,30,31 | José Domingo |
 |11 de Junio|24,25,26,27,28,29,30,31  | Alberto |
 |16 de Junio|32,33,34,35,36,37,38 | José Domingo |
 |18 de Junio|39,40,41  | Alberto |
@@ -45,6 +45,7 @@ tittle: Sesiones online
  * Explicar lo que es una imagen
  * Dónde se pueden obtener
  * Implicaciones de utilizarlas desde un punto de vista de seguridad
+1. Ejercicio: Subir una imagen de Debian Jessie stable
 1. Hacer un despliegue de un cluster CoreOS: [https://www.stackops.com/en/coreos-openstack/](https://www.stackops.com/en/coreos-openstack/)
 1. OpenStack por dentro 1: Proceso de instanciación con KVM/Qemu
  * Hipervisores disponibles - ![https://blog.xenproject.org/wp-content/uploads/2015/05/NovaCILoopMay2015.png](https://blog.xenproject.org/wp-content/uploads/2015/05/NovaCILoopMay2015.png)
@@ -53,8 +54,8 @@ tittle: Sesiones online
  * Discos de las instancias
  * Definición de las instancias en un nodo (virsh)
  * OpenStack metadata
-1. Ejercicio: Subir una imagen de Debian Jessie stable
- * Subirla y lanzar una instancia
+1. Ejercicio: 
+ * Lanzar una instancia con la imagen de debian jessie
  * Explicar que es necesario instalar dbus para que funcione el ACPI (es un bug que ya está solucionado pero la imagen oficial todavía no está actualizada). Esto nos dará pie a crear luego una instantánea de esta instancia
 1. Ejercicio: Instantáneas
  * Explicación de lo que es una instantánea y los tipos que hay
