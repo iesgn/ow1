@@ -40,16 +40,17 @@ tittle: Sesiones online
 	* Utilizar dos grupos de seguridad, una para cada instancia y abrir sólo los puertos necesarios para cada uno.
 	* Acceso a la instancia de BD desde la instancia del servidor web
 1. Ejercicio: Operaciones sobre la instancia
+1. Ejercicio: Levantar una instancia en jupiter para enseñar Horizon y utilizarla luego para ver OpenStack por dentro
+1. Contenidos: Administración de imágenes. Explicar lo que es una imagen, dónde se pueden obtener y las implicaciones de utilizarlas desde un punto de vista de seguridad (si se utilizan imágenes de sistemas para cloud, boxes de vagrant o contenedores docker de imágenes que no podamos verificar que no han sido manipuladas estamos asumiendo un importante riesgo. Todas las distros linux proporcionan imágenes y el mecanismo de creación para que se pueda verificar que el binario no contiene ningún tipo de software añadido).
 1. Hacer un despliegue de un cluster CoreOS: https://www.stackops.com/en/coreos-openstack/
 1. OpenStack por dentro 1: Proceso de instanciación con KVM
 
-   	* Hipervisores disponibles
+   	* Hipervisores disponibles - ![https://blog.xenproject.org/wp-content/uploads/2015/05/NovaCILoopMay2015.png](https://blog.xenproject.org/wp-content/uploads/2015/05/NovaCILoopMay2015.png)
         * Imágenes base
 	* Planificador
 	* Discos de las instancias
-	* Definición de las instancias en un nodo
+	* Definición de las instancias en un nodo (virsh)
 	* OpenStack metadata
-1. Contenidos: Administración de imágenes. Explicar lo que es una imagen, dónde se pueden obtener y las implicaciones de utilizarlas desde un punto de vista de seguridad (si se utilizan imágenes de sistemas para cloud, boxes de vagrant o contenedores docker de imágenes que no podamos verificar que no han sido manipuladas estamos asumiendo un importante riesgo. Todas las distros linux proporcionan imágenes y el mecanismo de creación para que se pueda verificar que el binario no contiene ningún tipo de software añadido).
 1. Ejercicio: Subir una imagen de Debian Jessie stable
 	* Subirla y lanzar una instancia
 	* Explicar que es necesario instalar dbus para que funcione el ACPI (es un bug que ya está solucionado pero la imagen oficial todavía no está actualizada). Esto nos dará pie a crear luego una instantánea de esta instancia
@@ -60,11 +61,11 @@ tittle: Sesiones online
 	* Crear una instantánea de la instancia de debian jessie
 	* Crear una o varias nuevas instancias a partir de la instantánea con otro sabor
 1. Ejercicio: Modificar el control de acceso de una instantánea dando acceso a todos los proyectos del curso
+1. Contenidos: Conceptos previos de volúmenes
 1. Redimensión
 	* Explicar lo que es la redimensión (escalado vertical) y explicar por qué no se reduce el sistema de ficheros
 	* Ejercicio: Redimensionar una instancia (escalado vertical) hacia arriba y hacia abajo
 	* Explicar que al utilizar un sabor más pequeño el disco no se reduce
-1. Contenidos: Conceptos previos de volúmenes
 1. Ejercicio: Copias de seguridad (instantáneas programadas)
 1. Ejercicio: Rescate de instancias
   	* Borrar el archivo authorized_keys, no podemos acceder a la instancia.
@@ -77,10 +78,16 @@ tittle: Sesiones online
 1. Ejercicio: Puntos de montaje permanentes y montaje en el arranque definiendo el fstab
 1. Ejercicio: Crear una instancia con el sistema raiz en un volumen
   	* Terminar la instancia e instanciar una nueva
+1. Conceptos: Almacenamiento de objetos
+1. Ejercicio: Almacenamiento privado
+1. Ejercicio: Almacenamiento público 
 1. Ejercicio: Crear una nueva imagen desde un volumen con sistema operativo
 1. Ejercicio: Instalación de owncloud
 1. Contenidos: Cinder por dentro:
-   	* "
+
+   	* [Cinder support matrix](https://wiki.openstack.org/wiki/CinderSupportMatrix)
+	* Funcionamiento de LVM + iSCSI
+	
 1. Contenidos: Conceptos previos de redes
 1. Ejercicio: Estudiar la configuración de la red por defecto de nuestro proyecto
   	* Ver la red y subred definidas
