@@ -106,7 +106,7 @@ tittle: Sesiones online
 1. Ejercicio: Gestión de volúmenes con nova y cinder
 1. Ejercicio: Gestión de redes con neutron
 1. Ejercicio: Gestión de imágenes con glance
-----
+<hr/>
 
 1. Contenidos: Cinder por dentro:
  * [Cinder support matrix](https://wiki.openstack.org/wiki/CinderSupportMatrix)
@@ -122,7 +122,7 @@ tittle: Sesiones online
  * Accediendo a la segunda instancia
  * Añadir reglas de encaminamiento al router
 1. Ejercicio: Utilizar una máquina Linux como router
------
+<hr/>
 1. Ejercicio: Instancias con varias interfaces de red
 1. Ejercicio: Balanceador de carga
  * Explicar lo que es un balanceador de carga y la implementación en OpenStack
@@ -131,7 +131,7 @@ tittle: Sesiones online
 1. Conceptos: Almacenamiento de objetos
 1. Ejercicio: Almacenamiento privado
 1. Ejercicio: Almacenamiento público 
------
+<hr/>
 1. Aprovisionamiento automático vs orquestación
  * Configurar automáticamente una instancia: ansible, puppet, chef, ...
  * Montar automáticamente un escenario (aprovisionamiento): heat, shell, ansible, puppet, ...
