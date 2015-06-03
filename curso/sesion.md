@@ -10,11 +10,11 @@ tittle: Sesiones online
 |28 de Mayo| 12,13,14,15,16,17,18,19,20,21 | Alberto |
 |2 de Junio| 22,23,24,25,26,27,28 | José Domingo |
 |9 de Junio| 29,30,31,32,33,34,35,36,37,38,39,40 | José Domingo |
-|11 de Junio|24,25,26,27,28,29,30,31  | Alberto |
-|16 de Junio|32,33,34,35,36,37,38 | José Domingo |
-|18 de Junio|39,40,41  | Alberto |
-|23 de Junio|42,43,44  | José Domingo |
-|25 de Junio|45,46,47  | Alberto |
+|11 de Junio|  | Alberto |
+|16 de Junio| | José Domingo |
+|18 de Junio|  | Alberto |
+|23 de Junio|  | José Domingo |
+|25 de Junio|  | Alberto |
 
 # Puntos
 
@@ -83,7 +83,7 @@ tittle: Sesiones online
  * Terminar la instancia e instanciar una nueva
 1. Ejercicio: Crear una nueva imagen desde un volumen con sistema operativo
 1. Ejercicio: Instalación de owncloud
-
+----
 1. Contenidos: Conceptos previos de redes
 1. Ejercicio: Estudiar la configuración de la red por defecto de nuestro proyecto
  * Ver la red y subred definidas
@@ -106,13 +106,13 @@ tittle: Sesiones online
 1. Ejercicio: Gestión de volúmenes con nova y cinder
 1. Ejercicio: Gestión de redes con neutron
 1. Ejercicio: Gestión de imágenes con glance
+----
+
 1. Contenidos: Cinder por dentro:
  * [Cinder support matrix](https://wiki.openstack.org/wiki/CinderSupportMatrix)
  * Funcionamiento de LVM + iSCSI
-1. Conceptos: Almacenamiento de objetos
-1. Ejercicio: Almacenamiento privado
-1. Ejercicio: Almacenamiento público 
 1. Contenido: Introducción a la virtualización de redes
+1. Contenidos: Neutron por dentro
 1. Ejercicio: Ejercicio avanzado con redes: Dos redes internas conectar por un router intermedio
  * Creación de la red y el router
  * Añadir una nueva interfaz al router
@@ -121,12 +121,17 @@ tittle: Sesiones online
  * Asignación de IP flotante a la segunda instancia
  * Accediendo a la segunda instancia
  * Añadir reglas de encaminamiento al router
-1. Ejercicio: Instancias con varias interfaces de red
 1. Ejercicio: Utilizar una máquina Linux como router
+-----
+1. Ejercicio: Instancias con varias interfaces de red
 1. Ejercicio: Balanceador de carga
  * Explicar lo que es un balanceador de carga y la implementación en OpenStack
 1. Ejercicio: Creación de un servidor VPN
 1. Balanceador con CLI
+1. Conceptos: Almacenamiento de objetos
+1. Ejercicio: Almacenamiento privado
+1. Ejercicio: Almacenamiento público 
+-----
 1. Aprovisionamiento automático vs orquestación
  * Configurar automáticamente una instancia: ansible, puppet, chef, ...
  * Montar automáticamente un escenario (aprovisionamiento): heat, shell, ansible, puppet, ...
