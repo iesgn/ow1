@@ -103,8 +103,9 @@ tittle: Sesiones online
 1. Contenido: Concepto previo de CLI
 1. Ejercicio: Instalación de los clientes
 1. Ejercicio: Gestión de instancias con nova
-1. Ejercicio: Gestión de volúmenes con nova
+1. Ejercicio: Gestión de volúmenes con nova y cinder
 1. Ejercicio: Gestión de redes con neutron
+1. Ejercicio: Gestión de imágenes con glance
 1. Contenidos: Cinder por dentro:
  * [Cinder support matrix](https://wiki.openstack.org/wiki/CinderSupportMatrix)
  * Funcionamiento de LVM + iSCSI
