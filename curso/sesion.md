@@ -81,9 +81,6 @@ tittle: Sesiones online
 1. Ejercicio: Puntos de montaje permanentes y montaje en el arranque definiendo el fstab
 1. Ejercicio: Crear una instancia con el sistema raiz en un volumen
  * Terminar la instancia e instanciar una nueva
-1. Conceptos: Almacenamiento de objetos
-1. Ejercicio: Almacenamiento privado
-1. Ejercicio: Almacenamiento público 
 1. Ejercicio: Crear una nueva imagen desde un volumen con sistema operativo
 1. Ejercicio: Instalación de owncloud
 1. Contenidos: Cinder por dentro:
@@ -112,6 +109,9 @@ tittle: Sesiones online
 1. Ejercicio: Gestión de instancias con nova
 1. Ejercicio: Gestión de volúmenes con nova
 1. Ejercicio: Gestión de redes con neutron
+1. Conceptos: Almacenamiento de objetos
+1. Ejercicio: Almacenamiento privado
+1. Ejercicio: Almacenamiento público 
 1. Contenido: Introducción a la virtualización de redes
 1. Ejercicio: Ejercicio avanzado con redes: Dos redes internas conectar por un router intermedio
  * Creación de la red y el router
