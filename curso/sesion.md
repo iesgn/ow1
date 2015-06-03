@@ -9,7 +9,7 @@ tittle: Sesiones online
 |26 de Mayo| 3,4,5,6,7,8,9,10,11 |José Domingo  |
 |28 de Mayo| 12,13,14,15,16,17,18,19,20,21 | Alberto |
 |2 de Junio| 22,23,24,25,26,27,28 | José Domingo |
-|9 de Junio| 29,30,31 | José Domingo |
+|9 de Junio| 29,30,31,32,33,34,35,36,37,38,39,40 | José Domingo |
 |11 de Junio|24,25,26,27,28,29,30,31  | Alberto |
 |16 de Junio|32,33,34,35,36,37,38 | José Domingo |
 |18 de Junio|39,40,41  | Alberto |
@@ -96,7 +96,7 @@ tittle: Sesiones online
  * Asignación de ip flotantes
  * Comprobación de que no hay conectividad entre las instancias usando las ip fijas.
 1. Ejercicio: Eliminación de la infraestructura de red creada
-1. Ejercicio: Instancias con varias interfaces de red
+
 1. Ejercicio 2 de red: dos redes privadas conectadas a un sólo router.
 1. Ejercicio: Instalador de un DNS local
 
@@ -121,6 +121,7 @@ tittle: Sesiones online
  * Asignación de IP flotante a la segunda instancia
  * Accediendo a la segunda instancia
  * Añadir reglas de encaminamiento al router
+1. Ejercicio: Instancias con varias interfaces de red
 1. Ejercicio: Utilizar una máquina Linux como router
 1. Ejercicio: Balanceador de carga
  * Explicar lo que es un balanceador de carga y la implementación en OpenStack
