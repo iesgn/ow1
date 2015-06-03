@@ -8,8 +8,8 @@ tittle: Sesiones online
 |21 de Mayo| 1,2,3 |Alberto |
 |26 de Mayo| 3,4,5,6,7,8,9,10,11 |José Domingo  |
 |28 de Mayo| 12,13,14,15,16,17,18,19,20,21 | Alberto |
-|2 de Junio| 22,23,24,25,26,27 | José Domingo |
-|9 de Junio| 27,28,29,30,31 | José Domingo |
+|2 de Junio| 22,23,24,25,26,27,28 | José Domingo |
+|9 de Junio| 29,30,31 | José Domingo |
 |11 de Junio|24,25,26,27,28,29,30,31  | Alberto |
 |16 de Junio|32,33,34,35,36,37,38 | José Domingo |
 |18 de Junio|39,40,41  | Alberto |
@@ -83,9 +83,7 @@ tittle: Sesiones online
  * Terminar la instancia e instanciar una nueva
 1. Ejercicio: Crear una nueva imagen desde un volumen con sistema operativo
 1. Ejercicio: Instalación de owncloud
-1. Contenidos: Cinder por dentro:
- * [Cinder support matrix](https://wiki.openstack.org/wiki/CinderSupportMatrix)
- * Funcionamiento de LVM + iSCSI
+
 1. Contenidos: Conceptos previos de redes
 1. Ejercicio: Estudiar la configuración de la red por defecto de nuestro proyecto
  * Ver la red y subred definidas
@@ -109,6 +107,9 @@ tittle: Sesiones online
 1. Ejercicio: Gestión de instancias con nova
 1. Ejercicio: Gestión de volúmenes con nova
 1. Ejercicio: Gestión de redes con neutron
+1. Contenidos: Cinder por dentro:
+ * [Cinder support matrix](https://wiki.openstack.org/wiki/CinderSupportMatrix)
+ * Funcionamiento de LVM + iSCSI
 1. Conceptos: Almacenamiento de objetos
 1. Ejercicio: Almacenamiento privado
 1. Ejercicio: Almacenamiento público 
