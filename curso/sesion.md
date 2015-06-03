@@ -84,7 +84,7 @@ tittle: Sesiones online
 1. Ejercicio: Crear una nueva imagen desde un volumen con sistema operativo
 1. Ejercicio: Instalación de owncloud
 <hr/>
-Sesión 5
+####Sesión 5
 1. Contenidos: Conceptos previos de redes
 1. Ejercicio: Estudiar la configuración de la red por defecto de nuestro proyecto
  * Ver la red y subred definidas
@@ -108,7 +108,7 @@ Sesión 5
 1. Ejercicio: Gestión de redes con neutron
 1. Ejercicio: Gestión de imágenes con glance
 <hr/>
-Sesión 6
+####Sesión 6
 1. Contenidos: Cinder por dentro:
  * [Cinder support matrix](https://wiki.openstack.org/wiki/CinderSupportMatrix)
  * Funcionamiento de LVM + iSCSI
@@ -124,7 +124,7 @@ Sesión 6
  * Añadir reglas de encaminamiento al router
 1. Ejercicio: Utilizar una máquina Linux como router
 <hr/>
-Sesión 7
+####Sesión 7
 1. Ejercicio: Instancias con varias interfaces de red
 1. Ejercicio: Balanceador de carga
  * Explicar lo que es un balanceador de carga y la implementación en OpenStack
@@ -134,11 +134,11 @@ Sesión 7
 1. Ejercicio: Almacenamiento privado
 1. Ejercicio: Almacenamiento público 
 <hr/>
-Sesión 8
+####Sesión 8
 
 
 <hr/>
-Sesión 9
+####Sesión 9
 1. Aprovisionamiento automático vs orquestación
  * Configurar automáticamente una instancia: ansible, puppet, chef, ...
  * Montar automáticamente un escenario (aprovisionamiento): heat, shell, ansible, puppet, ...
