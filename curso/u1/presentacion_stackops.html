@@ -15,21 +15,23 @@ tema: white
   </p>
   <p><small>Theme by: <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a></small></p>
 </section>
-
 <section>
-      <h3>Introducción a StackOps Cirrusflex</h3>
+    <h3>Servicios que ofrece StackOps cirrusflex</h3>
       <ul>
-      <li>La empresa StackOps nos ofrece un cloud público que actualmente
-      trabaja con OpenStack Icehouse</li> 
-      <li>La herramienta de gestion de la plataforma se llama StackOps
-      Cirrusflex. Esta aplicación web se encuentra disponible en la
-      url <a href="http://cloud.openwebinars.cirrusflex.com/portal/">http://cloud.openwebinars.cirrusflex.com/portal/</a></li> 
+        <li><strong><a href="https://cirrusflex.com/virtual-datacenter/">Virtual Datacenter</a></strong>: Nos ofrece una nube de instraestructura (IaaS) pública. La plataforma se encuentra alojada en Madrid.</li>
+        <li><strong><a href="https://cirrusflex.com/virtual-private-cloud/">Virtual Private Cloud</a></strong>: Nos ofrece la posibilidad de alquilar nuestra propia nube privada con OpenStack, para gestionar nuestros recursos.</li>
+        
+  </section>
+<section>
+      <h3>Introducción a StackOps Cirrusflex (VDC)</h3>
+      <ul>
+      <li>La empresa StackOps nos ofrece un cloud público: Cirrusflex VDC</li>
       <li>Implementa las funcionalidades básicas de los componentes principales
       de OpenStack: Nova, Glance, Neutron, Cinder, etc.</li>
       <li>StackOps ha optado por no utilizar OpenStack Horizon, el panel web de
-      administración de OpenStack, sino StackOps Portal, una aplicación web que
-      permite gestionar los recursos de OpenStack simulando un escritorio.</li> 
-      
+      administración de OpenStack. La herramienta de gestion de la plataforma se llama StackOps
+      Portal. Esta aplicación web se encuentra disponible en la
+      url <a href="http://cloud.openwebinars.cirrusflex.com/portal/">http://cloud.openwebinars.cirrusflex.com/portal/</a></li>       
       </ul>
     </section>
     <section>
@@ -37,13 +39,16 @@ tema: white
     <h3>Acceso a StackOps Cirrusflex</h3>
       <ul>
       <li>Acceso mediante usuario/contraseña</li>
-      <li> A día de hoy puede acceder a la zona Sur de Europa.</li>
+      <li> Podemos acceder a dos zonas (Novedad!!!):</li>
+        <ul>
+          <li>SE1: South Europe: Funciona con icehouse.</li>
+          <li>MMA1: MasMovil1: Funciona con Juno</li>
+        </ul>
       <li>Lo normal es que un usuario gestiona sólo un proyecto o Virtual
       Datacenter, aunque puede estar asignado a varios.</li>
       <li>Un usuario puede:</li>
       <ul>
-        <li>Crear instancias</li>
-        <li>Modificar el estado de sus instancias</li>
+        <li>Crear y gestionar instancias</li>
         <li>Asociar direcciones IP públicas a sus instancias</li>
         <li>Crear volúmenes</li>
         <li>Gestionar redes virtuales</li>
