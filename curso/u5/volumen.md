@@ -162,4 +162,26 @@ nuestro sistema:
     # Crear un volumen a partir de una imagen
     nova volume-create SIZE --image-id IMAGEN_ID --display-name NOMBRE
 
+    # Crear una instantánea de volumen
+	nova volume-snapshot-create --display-name SNAPSHOT_NAME VOLUMEN_NAME
 
+
+### Utilizando del cliente cinder
+
+	# Listar volúmenes
+	cinder list
+
+	# Crear un volumen
+    cinder create SIZE --display-name NOMBRE 
+
+    # Información sobre el volumen
+    cinder show NOMBRE
+
+    # Crear un volumen a partir de una imagen
+    cinder create SIZE --image-id IMAGEN_ID --display-name NOMBRE
+
+    # Crear una instantánea de volumen
+	cinder snapshot-create --display-name SNAPSHOT_NAME VOLUMEN_NAME
+
+	# Extender el tamaño del volumen
+	cinder extend ID_VOLUME NEW_SIZE
