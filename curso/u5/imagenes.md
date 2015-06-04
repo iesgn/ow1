@@ -8,7 +8,7 @@ menu:
 
 ### Crear una nueva imagen
 
-		glance image-create --name='cirros image' --is-public=true \
+		glance image-create --name='cirros image'  \
 		  --container-format=bare --disk-format=qcow2 < cirros-0.3.3-x86_64-disk.img
 
 ### Listar las imágenes disponibles
