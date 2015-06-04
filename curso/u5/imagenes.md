@@ -17,6 +17,7 @@ menu:
 		...
 		| 0dc74a8f-1dca-438e-855e-d694b9429176 | cirros image                                           | qcow2       | bare             | 13200896    | active |
 		...
+
 ### Ver detalles de la imagen
 
 		 glance image-show 'cirros image'
