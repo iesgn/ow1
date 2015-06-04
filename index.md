@@ -43,9 +43,12 @@ tittle: Curso de Cloud con OpenStack
 ### OpenStack con CLI
 
 * [Conceptos previos](curso/u5/previos)
+* [Gestión de imágenes con galnce](curso/u5/imagenes)
 * [Gestión de instancias con nova](curso/u5/instancia)
-* [Gestión de volúmenes con nova](curso/u5/volumen)
+* [Gestión de volúmenes con nova y cinder](curso/u5/volumen)
 * [Gestión de redes con neutron](curso/u5/red)
+
+
 * [Enlaces sobre CLI](curso/u5/enlaces)
 
 * [Introducción a la virtualización de redes](curso/u6/intro)
