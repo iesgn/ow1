@@ -30,7 +30,7 @@ tema: white
       </ul>
     </li>
     <li>Virtualización de redes</li>
-    <li>Alta disponibilidad</li>
+    <li>¿Alta disponibilidad?</li>
     <li>Sistema escalable</li>
     </ul>
 </section>
@@ -67,9 +67,9 @@ tema: white
   <p>Los roles típicos dentro de OpenStack son:</p>
   <ul>
     <li><strong>Nodo controlador:</strong> Equipo que gestiona el
-      cloud, es al que suelen conectarse los clientes. Contiene la base
+      cloud, ofrece las APIs a los clientes, contiene las bases
       de datos, el servidor AMQP, los planificadores y los componentes
-      "centrales" de OpenStack.</li>
+      "centrales" de cada componente de OpenStack.</li>
     <li><strong>Nodo de red:</strong> Con neutron es recomendable
       utilizar un equipo específico para todo el tráfico de red</li>
     <li><strong>Nodo de computación</strong> Equipo en el que se
@@ -95,7 +95,14 @@ tema: white
       utilizar depende de si las instancias utilizan o no disco
       local.</li>
   </ul>
-  </section>
+</section>
+<section>
+  <img src="img/osog_0101.png" />
+  <p><small>Fuente: <a href="http://docs.openstack.org/openstack-ops/content/example_architecture.html#example_architecture-neutron">OpenStack Operations Guide</a></small></p>
+</section>
+<section>
+  <img src="img/osog_0102.png" />
+</section>
 <section>
   <h2>Keystone (Identity Service)</h2>
   <ul>
