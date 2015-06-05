@@ -1,0 +1,123 @@
+---
+layout: presentacion
+title: Implantación de OpenStack. Ejemplo
+tema: white
+---
+<section>
+  <h2>Implantación de OpenStack. Ejemplo</h2>
+  <p>
+    <a href="http://albertomolina.wordpress.com">Alberto Molina Coballes</a> y
+    <a href="http://www.josedomingo.org">José Domingo Muñoz Rodríguez</a>
+  </p>
+  <p>
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/">
+      <img src="../u1/img/cc_by_sa.png" width="100px" border="0"/></a>
+  </p>
+  <p><small>Theme by: <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a></small></p>
+</section>
+
+<section>
+  <h2>Caso tipo</h2>
+  <ul>
+    <li>Nube privada</li>
+    <li>Varios proyectos y usuarios independientes</li>
+    <li>Capacidad inicial máxima estimada:
+      <ul>
+	<li>200 máquinas con 4 GiB RAM, 2 vCPU y 20 GiB HD</li>
+	<li>Consumo CPU intermedio</li>
+	<li>Hasta 10 TiB de almacenamiento adicional (discos)</li>
+	<li>Hasta 10 TiB de almacenamiento de objetos</li>
+      </ul>
+    </li>
+    <li>Virtualización de redes</li>
+    <li>Alta disponibilidad</li>
+    <li>Sistema escalable</li>
+    </ul>
+</section>
+<section>
+  <h2>Componentes de OpenStack necesarios</h2>
+  <ul>
+    <li>Keystone</li>
+    <li>Glance</li>
+    <li>Nova</li>
+    <li>Cinder</li>
+    <li>Neutron</li>
+    <li>¿Swift?</li>
+    <li>¿Horizon?</li>
+  </ul>
+</section>
+<section>
+  <h2>Otros componentes</h2>
+  <ul>
+    <li>Servidor AMQP: RabbitMQ o QPID</li>
+    <li>BBDD: MySQL, MySQL cluster, Galera, ...</li>
+  </ul>
+</section>
+<section>
+  <h2>Tecnologías subyacentes</h2>
+  <ul>
+    <li>Hipervisor: KVM</li>
+    <li>Almacenamiento de bloques: Ceph RBD</li>
+    <li>Almacenamiento de objetos: Ceph RadosGW</li>
+    <li>Switch virtual: Open vSwitch</li>
+  </ul>
+</section>
+<section>
+  <h2>Tipos de nodos</h2>
+  <p>Los roles típicos dentro de OpenStack son:</p>
+  <ul>
+    <li><strong>Nodo controlador:</strong> Equipo que gestiona el
+      cloud, es al que suelen conectarse los clientes. Contiene la base
+      de datos, el servidor AMQP, los planificadores y los componentes
+      "centrales" de OpenStack.</li>
+    <li><strong>Nodo de red:</strong> Con neutron es recomendable
+      utilizar un equipo específico para todo el tráfico de red</li>
+    <li><strong>Nodo de computación</strong> Equipo en el que se
+      ejecutan las instancias</li>
+    <li><strong>Nodo de almacenamiento</strong> Múltiples
+      opciones. Almacenamiento de volúmenes y/o objetos.</li>
+  </ul>
+</section>
+<section>
+  <h2>Características de los nodos</h2>
+  <ul>
+    <li><strong>Nodo controlador:</strong>Servidor convencional, para
+      una nube pequeña podríamos utilizar un equipo con 8 GiB de
+      RAM, 1 CPU.</li>
+    <li><strong>Nodo de red:</strong>Servidor de características
+      similares al nodo controlador. Mínimo con 2 interfaces de
+      red 1 Gb Ethernet.</li>
+    <li><strong>Nodo de almacenamiento: </strong>Dependiendo de la
+      opción de almacenamiento a utilizar tendrá que tener discos
+      adicionales</li>
+    <li><strong>Nodo de computación:</strong>Equipo de altas
+      prestaciones con procesadores potentes y mucha RAM. Los discos a
+      utilizar depende de si las instancias utilizan o no disco
+      local.</li>
+  </ul>
+  </section>
+<section>
+  <h2>Keystone (Identity Service)</h2>
+  <ul>
+    <li>Proyectos, usuarios, roles, etc.</li>
+    <li>Implementa RBAC (<em>Role Based Access Control</em>)</li>
+    <li>Gestión de los Endpoints</li>
+    <li>Backend: SQL o LDAP</li>
+    <li>¿PKI?</li>
+    <li>¿http o https?</li>
+  </ul>
+</section>
+<section>
+  <h2>Glance (Image Service)</h2>
+  <ul>
+    <li>Gestión de imágenes e instantáneas</li>
+    <li>Formato qcow2 <- KVM</li>
+    <li>Se almacenan como objetos las imágenes y las instantáneas</li>
+    <li>Toda la capacidad del almacén de objetos</li>
+  </ul>
+</section>
+<section>
+  <h2>Nova (Compute Service)</h2>
+  <ul>
+    <li>Gestión de las instancias</li>
+</section>
