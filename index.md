@@ -63,6 +63,9 @@ tittle: Curso de Cloud con OpenStack
 
 * [Presentación Swift](curso/u9/presentacion_objetos)
 
+* [Presentación: automatización](curso/u7/automatizacion)
+* [Introducción a ansible](curso/u7/ansible)
+
 ## Sesiones
 Temas que se tratarán en cada sesión:
 
