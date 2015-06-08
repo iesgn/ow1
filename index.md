@@ -57,6 +57,10 @@ tittle: Curso de Cloud con OpenStack
 
 ### Conceptos avanzados
 
+* [Opentack por dentro. Instancias](curso/avanzado/kvm.md)
+* [Opentack por dentro. Almacenamiento](curso/avanzado/almacenamiento.md)
+* [Opentack por dentro. Redes](curso/avanzado/openvswitch.md)
+
 ## Sesiones
 Temas que se tratarán en cada sesión:
 
