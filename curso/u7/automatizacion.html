@@ -75,15 +75,11 @@ tema: white
        <li>Muy pocas dependencias</li>
        <li>Ideal para entornos pequeños y homogéneos</li>
        <li>No es necesario configurar nada en los clientes</li>
+       <li><a href="https://galaxy.ansible.com/">Ansible Galaxy</a></li>
      </ul>
-     <li>Inconvenientes:</li>
-     <ul>
-       <li>Más complejo en entornos muy heterogéneos</li>
-       <li>Menos "recetas" desarrolladas previamente al ser muy nuevo</li>
-     </ul>
-         </ul>
-        <small>Lo importante no es qué herramienta de gestión de la
-        configuración utilizar. Lo importante es utilizar al menos una.</small>
+      </ul>
+        <p>Lo importante no es qué herramienta de gestión de la
+        configuración utilizar. Lo importante es utilizar al menos una.</p>
     </section>
     <section>
       <h2>Ansible. Instalación</h2>
@@ -141,7 +137,7 @@ tema: white
 
   </section>
   <section>
-  <section>
+  
     <h2>Conceptos (I)</h2>
     <ul>
       <li>Stack: Es el conjunto de recutrsos que se van a crear con Heat (Instanicas, volúmenes, redes, subredes, puertos ...)</li>
@@ -158,9 +154,9 @@ tema: white
       <li>CFN (AWS CloudFormation), otro formato compatible con Heat, escrito en JSON.</li>
     </ul>
   </section>
-</section>
+
   <section>
-  <section>
+
     <h2>¿Cómo funciona Heat? (I)</h2>
     <ul>
       <li>En el template describimos la la infraestructura que queremos crear.</li>
@@ -175,7 +171,7 @@ tema: white
         <li>Heat maneja el ciclo de vida completo de la infraestructura, cuando necesitas cambiarla, solo hay que modificar el template y realizar la actualización del stack.</li>
         <li>Heat gestiona infrestructura, pero los templates se pueden integrar con herramientas de automatización para realizar la confiuración de los recursos.</li>
     </section>
-  </section>
+
   <section>
     <h2>Ejemplo de template</h2>
 <pre>  
