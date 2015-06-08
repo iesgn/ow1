@@ -176,5 +176,23 @@ tema: white
         <li>Heat gestiona infrestructura, pero los templates se pueden integrar con herramientas de automatización para realizar la confiuración de los recursos.</li>
     </section>
   </section>
+  <section>
+    <h2>Ejemplo de template</h2>
+<pre>  
+         <code data-trim>
 
+heat_template_version: 2013-05-23
+
+description: Simple template to deploy a single compute instance
+
+resources:
+  my_instance:
+    type: OS::Nova::Server
+    properties:
+      key_name: my_key
+      image: F18-x86_64-cfntools
+      flavor: m1.small
+</code>
+</pre>
+</section>
 </section>
