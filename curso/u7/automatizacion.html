@@ -158,6 +158,23 @@ tema: white
       <li>CFN (AWS CloudFormation), otro formato compatible con Heat, escrito en JSON.</li>
     </ul>
   </section>
+</section>
   <section>
-    <h2>
+  <section>
+    <h2>¿Cómo funciona Heat? (I)</h2>
+    <ul>
+      <li>En el template describimos la la infraestructura que queremos crear.</li>
+      <li>Se describe cada uno de los <a href="http://docs.openstack.org/developer/heat/template_guide/index.html">recursos</a> que necesitamos.</li>
+      <li>Heat ofrece un servicio de autoescalado, utilizanod la información que nos ofrece el componente <a href="https://wiki.openstack.org/wiki/Ceilometer">Ceilometer</a></li>
+    </ul>
+  </section>
+    <section>
+      <h2>¿Cómo funciona Heat? (II)</h2>
+      <ul>
+        <li>Se puede especificar también las relaciones que hay entre los recursos (volumen conectado a una instancia)</li>
+        <li>Heat maneja el ciclo de vida completo de la infraestructura, cuando necesitas cambiarla, solo hay que modificar el template y realizar la actualización del stack.</li>
+        <li>Heat gestiona infrestructura, pero los templates se pueden integrar con herramientas de automatización para realizar la confiuración de los recursos.</li>
+    </section>
+  </section>
+
 </section>
