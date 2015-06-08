@@ -132,6 +132,9 @@ mínimas necesarias son:
 |----------|--------------|
 |nova|2.18.1|
 |neutron|2.3.6|
+|cinder|1.0.8|
+|glance|0.12.0|
+|swift|2.3.1|
 
 Que podemos verificar una vez instalados los paquetes pasándole al
 programa el modificador "--version":
