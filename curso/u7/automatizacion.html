@@ -57,3 +57,80 @@ tema: white
 </section>
 
 
+ <section>
+ <section>
+        <h2>Ansible. Introducción</h2>
+         <ul>
+     <li>Ansible es una aplicación libre de orquestación escrita en python</li>
+     <li>La primera versión se desarrolló en febrero de 2012 (!)
+         </ul>
+      </section>
+      <section>
+        <h2>Ansible. Introducción (2)</h2>
+        <ul>
+     <li>Ventajas frente a otro software de automatización (puppet o chef):</li>
+     <ul>
+       <li>Muy fácil instalación</li>
+       <li>Comunidad de desarrolladores muy activa</li>
+       <li>Muy pocas dependencias</li>
+       <li>Ideal para entornos pequeños y homogéneos</li>
+       <li>No es necesario configurar nada en los clientes</li>
+     </ul>
+     <li>Inconvenientes:</li>
+     <ul>
+       <li>Más complejo en entornos muy heterogéneos</li>
+       <li>Menos "recetas" desarrolladas previamente al ser muy nuevo</li>
+     </ul>
+         </ul>
+        <p>Lo importante no es qué herramienta de gestión de la
+        configuración utilizar. Lo importante es utilizar al menos una.</p>
+    </section>
+    <section>
+      <h2>Ansible. Instalación</h2>
+      <p>Para utilizar la última versión:</p>
+      <pre>
+
+# apt-get install python-pip python-dev
+# pip install ansible
+      </pre>
+      <p><strong>Voila!</strong></p>
+      
+    </section>
+    <section>
+      <h2>Ansible. Playbooks</h2>
+      <p>Las tareas a realizar por ansible se describen en formato yaml en ficheros denominados “playbooks”, que pueden incluir una o varias jugadas, por ejemplo:</p>
+      
+       <pre>  
+         <code data-trim>
+---
+- name: Apache installation
+  hosts: all
+  sudo: True
+  tasks:
+  - name: Set proper sources.list
+    copy: >
+      src=files/etc/apt/sources.list
+      dest=/etc/apt/sources.list
+      owner=root
+      mode=644
+  - name: Ensure apache is installed (after updating)
+    apt: pkg=apache2 update_cache=yes
+         </code>
+       </pre>
+    </section>
+    </section>
+    <section>
+      <h2>Automatizar con Ansible</h2>
+      <p>Imagina que tenemos varias intancias en nuestro cloud y podríamos realizar las siguientes tareas de forma automática:</p>
+      <ul>
+        <li>Configurar la red</li>
+        <li>Realizar las actualizaciones de software</li>
+        <li>Instalar los paquetes del software que se va a utilizar</li>
+        <li>Copiar los ficheros de configuración de plantillas previamente creadas</li>
+        <li>Levantar o parar los servicios que se determinen</li>
+        <li>Ejecutar cualquier tarea en cada una de las máquinas virtuales</li>
+        <li>Dejar el entorno completamente operativo</li>
+      </ul>
+      
+</section>
+</section>
