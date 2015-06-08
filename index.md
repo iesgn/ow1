@@ -61,6 +61,8 @@ tittle: Curso de Cloud con OpenStack
 * [Opentack por dentro. Almacenamiento](curso/avanzado/almacenamiento)
 * [Opentack por dentro. Redes](curso/avanzado/openvswitch)
 
+* [Presentación Swift](curso/u9/presentacion_objetos)
+
 ## Sesiones
 Temas que se tratarán en cada sesión:
 
