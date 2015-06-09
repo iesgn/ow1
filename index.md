@@ -62,7 +62,7 @@ tittle: Curso de Cloud con OpenStack
 * [Opentack por dentro. Redes](curso/avanzado/openvswitch)
 
 * [Presentación Swift](curso/u9/presentacion_objetos)
-* [Introducción a Swift]((curso/u9/swift)
+* [Introducción a Swift](curso/u9/swift)
 
 * [Presentación: automatización](curso/u7/automatizacion)
 * [Introducción a ansible](curso/u7/ansible)
