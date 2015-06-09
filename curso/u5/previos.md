@@ -128,13 +128,13 @@ Una vez instalados los dos paquetes, deberíamos verificar que las
 versiones son las correctas para utilizar Cirrusflex. Las versiones
 mínimas necesarias son:
 
-|Aplicación|Versión mínima|
-|----------|--------------|
-|nova|2.18.1|
-|neutron|2.3.6|
-|cinder|1.0.8|
-|glance|0.12.0|
-|swift|2.3.1|
+|Aplicación|Versión mínima Icehouse|Versión mínima Juno|
+|----------|-----------------------|-------------------|
+|nova|2.18.1|2.20|
+|neutron|2.3.6|2.3.6|
+|cinder|1.0.8|1.0.9|
+|glance|0.12.0|0.13.1|
+|swift|2.3.1|2.3.1|
 
 Que podemos verificar una vez instalados los paquetes pasándole al
 programa el modificador "--version":
