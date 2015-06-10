@@ -83,8 +83,6 @@ tittle: Sesiones online
  * Terminar la instancia e instanciar una nueva
 1. Ejercicio: Crear una nueva imagen desde un volumen con sistema operativo
 1. Ejercicio: Instalación de owncloud
-<hr/>
-####Sesión 5
 1. Contenidos: Conceptos previos de redes
 1. Ejercicio: Estudiar la configuración de la red por defecto de nuestro proyecto
  * Ver la red y subred definidas
