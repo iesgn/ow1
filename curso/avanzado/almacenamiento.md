@@ -5,6 +5,17 @@ menu:
   - Unidades
 ---
 
+OpenStack soporta un buen número de tecnologías para proporcionar
+almacenamiento de bloques, en este caso vamos a explicar la
+utilización de LVM + iSCSI que es la tecnología utilizada por defecto
+y quizás la más adecuada para explicar el funcionamiento de OpenStack
+gracias a su sencillez. A diferencia del caso de KVM, que es sin duda
+ninguna el hipervisor más utilizado en despliegues de OpenStack, LVM +
+iSCSI no es la combinación más extendida ya que hay múltiples opciones
+(Ceph RBD, GlusterFS, sistemas de almacenamiento de múltiples fabricantes,
+etc.), de entre todas es Ceph RBD la opción preferida de acuerdo a la
+última <a href="http://superuser.openstack.org/articles/openstack-user-survey-insights-november-2014">encuesta de uso de OpenStack</a>.
+
 ## LVM
 
 Logical Volume Manager 2 (LVM2) o simplemente LVM es una implementación de
@@ -12,6 +23,9 @@ volúmenes lógicos para el kérnel de linux. Permite abstraer los dispositivos 
 bloques lógicos utilizados por el sistema o los usuarios de los dispositivos
 físicos de la máquina, permitiendo una gestión más adecuada y dinámica de los
 recursos.
+
+LVM en sí mismo no proporciona redundancia, ésta habitualmente se
+proporciona utilizando RAID por debajo.
 
 ## iSCSI
 
@@ -55,7 +69,25 @@ lógico del tamaño solicitado:
 Este volumen se ha creado sobre el grupo de volúmenes *cinder-volumes* y se
 identifica con el nombre *volume-* seguido del UUID del volumen de OpenStack.
 
-Simultáneamente se ha creado un nuevo target iSCSI asociado a este volumen
+Aunque el volumen ya esté creado, el target iSCSI correspondiente no
+se creará hasta que se realice la asociación del volumen a una
+determinada instancia.
+
+### Asociación de un volumen a una instancia
+
+Para asociar un volumen a una instancia utilizamos el cliente nova:
+
+    $ nova volume-attach f69ab4d9-ed28-406e-8a78-67f62a5e4bc2 d61284c3-4daa-48e1-9731-cd6d4361b4c6
+	+----------+--------------------------------------+
+	| Property | Value                                |
+	+----------+--------------------------------------+
+	| device   | /dev/vdb                             |
+	| id       | d61284c3-4daa-48e1-9731-cd6d4361b4c6 |
+	| serverId | f69ab4d9-ed28-406e-8a78-67f62a5e4bc2 |
+	| volumeId | d61284c3-4daa-48e1-9731-cd6d4361b4c6 |
+	+----------+--------------------------------------+
+
+En ese momento se crea un nuevo target iSCSI asociado a este volumen
 lógico que podemos ver con la siguiente instrucción:
 
     # tgtadm --lld iscsi --op show --mode target
@@ -94,28 +126,60 @@ lógico que podemos ver con la siguiente instrucción:
 		ACL information:
 		    ALL
 
-Desde cualquiera de los nodos de computación podemos comprobar los targets iSCSI
-que están disponibles:
+Y en el nodo de computación correspondiente podemos ver la conexión
+realizada con detalle:
 
-    # iscsiadm -m discovery -t st -p 192.168.0.68:3260
-	192.168.0.68:3260,1 iqn.2010-10.org.openstack:volume-70ba58bf-1201-4b27-8de3-a1f2f1bf49ed
-	192.168.0.68:3260,1 iqn.2010-10.org.openstack:volume-beac534f-0dfc-4663-b404-cdd838e89558
-	192.168.0.68:3260,1 iqn.2010-10.org.openstack:volume-d61284c3-4daa-48e1-9731-cd6d4361b4c6
-
-### Asociación de un volumen a una instancia
-
-Para asociar un volumen a una instancia utilizamos el cliente nova:
-
-    $ nova volume-attach f69ab4d9-ed28-406e-8a78-67f62a5e4bc2 d61284c3-4daa-48e1-9731-cd6d4361b4c6
-	+----------+--------------------------------------+
-	| Property | Value                                |
-	+----------+--------------------------------------+
-	| device   | /dev/vdb                             |
-	| id       | d61284c3-4daa-48e1-9731-cd6d4361b4c6 |
-	| serverId | f69ab4d9-ed28-406e-8a78-67f62a5e4bc2 |
-	| volumeId | d61284c3-4daa-48e1-9731-cd6d4361b4c6 |
-	+----------+--------------------------------------+
-
+    # iscsiadm -m session -P 3
+    Target: iqn.2010-10.org.openstack:volume-d61284c3-4daa-48e1-9731-cd6d4361b4c6 (non-flash)
+            Current Portal: 192.168.222.11:3260,1
+	    Persistent Portal: 192.168.222.11:3260,1
+	            **********
+	            Interface:
+	            **********
+	            Iface Name: default
+                    Iface Transport: tcp
+                    Iface Initiatorname: iqn.1993-08.org.debian:01:cab427965c1
+                    Iface IPaddress: 192.168.222.23
+                    Iface HWaddress: <empty>
+                    Iface Netdev: <empty>
+                    SID: 121
+                    iSCSI Connection State: LOGGED IN
+                    iSCSI Session State: LOGGED_IN
+                    Internal iscsid Session State: NO CHANGE
+                    *********
+                    Timeouts:
+                    *********
+                    Recovery Timeout: 120
+                    Target Reset Timeout: 30
+                    LUN Reset Timeout: 30
+                    Abort Timeout: 15
+                    *****
+                    CHAP:										    
+		    *****
+                    username: ZQg9H5oC5b5rHBthfSFf
+                    password: ********
+                    username_in: <empty>
+                    password_in: ********
+                    ************************
+                    Negotiated iSCSI params:
+                    ************************
+                    HeaderDigest: None
+                    DataDigest: None
+                    MaxRecvDataSegmentLength: 262144
+                    MaxXmitDataSegmentLength: 8192
+                    FirstBurstLength: 65536
+                    MaxBurstLength: 262144
+                    ImmediateData: Yes
+                    InitialR2T: Yes
+                    MaxOutstandingR2T: 1
+                    ************************
+                    Attached SCSI devices:
+                    ************************
+                    Host Number: 127	State: running
+                    scsi127 Channel 00 Id 0 Lun: 0
+                    scsi127 Channel 00 Id 0 Lun: 1
+                            Attached scsi disk sdj          State: running
+			       
 Si volcamos la salida del "kernel ring buffer" con la instrucción dmesg del nodo
 de computación donde se encuentra ejecutándose la instancia, vemos una salida
 como la siguiente:
@@ -125,14 +189,14 @@ como la siguiente:
 	scsi 5:0:0:0: Attached scsi generic sg7 type 12
 	scsi 5:0:0:1: Direct-Access     IET      VIRTUAL-DISK     0001 PQ: 0 ANSI: 5
 	sd 5:0:0:1: Attached scsi generic sg8 type 0
-	sd 5:0:0:1: [sdg] 2097152 512-byte logical blocks: (1.07 GB/1.00 GiB)
-	sd 5:0:0:1: [sdg] Write Protect is off
-	sd 5:0:0:1: [sdg] Mode Sense: 49 00 00 08
-	sd 5:0:0:1: [sdg] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+	sd 5:0:0:1: [sdj] 2097152 512-byte logical blocks: (1.07 GB/1.00 GiB)
+	sd 5:0:0:1: [sdj] Write Protect is off
+	sd 5:0:0:1: [sdj] Mode Sense: 49 00 00 08
+	sd 5:0:0:1: [sdj] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
 	 sdg: unknown partition table
-	 sd 5:0:0:1: [sdg] Attached SCSI disk
+	sd 5:0:0:1: [sdj] Attached SCSI disk
 
-Es decir, el que realiza la conexión iSCSI es el nodo de computación y el dispositivo de bloques remoto aparece como un dispositivo de bloques local asociado a /dev/sdg. Sin embargo este dispositivo de bloques no lo utiliza directamente el nodo de computación sino que se lo transfiere a la máquina virtual modificando el fichero /etc/libvirt/qemu/instance-0000001c.xml con las líneas:
+Es decir, el que realiza la conexión iSCSI es el nodo de computación y el dispositivo de bloques remoto aparece como un dispositivo de bloques local asociado a /dev/sdj. Sin embargo este dispositivo de bloques no lo utiliza directamente el nodo de computación sino que se lo transfiere a la máquina virtual modificando el fichero /etc/libvirt/qemu/instance-0000001c.xml con las líneas:
 
     <disk type='block' device='disk'>
 	  <driver name='qemu' type='raw' cache='none'/>
