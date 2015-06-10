@@ -18,12 +18,9 @@ va incluyendo paulatinamente diferentes tecnologías de red como "backends"
 mediante <a
 href="https://wiki.openstack.org/wiki/Neutron#Using_Neutron">plugins</a>
 
-En nuestro caso, vamos a utilizar Open vSwitch como la tecnología por debajo de
-neutron encargada de la virtualización de la red.
-
-**Nota:** Aunque en OpenStack Havana está recomendado utilizar Open vSwitch
-mediante el nuevo plugin *Modular Layer 2* (ML2), hemos utilizado directamente
-el plugin de Open vSwitch.
+En nuestro caso, vamos a utilizar Open vSwitch como la tecnología de
+capa 2 por debajo de neutron encargada de la virtualización de la
+red.
 
 ## Open vSwitch
 
@@ -75,7 +72,7 @@ independiente al resto de proyectos, lo que OpenStack denomina <a
 href="http://docs.openstack.org/grizzly/openstack-network/admin/content/app_demo_routers_with_private_networks.html">
 Per-tenant Routers with Private Networks</a>
 
-En este caso utilizaremos <a
+En este caso vamos a explicar el caso más habitual de  <a
 href='http://docs.openstack.org/havana/install-guide/install/apt/content/section_networking-routers-with-private-networks.html'>Per
 tenant routers with private networks</a>, que permite que cada proyecto defina
 sus propios routers y por tanto cada proyecto utilice su propio direccionamiento
