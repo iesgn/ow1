@@ -72,7 +72,7 @@ Podemos acceder desde un navegador a dicha imagen, utilizando el endpoint de swi
 
 Para que se accesible la imagen tenemos que dar permiso de lectura al contenedor, por medio de una ACL:
 
-		$ ift post -r '.r:*' contenedor
+		$ swift post -r '.r:*' contenedor
 
 
 4. Borrar un conetenedor
