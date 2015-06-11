@@ -870,6 +870,67 @@ direcciones IP en el siguiente diagrama:
 
 <div style="text-align: center;"><img src="img/red-final.png" alt="red final"/></div>
 
+## Servidor de metadatos
+
+Al igual que otras plataformas de cloud computing OpenStack
+proporciona un servicio de metadatos para pasarle a la instancia
+cierta información específica. Este servicio de metadatos se utiliza
+principalmente durante el arranque de la máquina virtual, pero puede
+utilizarse en cualquier momento que sea preciso.
+
+La instancia espera que el servidor de metadatos esté accesible a
+través de la URL http://169.254.169.254, puesto que estamos utilizando
+neutron y cada proyecto gestiona sus propias redes aisladas entre sí,
+OpenStack tiene que proporcionar un mecanismo para que la URL anterior
+esté accesible en todas las redes y esto habitualmente se hace
+mediante un proxy de metadatos en neutron. A continuación vamos a
+explicar cómo funciona.
+
+En el nodo de red hay que comprobar que exista un proceso del agente
+de metadatos:
+
+neutron   2559  0.0  0.4 178264 69548 ?        Ss   17:37   0:04 \
+/usr/bin/python2.7 /usr/bin/neutron-metadata-agent \
+--config-file=/etc/neutron/metadata_agent.ini \
+--config-file=/etc/neutron/neutron.conf \
+--log-file=/var/log/neutron/neutron-metadata-agent.log
+
+El servicio de metadatos puede estar tanto asociado a un router del
+proyecto como a un dispositivo DHCP, aunque lo más habitual es que
+esté asociado a un router.
+
+Buscamos el identificador del router del proyecto:
+
+root@network:~# neutron router-list |grep "router de test"
+| 3e98276c-f107-48a5-97de-f144e10df3df | router de test | {"network_id": "a86fc437-de50-4034-8e1a-f37a7b05537f", "enable_snat": true} |
+
+El espacio de nombres de red correspondiente en el nodo de red:
+
+root@network:~# ip netns |grep 3e98276c-f107-48a5-97de-f144e10df3df
+qrouter-3e98276c-f107-48a5-97de-f144e10df3df
+
+Y podemos encontrar el proceso del proxy de metadatos funcionando dentro de ese espacio de nombres de red:
+
+root@network:~# ip netns exec qrouter-3e98276c-f107-48a5-97de-f144e10df3df netstat -putan
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address
+State       PID/Program name
+tcp        0      0 0.0.0.0:9697            0.0.0.0:*
+LISTEN      19551/python2.7
+
+El proxy de metadatos es un proceso que escucha peticiones en el puerto 9697/tcp, por lo que hay una regla de iptables que redirige las peticiones que los clientes hagan al 169.254.169.254:80:
+
+root@network:~# ip netns exec qrouter-3e98276c-f107-48a5-97de-f144e10df3df iptables -t nat -L -n -v|grep 9697
+24  1440 REDIRECT   tcp  --  *      *       0.0.0.0/0    169.254.169.254      tcp dpt:80 redir ports 9697
+
+(En este caso se han redirigido 24 paquetes)
+
+El proxy de metadatos se conecta al agente de metadatos del nodo de red a través de un socket UNIX y el agente de metadatos manda la petición al servidor de metadatos a través de la API de nova utilizando una clave secreta compartida que se configura en ambos nodos (8775/tcp en el nodo controlador).
+
+Finalmente podemos comprobar que el servidor de metadatos está esperando peticiones en el puerto 8775/tcp del nodo controlador:
+
+root@controller:/# netstat -putan | grep 8775
+tcp        0      0 0.0.0.0:8775            0.0.0.0:*    LISTEN      2657/python
 
 ### Referencias
 
