@@ -90,4 +90,16 @@ $ swift download CONTENEDOR NOMBRE_OBJETO
 $ swift post ARGUMENTOS
     </code></pre>
   </section>
+  <section>
+    <h2>Permisos</h2>
+    <pre><code>
+#Hacer público un conetenedor
+$ swift post -r '.r:*' CONTENEDOR
+#Permiter a otro usuario acceder a los objetos del contenedor
+$ swift post -r PROYECTO:USUARIO CONTENEDOR
+# Para permiter obtener la lista de objetos de un contenedor
+$ swift post  -r '.r:*,.rlistings' CONTENEDOR
+
+    </code></pre>
+  </section>
 </section>
