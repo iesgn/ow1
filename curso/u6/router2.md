@@ -77,9 +77,11 @@ De forma equivalente, utilizando *neutron* tendríamos que ejecutar:
     | tenant_id             | 44f5cb63ad34481aab5cc9c2809e4a76                                                  |
     +-----------------------+-----------------------------------------------------------------------------------+
 
-La conexión del router (mi_router) al puerto que acabamos de crear **no se puede
-realizar desde la aplicación web Cirrusflex**, por lo tanto la única forma de
-hacerlo es a través del cliente *neutron*:
+La conexión del router (mi_router) al puerto que acabamos de crear se puede hacer desde cirrusflex desde la ventana "Enalzar subre" y la opción "Unir a un puerto".
+
+![red](img/net13.png)
+
+También lo podemos hacer a través del cliente *neutron*:
 
     neutron router-interface-add mi_router port=5138b3e0-6a88-4f79-8804-01d7c50c020f
 
