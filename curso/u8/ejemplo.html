@@ -124,7 +124,9 @@ tema: white
   </ul>
 </section>
 <section>
-  <h2>Esquemas</h2>
+  <section>
+    <h2>Esquemas</h2>
+  </section>
   <section>
     <h2>Con alta disponibilidad</h2>
     <img src="img/osog_0101.png" />
@@ -238,9 +240,10 @@ tema: white
     </ul>
   </section>
   <section>
-    <h2>Nodo de computación (uso intermedio)</h2>
+    <h2>Nodo de computación</h2>
+    <h3>uso intermedio</h3>
     <ul>
-      <li>CPU allocation-ratio: 8</li>
+      <li>CPU allocation ratio: 8</li>
       <li>RAM allocation ratio: 1.2</li>
       <li>Escalamos al pico máximo:
 	<ul>
@@ -258,7 +261,8 @@ tema: white
     </ul>
   </section>
   <section>
-    <h2>Nodo de computación (uso intensivo)</h2>
+    <h2>Nodo de computación</h2>
+    <h3>uso intensivo</h3>
     <ul>
       <li>CPU allocation-ratio: 1</li>
       <li>RAM allocation ratio: 1</li>
@@ -277,8 +281,30 @@ tema: white
       </li>
     </ul>
   </section>
-</section>
-<section>
-http://www.slideshare.net/LarsMarowskyBre/suse-storage-sizing-and-performance-ceph-42056074
-http://iopscience.iop.org/1742-6596/513/4/042047/pdf/1742-6596_513_4_042047.pdf
+  <section>
+    <h2>Nodo de almacenamiento</h2>
+    <h3>LVM + iSCSI</h3>
+    <ul>
+      <li>Supongamos que proporcionamos redundancia con RAID5 más un disco de reserva</li>
+      <li>7 HD de 2 TiB</li>
+      <li>Discos aparte para el sistema y cinder-volume</li>
+      <li>Varias interfaces de red para bonding o 10 Gigabit Ethernet</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Nodo de almacenamiento</h2>
+    <h3>Ceph</h3>
+    <ul>
+      <li>1 GiB de RAM por 1 TiB de almacenamiento</li>
+      <li>Requisitos mínimos. 3 nodos con:
+	<ul>
+	  <li>1 CPU multicore</li>
+	  <li>24 GiB RAM</li>
+	  <li>No utilizar RAID</li>
+	  <li>10 HD de 2 TiB</li>
+	</ul>
+      </li>
+    </ul>
+    <small><a href="http://ceph.com/docs/master/start/hardware-recommendations/">Ceph. Hardware recommendations</a></small>
+  </section>
 </section>
