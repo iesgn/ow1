@@ -1,6 +1,6 @@
 ---
 layout: blog
-tittle: Entorod e pruebas con DevStack
+tittle: Entorno de pruebas con DevStack
 menu:
   - Unidades
 ---
