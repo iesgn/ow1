@@ -4,7 +4,7 @@ title: Implantación de OpenStack. Ejemplo
 tema: white
 ---
 <section>
-  <h2>Implantación de OpenStack. Ejemplo</h2>
+  <h2>Implantación de OpenStack. Ejemplo paso a paso</h2>
   <p>
     <a href="http://albertomolina.wordpress.com">Alberto Molina Coballes</a> y
     <a href="http://www.josedomingo.org">José Domingo Muñoz Rodríguez</a>
@@ -35,30 +35,57 @@ tema: white
     </ul>
 </section>
 <section>
+      <a href="../u1/img/esquema-iaas.png"><img src="../u1/img/esquema-iaas.png"
+					  alt="esquema IaaS"/></a>
+</section>
+<section>
   <h2>Componentes de OpenStack necesarios</h2>
   <ul>
     <li>Keystone</li>
     <li>Glance</li>
     <li>Nova</li>
     <li>Cinder</li>
+    <li>Horizon</li>
     <li>Neutron</li>
-    <li>¿Swift?</li>
-    <li>¿Horizon?</li>
   </ul>
 </section>
 <section>
-  <h2>Otros componentes</h2>
+  <h2>Componentes de OpenStack opcionales</h2>
+  <ul>
+    <li>Swift: No es imprescindible si utilizamos Ceph, que también puede
+      proporcionar almacanamiento de objetos</li>
+    <li>Ceilometer y Heat</li>
+    <li>Trove</li>
+    <li>Sahara</li>
+    <li>Designate</li>
+    <li>...</li>
+  </ul>
+<section>
+  <h2>Otros componentes necesarios</h2>
   <ul>
     <li>Servidor AMQP: RabbitMQ o QPID</li>
-    <li>BBDD: MySQL, MySQL cluster, Galera, ...</li>
+    <li>BBDD:
+      <ul>      
+	<li>Si HA: Galera o MySQL cluster</li>
+	<li>Si no HA: MySQL</li>
+      </ul>
+    </li>
   </ul>
 </section>
 <section>
   <h2>Tecnologías subyacentes</h2>
   <ul>
     <li>Hipervisor: KVM</li>
-    <li>Almacenamiento de bloques: Ceph RBD</li>
-    <li>Almacenamiento de objetos: Ceph RadosGW</li>
+    <li>Almacenaminto. Opción 1:
+      <ul>
+	<li>Almacenamiento de bloques: LVM + iSCSI</li>
+	<li>Almacenamiento  de objetos: Swift</li>
+    </ul></li>
+    <li>Almacenamiento. Opción 2:
+      <ul>
+	<li>Almacenamiento de bloques: Ceph RBD</li>
+	<li>Almacenamiento de objetos: Ceph RadosGW</li>
+    </ul></li>
     <li>Switch virtual: Open vSwitch</li>
   </ul>
 </section>
@@ -79,17 +106,15 @@ tema: white
   </ul>
 </section>
 <section>
-  <h2>Características de los nodos</h2>
+  <h2>Características físicas de los nodos</h2>
   <ul>
-    <li><strong>Nodo controlador:</strong>Servidor convencional, para
-      una nube pequeña podríamos utilizar un equipo con 8 GiB de
-      RAM, 1 CPU.</li>
+    <li><strong>Nodo controlador:</strong>Servidor convencional sin grandes
+      requisitos. Podría reutilizarse un equipo que ya se tuviera.</li>
     <li><strong>Nodo de red:</strong>Servidor de características
       similares al nodo controlador. Mínimo con 2 interfaces de
       red 1 Gb Ethernet.</li>
     <li><strong>Nodo de almacenamiento: </strong>Dependiendo de la
-      opción de almacenamiento a utilizar tendrá que tener discos
-      adicionales</li>
+      opción de almacenamiento así serán los discos  adicionales</li>
     <li><strong>Nodo de computación:</strong>Equipo de altas
       prestaciones con procesadores potentes y mucha RAM. Los discos a
       utilizar depende de si las instancias utilizan o no disco
@@ -97,12 +122,27 @@ tema: white
   </ul>
 </section>
 <section>
+  <h2>Con alta disponibilidad</h2>
   <img src="img/osog_0101.png" />
   <p><small>Fuente: <a href="http://docs.openstack.org/openstack-ops/content/example_architecture.html#example_architecture-neutron">OpenStack Operations Guide</a></small></p>
 </section>
 <section>
+  <h2>Sin alta disponibilidad</h2>
   <img src="img/osog_0102.png" />
 </section>
+<section>
+  <h2>Sobre la Alta disponibilidad</h2>
+  <ul>
+    <li>Un despliegue de OpenStack sin SPOF es muy complejo</li>
+    <li>Se puede conseguir algunos servicios en HA de forma sencilla:
+      <ul>
+	<li>MySQL con Galera</li>
+	<li>AMQP</li>
+	<li>APIs balanceadas con HA-proxy</li>
+    </ul></li>
+    <li>Swift o Ceph</li>
+    <li>Los nodos de computación no se montan en HA</li>  
+  </ul>
 <section>
   <h2>Keystone (Identity Service)</h2>
   <ul>
@@ -118,16 +158,50 @@ tema: white
   <h2>Glance (Image Service)</h2>
   <ul>
     <li>Gestión de imágenes e instantáneas</li>
-    <li>Formato qcow2 <- KVM</li>
-    <li>Se almacenan como objetos las imágenes y las instantáneas</li>
-    <li>Toda la capacidad del almacén de objetos</li>
+    <li>Formato qcow2 &#8592; KVM</li>
+    <li>Se pueden almacenar como objetos las imágenes e instantáneas</li>
   </ul>
 </section>
 <section>
   <h2>Nova (Compute Service)</h2>
   <ul>
     <li>Gestión de las instancias</li>
+    <li>Varios subcomponentes: nova-api, nova-conductor, nova-console,
+      nova-scheduler, nova-compute</li>
+    <li>La configuración de nova-compute depende del hipervisor</li>
+    <li>nova-scheduler implementa varios algoritmos</li>
+    <li>Importante: Definir CPU y RAM allocation-ratio</li>
+    <li>nova-console: VNC o SPICE</li>
+  </ul>
 </section>
+<section>
+  <h2>Cinder (Block Storage Service)</h2>
+  <ul>
+    <li>Gestión de los volúmenes</li>
+    <li>Múltiples "backends"</li>
+    <li>Varios componentes: cinder-api, cinder-scheduler y cinder-volume</li>
+  </ul>
+</section>
+<section>
+  <h2>Horizon (Dashboard)</h2>
+  <ul>
+    <li>Desarrollada en Django</li>
+    <li>Fácilmente extensible y adaptable</li>
+    <li>Habitualmente con memcached</li>
+  </ul>
+</section>
+<section>
+  <h2>Neutron (Networking Service)</h2>
+  <ul>
+    <li>Encargado de las redes, subredes, routers, etc.</li>
+    <li>Modular Layer 2 (ML2):
+      <ul>
+	<li>Varios tipos: local,flat,vlan,gre,vxlan</li>
+	<li>Varios mecanismos:  Arista, Brocade, Cisco, Nexus, Hyper-V, midonet,
+    nuage, OVS, ...</li>
+      </ul>
+    </li>
+  </ul>
 <section>
   <h2>Arquitectura lógica</h2>
   <img src="img/openstack-arch-kilo-logical-v1.png" />
