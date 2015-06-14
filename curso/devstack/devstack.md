@@ -74,5 +74,3 @@ Si comprobamos que no funciona bien, tendremos que volver a instalar devstack (a
 Abrimos un navegador y accedemos a <em>localhost</em>:
 
 <a class="thumbnail" href="http://www.josedomingo.org/pledin/wp-content/uploads/2014/10/intro.png"><img class="aligncenter wp-image-1048 size-medium" src="http://www.josedomingo.org/pledin/wp-content/uploads/2014/10/intro-233x300.png" alt="intro" width="233" height="300" /></a>
-
-En las próximas entradas iremos viendo los distintos conceptos relacionados con OpenStack y algunas prácticas para que veamos cómo funciona.
