@@ -59,6 +59,7 @@ tema: white
     <li>Sahara</li>
     <li>Designate</li>
     <li>...</li>
+    <li>En general no repercuten en la arquitectura, salvo swift</li>
   </ul>
 </section>
 <section>
@@ -77,7 +78,7 @@ tema: white
   <h2>Tecnologías subyacentes</h2>
   <ul>
     <li>Hipervisor: KVM</li>
-    <li>Almacenaminto. Opción 1:
+    <li>Almacenamiento. Opción 1:
       <ul>
 	<li>Almacenamiento de bloques: LVM + iSCSI</li>
 	<li>Almacenamiento  de objetos: Swift</li>
@@ -123,87 +124,101 @@ tema: white
   </ul>
 </section>
 <section>
-  <h2>Con alta disponibilidad</h2>
-  <img src="img/osog_0101.png" />
-  <p><small>Fuente: <a href="http://docs.openstack.org/openstack-ops/content/example_architecture.html#example_architecture-neutron">OpenStack Operations Guide</a></small></p>
+  <section>
+    <h2>Esquemas</h2>
+  </section>
+  <section>
+    <h2>Con alta disponibilidad</h2>
+    <img src="img/osog_0101.png" />
+    <p><small>Fuente: <a href="http://docs.openstack.org/openstack-ops/content/example_architecture.html#example_architecture-neutron">OpenStack Operations Guide</a></small></p>
+  </section>
+  <section>
+    <h2>Sin alta disponibilidad</h2>
+    <img src="img/osog_0102.png" />
+  </section>
+  <section>
+    <h2>Sobre la Alta disponibilidad</h2>
+    <ul>
+      <li>Un despliegue de OpenStack sin SPOF es muy complejo</li>
+      <li>Se puede conseguir algunos servicios en HA de forma sencilla:
+	<ul>
+	  <li>MySQL con Galera</li>
+	  <li>AMQP</li>
+	  <li>APIs balanceadas con HA-proxy</li>
+      </ul></li>
+      <li>Swift o Ceph</li>
+      <li>Los nodos de computación no se montan en HA</li>  
+    </ul>
+  </section>
 </section>
 <section>
-  <h2>Sin alta disponibilidad</h2>
-  <img src="img/osog_0102.png" />
-</section>
-<section>
-  <h2>Sobre la Alta disponibilidad</h2>
-  <ul>
-    <li>Un despliegue de OpenStack sin SPOF es muy complejo</li>
-    <li>Se puede conseguir algunos servicios en HA de forma sencilla:
-      <ul>
-	<li>MySQL con Galera</li>
-	<li>AMQP</li>
-	<li>APIs balanceadas con HA-proxy</li>
-    </ul></li>
-    <li>Swift o Ceph</li>
-    <li>Los nodos de computación no se montan en HA</li>  
-  </ul>
-</section>
-<section>
-  <h2>Keystone (Identity Service)</h2>
-  <ul>
-    <li>Proyectos, usuarios, roles, etc.</li>
-    <li>Implementa RBAC (<em>Role Based Access Control</em>)</li>
-    <li>Gestión de los Endpoints</li>
-    <li>Backend: SQL o LDAP</li>
-    <li>¿PKI?</li>
-    <li>¿http o https?</li>
-  </ul>
-</section>
-<section>
-  <h2>Glance (Image Service)</h2>
-  <ul>
-    <li>Gestión de imágenes e instantáneas</li>
-    <li>Formato qcow2 &#8592; KVM</li>
-    <li>Se pueden almacenar como objetos las imágenes e instantáneas</li>
-  </ul>
-</section>
-<section>
-  <h2>Nova (Compute Service)</h2>
-  <ul>
-    <li>Gestión de las instancias</li>
-    <li>Varios subcomponentes: nova-api, nova-conductor, nova-console,
-      nova-scheduler, nova-compute</li>
-    <li>La configuración de nova-compute depende del hipervisor</li>
-    <li>nova-scheduler implementa varios algoritmos</li>
-    <li>Importante: Definir CPU y RAM allocation-ratio</li>
-    <li>nova-console: VNC o SPICE</li>
-  </ul>
-</section>
-<section>
-  <h2>Cinder (Block Storage Service)</h2>
-  <ul>
-    <li>Gestión de los volúmenes</li>
-    <li>Múltiples "backends"</li>
-    <li>Varios componentes: cinder-api, cinder-scheduler y cinder-volume</li>
-  </ul>
-</section>
-<section>
-  <h2>Horizon (Dashboard)</h2>
-  <ul>
-    <li>Desarrollada en Django</li>
-    <li>Fácilmente extensible y adaptable</li>
-    <li>Habitualmente con memcached</li>
-  </ul>
-</section>
-<section>
-  <h2>Neutron (Networking Service)</h2>
-  <ul>
-    <li>Encargado de las redes, subredes, routers, etc.</li>
-    <li>Modular Layer 2 (ML2):
-      <ul>
-	<li>Varios tipos: local,flat,vlan,gre,vxlan</li>
-	<li>Varios mecanismos:  Arista, Brocade, Cisco, Nexus, Hyper-V, midonet,
-    nuage, OVS, ...</li>
-      </ul>
-    </li>
-  </ul>
+  <section>
+    <h2>Componentes de OpenStack. Detalle</h2>
+  </section>
+  <section>
+    <h2>Keystone (Identity Service)</h2>
+    <ul>
+      <li>Proyectos, usuarios, roles, etc.</li>
+      <li>Implementa RBAC (<em>Role Based Access Control</em>)</li>
+      <li>Autenticación por tokens</li>
+      <li>Gestión de los Endpoints</li>
+      <li>Backend: SQL o LDAP</li>
+      <li>¿PKI?</li>
+      <li>¿http o https?</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Glance (Image Service)</h2>
+    <ul>
+      <li>Gestión de imágenes e instantáneas</li>
+      <li>Formato qcow2 &#8592; KVM</li>
+      <li>Se pueden almacenar como objetos las imágenes e instantáneas</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Nova (Compute Service)</h2>
+    <ul>
+      <li>Gestión de las instancias</li>
+      <li>Varios subcomponentes: nova-api, nova-conductor, nova-console,
+	nova-scheduler, nova-compute</li>
+      <li>La configuración de nova-compute depende del hipervisor</li>
+      <li>nova-scheduler implementa varios algoritmos</li>
+      <li>Importante: Definir CPU y RAM allocation-ratio</li>
+      <li>nova-console: VNC o SPICE</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Cinder (Block Storage Service)</h2>
+    <ul>
+      <li>Gestión de los volúmenes</li>
+      <li>Múltiples "backends"</li>
+      <li>Varios componentes: cinder-api, cinder-scheduler y cinder-volume</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Horizon (Dashboard)</h2>
+    <ul>
+      <li>Desarrollada en Django</li>
+      <li>Fácilmente extensible y adaptable</li>
+      <li>Habitualmente con memcached</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Neutron (Networking Service)</h2>
+    <ul>
+      <li>Encargado de las redes, subredes, routers, etc.</li>
+      <li>Modular Layer 2 (ML2):
+	<ul>
+	  <li>Varios tipos: local,flat,vlan,gre,vxlan</li>
+	  <li>Varios mecanismos:  Arista, Brocade, Cisco, Nexus, Hyper-V, midonet,
+	    nuage, OVS, ...</li>
+	</ul>
+      </li>
+      <li>DHCP y routers definidos en el nodo de red</li>
+      <li>Servicio de metadatos a cada subred en modo proxy</li>
+      <li>Puede proporcionar LBaaS y FWaaS</li>
+    </ul>
+  </section>
 </section>
 <section>
   <h2>Arquitectura lógica</h2>
@@ -211,6 +226,93 @@ tema: white
   <p><small><a href="http://docs.openstack.org/admin-guide-cloud/content/logical-architecture.html">OpenStack Operations Guide</a></small></p>
 </section>
 <section>
-http://www.slideshare.net/LarsMarowskyBre/suse-storage-sizing-and-performance-ceph-42056074
-http://iopscience.iop.org/1742-6596/513/4/042047/pdf/1742-6596_513_4_042047.pdf
+  <section>
+    <h2>Características físicas</h2>
+  </section>
+  <section>
+    <h2>Nodos de red y controlador</h2>
+    <ul>
+      <li>El o los nodo controlador y nodos de red son equipos convencionales sin
+	requisitos especiales en capacidad de cómputo, memoria o almacenamiento en
+	disco para una nube pequeña como la de este ejemplo.</li>
+      <li>La principal mejora que se podría hacer en estos equipos es la inclusión
+	de interfaces de red 10 Gigabit Ethernet</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Nodo de computación</h2>
+    <h3>uso intermedio</h3>
+    <ul>
+      <li>CPU allocation ratio: 8</li>
+      <li>RAM allocation ratio: 1.2</li>
+      <li>Escalamos al pico máximo:
+	<ul>
+	  <li>666 GiB RAM (800 / 1.2)</li>
+	  <li>50 cores (200 X 2 / 8)</li>
+	  <li>4 TiB HD (200 x 20)</li>
+	</ul>
+      <li>Resultado: 5 nodos de computación
+	<ul>
+	  <li>128 GiB de RAM</li>
+	  <li>10 cores</li>
+	  <li>1 TiB de HD</li>
+	</ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Nodo de computación</h2>
+    <h3>uso intensivo</h3>
+    <ul>
+      <li>CPU allocation-ratio: 1</li>
+      <li>RAM allocation ratio: 1</li>
+      <li>Escalamos al pico máximo:
+	<ul>
+	  <li>800 GiB RAM</li>
+	  <li>400 cores</li>
+	  <li>4 TiB HD</li>
+	</ul>
+      <li>Resultado: 12 nodos de computación
+	<ul>
+	  <li>64 GiB de RAM</li>
+	  <li>32 cores</li>
+	  <li>500 GiB de HD</li>
+	</ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Nodo de almacenamiento</h2>
+    <h3>LVM + iSCSI</h3>
+    <ul>
+      <li>Supongamos que proporcionamos redundancia con RAID5 más un disco de reserva</li>
+      <li>7 HD de 2 TiB</li>
+      <li>Discos aparte para el sistema y cinder-volume</li>
+      <li>Varias interfaces de red para bonding o 10 Gigabit Ethernet</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Nodo de almacenamiento</h2>
+    <h3>Ceph</h3>
+    <ul>
+      <li>1 GiB de RAM por 1 TiB de almacenamiento</li>
+      <li>Requisitos mínimos. 3 nodos con:
+	<ul>
+	  <li>1 CPU multicore</li>
+	  <li>24 GiB RAM</li>
+	  <li>No utilizar RAID</li>
+	  <li>10 HD de 2 TiB</li>
+	  <li>Discos aparte para sistema y journal</li>
+	</ul>
+      </li>
+    </ul>
+    <small><a href="http://ceph.com/docs/master/start/hardware-recommendations/">Ceph. Hardware recommendations</a></small>
+  </section>
 </section>
+<section>
+  <h2>Referencias</h2>
+  <ul>
+    <li><a href="http://docs.openstack.org/openstack-ops/content/architecture.html">OpenStack Operations Guide. Architecture</a></li>
+    <li><a href="http://architects.dzone.com/articles/exploring-swift-software">Exploring Swift, the Software Behind OpenStack Object Storage Service</a></li>
+    <li><a href="http://www.sebastien-han.fr/blog/2014/02/02/fosdem-2014-ceph-the-de-facto-storage-backend-for-openstack/">Ceph the De Facto Storage Backend for OpenStack</a></li>
+  </ul>
