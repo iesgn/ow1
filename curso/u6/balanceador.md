@@ -77,3 +77,37 @@ Para configurar la IP virtual tenemos que indicar la siguiente información:
 
 * Límite de conexión: Para controlar el tráfico entrante en la dirección IP del VIP asi como el tráfico recibido en cada miembro del pool, el usuario puede limitar el número de conexiones que se pueden realizar. Con el valor de -1 no existirá ningún límite.
 * IP Flotante: En este combo se muestran las IP públicas actualmente reservadas. Con este valor se le puede asignar al VIP una IP pública para que tenga acceso desde el exterior.
+
+### Gestionar el balanceador de carga desde la línea de comandos
+
+Para crear un pool:
+
+		neutron lb-pool-create --lb-method METODO --name NOMBRE --protocol PROTOCOLO --subnet-id ID_SUBRED
+
+Más instrucciones para gestionar los pools_
+
+		# Para listar los pools 
+		neutron lb-pool-list
+		# Para obtener información de un pool
+		neutron lb-pool-show NOMBRE
+		# Para borrar un pool
+		ńeutron lb-pool-delete NOMBRE
+
+Para añadir un miembro al pool:
+
+		neutron lb-member-create --address IP --protocol-port PUERTO NOMBRE_POOL
+
+Más operaciones sobre los miembros: 
+
+		neutron lb-member-list
+		neutron lb-member-delete NOMBRE
+
+Para añadir un monitor:
+
+		neutron lb-healthmonitor-create --delay PERIODO --type TIPO --max-retries INTENTOS --timeout ESPERA
+		neutron lb-healthmonitor-associate MONITOR_ID NOMBRE_POOL
+
+Para crear un vip:
+
+		neutron lb-vip-create --name NOMBRE --protocol-port PUERTO --protocol PROTOCOLO --subnet-id SUBRED_ID NOMBRE_POOL
+		neutron floatingip-associate ip_id port_id
