@@ -105,13 +105,13 @@ tittle: Sesiones online
 1. Ejercicio: Gestión de volúmenes con nova y cinder
 1. Ejercicio: Gestión de redes con neutron
 1. Ejercicio: Gestión de imágenes con glance
-<hr/>
-####Sesión 6
 1. Contenidos: Cinder por dentro:
  * [Cinder support matrix](https://wiki.openstack.org/wiki/CinderSupportMatrix)
  * Funcionamiento de LVM + iSCSI
 1. Contenido: Introducción a la virtualización de redes
 1. Contenidos: Neutron por dentro
+<hr/>
+####Sesión 7
 1. Ejercicio: Ejercicio avanzado con redes: Dos redes internas conectar por un router intermedio
  * Creación de la red y el router
  * Añadir una nueva interfaz al router
@@ -121,8 +121,6 @@ tittle: Sesiones online
  * Accediendo a la segunda instancia
  * Añadir reglas de encaminamiento al router
 1. Ejercicio: Utilizar una máquina Linux como router
-<hr/>
-####Sesión 7
 1. Ejercicio: Instancias con varias interfaces de red
 1. Ejercicio: Balanceador de carga
  * Explicar lo que es un balanceador de carga y la implementación en OpenStack
@@ -133,7 +131,6 @@ tittle: Sesiones online
 1. Ejercicio: Almacenamiento público 
 <hr/>
 ####Sesión 8
-
 
 <hr/>
 ####Sesión 9
