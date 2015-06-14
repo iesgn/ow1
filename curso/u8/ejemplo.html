@@ -139,7 +139,7 @@ tema: white
   <section>
     <h2>Sobre la Alta disponibilidad</h2>
     <ul>
-      <li>Un despliegue de OpenStack sin SPOF es muy complejo</li>
+      <li>Un despliegue de OpenStack sin SPOF es bastante complejo</li>
       <li>Se puede conseguir algunos servicios en HA de forma sencilla:
 	<ul>
 	  <li>MySQL con Galera</li>
@@ -149,6 +149,7 @@ tema: white
       <li>Swift o Ceph</li>
       <li>Los nodos de computación no se montan en HA</li>  
     </ul>
+    <small><a href="http://docs.openstack.org/high-availability-guide/content/">OpenStack High Availability Guide</a></small>
   </section>
 </section>
 <section>
@@ -241,6 +242,27 @@ tema: white
   </section>
   <section>
     <h2>Nodo de computación</h2>
+    <h3>uso poco intensivo</h3>
+    <ul>
+      <li>CPU allocation ratio: 16</li>
+      <li>RAM allocation ratio: 1.5</li>
+      <li>Escalamos al pico máximo:
+	<ul>
+	  <li>533 GiB RAM (800 / 1.5)</li>
+	  <li>25 cores (200 X 2 / 16)</li>
+	  <li>4 TiB HD (200 x 20)</li>
+	</ul>
+      <li>Resultado: 4 nodos de computación
+	<ul>
+	  <li>128 GiB de RAM</li>
+	  <li>6 cores</li>
+	  <li>1 TiB de HD</li>
+	</ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>Nodo de computación</h2>
     <h3>uso intermedio</h3>
     <ul>
       <li>CPU allocation ratio: 8</li>
@@ -264,7 +286,7 @@ tema: white
     <h2>Nodo de computación</h2>
     <h3>uso intensivo</h3>
     <ul>
-      <li>CPU allocation-ratio: 1</li>
+      <li>CPU allocation ratio: 1</li>
       <li>RAM allocation ratio: 1</li>
       <li>Escalamos al pico máximo:
 	<ul>
@@ -305,8 +327,9 @@ tema: white
 	  <li>Discos aparte para sistema y journal</li>
 	</ul>
       </li>
+      <li>Ejemplo: <a href="http://www.supermicro.com/solutions/datasheet_Ceph.pdf">Supermicro. Ceph Object-Based Storage Cluster</a></li>
     </ul>
-    <small><a href="http://ceph.com/docs/master/start/hardware-recommendations/">Ceph. Hardware recommendations</a></small>
+    <p><small><a href="http://ceph.com/docs/master/start/hardware-recommendations/">Ceph. Hardware recommendations</a></small></p>
   </section>
 </section>
 <section>
