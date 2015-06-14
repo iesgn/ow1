@@ -25,7 +25,7 @@ tema: white
 <section>
 	<ol>
 	  <li>Conceptos previos</li>
-	  <li>Contenedores y objetos. Utilización desde Horizon</li>
+	  <li>Contenedores y objetos</li>
 	  <li>Manejo de objetos desde swift cli</li>
 	  <li>Acceso anónimo a objetos</li>
 	</ol>
@@ -93,11 +93,11 @@ $ swift post ARGUMENTOS
   <section>
     <h2>Permisos</h2>
     <pre><code>
-#Hacer público un conetenedor
+#Hacer público un contenedor
 $ swift post -r '.r:*' CONTENEDOR
 #Permiter a otro usuario acceder a los objetos del contenedor
 $ swift post -r PROYECTO:USUARIO CONTENEDOR
-# Para permiter obtener la lista de objetos de un contenedor
+# Para permitir obtener la lista de objetos de un contenedor
 $ swift post  -r '.r:*,.rlistings' CONTENEDOR
 
     </code></pre>
