@@ -5,7 +5,7 @@ menu:
   - Unidades
 ---
 
-nEn esta demostración vamos a crear una nueva red, una nueva subred y un nuevo
+En esta demostración vamos a crear una nueva red, una nueva subred y un nuevo
 router. El router estará conectado a las dos redes internas. El esquema de red
 sería el siguiente:
 
