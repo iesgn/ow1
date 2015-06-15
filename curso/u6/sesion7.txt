@@ -26,7 +26,7 @@ nova boot --flavor ssd.XXS \
  --image b10a9d97-dce3-48e9-89f5-955362714c5c \
  --security-groups default \
  --key-name clave-ow \
- --nic net-id=4bd341d5-1f75-4a9c-82c5-835218f9bdc7 \
+ --nic net-id=ID_NET1 \
  i1
 
 nova boot --flavor ssd.XXS \
@@ -38,6 +38,9 @@ nova boot --flavor ssd.XXS \
  
  nova floating-ip-create ext-net
  nova floating-ip-associate i1 212.231.128.187
+
+ ¿Podemos asignar una ip flotante a i2?
+
  nova floating-ip-associate i2 212.231.128.188
  ERROR (BadRequest): Unable to associate floating ip 212.231.128.188 to fixed ip 192.168.2.2 for instance 8cdb80ff-f82e-4ac2-82af-0b65c53cd949. Error: External network d15e0eb6-c892-4717-8be1-b3e85795e8c9 is not reachable from subnet 64ca340d-0272-48f3-8400-2a917792a87d.  Therefore, cannot associate Port 2dee9bbf-877f-488a-b415-99713b7720c0 with a Floating IP. (HTTP 400)
 
@@ -47,7 +50,6 @@ i1: ping i2
 
 Acceder a la segunda instancia
 
-¿Podemos asignar una ip flotante?
 
 Sólo se puede acceder desde la primera:
 
