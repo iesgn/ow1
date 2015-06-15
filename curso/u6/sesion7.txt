@@ -4,7 +4,7 @@
 Creo nueva red y subred, conectada al nuevo router
 
 neutron net-create red2
-neutron subnet-create --name subred2 red2 192.168.2.0/24 --allocation-pool start=192.168.2.2,end=192.168.2.99
+neutron subnet-create --name subred2 red2 192.168.2.0/24 
 
 neutron router-create router2
 neutron router-interface-add router2 subred2
