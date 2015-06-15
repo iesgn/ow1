@@ -1,10 +1,10 @@
 ---
 layout: presentacion
-title: Introducción a la in de Openstack
+title: opciones de instalación de Openstack
 tema: white
 ---
 <section>
-  <h1>Introducción a la instalación de OpenStack</h1>
+  <h1>Opciones de instalación de OpenStack</h1>
   <p>
     <small><a href="http://albertomolina.wordpress.com">Alberto Molina
 	Coballes</a> / <a
@@ -35,43 +35,71 @@ tema: white
     descripción detallada precisaría de un curso específico.</li>
   </ul>
 </section>
-
+<section>
+  <h2>Elegir una versión</h2>
+  <ul>
+    <li>Elegir qué componentes son necesarios y descartar las versiones de
+      OpenStack que nos los incluyan</li>
+    <li>Salvo necesidad no utilizar la última versión publicada ya que suelen
+      aparecer bastantes "bugs" en los primeros meses</li>
+    <li>Las opciones recomendadas en estos momentos serían Icehouse o Juno</li>
+    <li>No es igual elegir una versión para un entorno de pruebas que para un
+    entorno en producción</li>
+</section>
 <section>
   <h2>Instalación manual</h2>
   <ul>
-    <li>Elegir una distribución Linux que incluya en sus repositorios los
+    <li>Elegir una distribución GNU/Linux que incluya en sus repositorios los
     páquetes de OpenStack:</li> 
       <ul>
-        <li>Debian, Ubuntu, openSUSE, Red Hat, Centos, Fedora</li>
+        <li>Debian, Ubuntu, openSUSE, Red Hat, CentOS, Fedora</li>
       </ul>
     <li>Realiza una instalación manual siguiendo
-    la <a href="http://docs.openstack.org/">documentación oficial</a></li>
+      la <a href="http://docs.openstack.org/">documentación oficial</a></li>
+    <li>Es recomendable hacer al menos una vez una instalación manual para
+    familiarizarse con los componentes de OpenStack</li>
   </ul>
 </section>
 
 <section>
   <h2>Instalación automática</h2>
   <ul>
-    <li>Existen recetas elaboradas con las herramientas de automatización de la configuración más populares:</li>
+    <li>Existen (recetas|manifiestos|libros de jugadas|encantamientos|...) elaboradas con las herramientas de automatización de la configuración más populares:</li>
       <ul>
         <li><a href="http://docs.opscode.com/openstack.html">Chef</a> - <a href="https://github.com/stackforge/openstack-chef-repo">Repositorio GitHub</a></li>
         <li><a href="http://github.com/puppetlabs/puppetlabs-openstack">Puppet</a> - Ejemplo: <a href="https://www.rdoproject.org/Main_Page">RDO</a> </li>
-        <li>Ansible: Hay muchas recetas desarrolladas. Por ejemplo la nuestra: <a href="https://github.com/iesgn/openstack-debian-ansible">https://github.com/iesgn/openstack-debian-ansible</a></li>
+        <li>Ansible:
+	  <ul>
+	    <li><a href="http://www.openstack.org/news/view/61/ansible-announces-the-simple-openstack-initiative">Anuncio
+		de iniciativa oficial</a></li>
+	    <li>Muy utilizado con libros de jugadas elaborados por los
+	      usuarios,
+	      tomando <a href="https://github.com/openstack-ansible/openstack-ansible">openstack-ansible</a>
+	      de Lorin Hochstein como referencia</li>
+	    <li>Nuestro
+	      caso: <a href="https://github.com/iesgn/openstack-debian-ansible">https://github.com/iesgn/openstack-debian-ansible</a></li>
+	  </ul>
+	</li>
       </ul>
-    <li>Desventaja: Se pierden los detalles de la instalación, por lo que se puede perder el control de lo que se está haciendo.</li>
+    <li>Desventaja: Se pierden los detalles de la instalación</li>
   </ul>
 </section>
 
 <section>
   <h2>Instalación usando herramientas específicas</h2>
   <ul>
-    <li>Existen muchas <a href="https://www.openstack.org/marketplace/distros/">distribuciones de OpenStack</a>, muchas de ellas te ofrecen herramientas específicas para realizar una implantación, por ejemplo:</li>
+    <li>Existen
+    varias <a href="https://www.openstack.org/marketplace/distros/">distribuciones
+    de OpenStack</a>, muchas de ellas te ofrecen herramientas específicas para
+    realizar una implantación, por ejemplo:</li>
       <ul>
-        <li>Mirantis: <a href="https://software.mirantis.com/openstack-download-form/">Fuel</a>, the open source OpenStack control plane, to make it easier to deploy and manage your cloud.</li>
-        <li><a href="http://www.rackspace.com/cloud/private/openstack/software/">Rackspace Private Cloud Version 10</a></li>
+        <li>Mirantis: <a href="https://software.mirantis.com/openstack-download-form/">Fuel</a>,
+        the open source OpenStack control plane, to make it easier to deploy and
+        manage your cloud.</li> 
+        <li><a href="http://www.rackspace.com/cloud/private/openstack/software/">Rackspace
+        Private Cloud Version 10</a></li>
         <li><a href="http://www.ubuntu.com/download/cloud/install-ubuntu-openstack">Ubuntu OpenStack</a>
-      </ul>
-    
+      </ul> 
   </ul>
 </section>
 
@@ -82,18 +110,5 @@ tema: white
     <li>Es el entorno que usan los desarrolladores de OpenStack para tener una instalación limpia</li>
     <li>No sirve para entornos en producción</li>
     <li>Tutorial: <a href="http://www.josedomingo.org/pledin/2014/11/instalar-open-stack-juno-con-devstack/">Instalar Open Stack Juno con devstack</a></li>
-    
   </ul>
 </section>
-
-
-
-<section>
-  <h2>Para seguir investigando</h2>
-  <ul>
-    <li>Curso: Fundamentos de Cloud Computing con OpenStack y
-      OpenShift. Abril - Mayo 2014</li>
-  </ul>
-  <center><a href="http://iesgn.github.io/cloud/">http://iesgn.github.io/cloud/</a></center>
-</section>
-
