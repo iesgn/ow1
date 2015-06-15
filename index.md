@@ -72,6 +72,8 @@ tittle: Curso de Cloud con OpenStack
 * [Presentación: automatización](curso/u7/automatizacion)
 * [Introducción a ansible](curso/u7/ansible)
 
+* [Entorno de pruebas con DevStack](curso/devstack/devstack)
+
 ## Sesiones
 Temas que se tratarán en cada sesión:
 
