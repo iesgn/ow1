@@ -53,7 +53,7 @@ Acceder a la segunda instancia
 
 Sólo se puede acceder desde la primera:
 
-scp -i ~/.ssh/clave-ow debian@x.x.x.x:/home/debian/.ssh
+scp ~/.ssh/clave-ow debian@x.x.x.x:/home/debian/.ssh
 
 i1: chmod 400 .ssh/clave-ow
 i1 ssh -i .ssh/clave_ow debian@x.x.x.x
@@ -73,6 +73,10 @@ No, por que el router2 no hace SNAT, sólo hacen SNAT los routers que están con
 
 2. Instancias con varias interfaces
 
+neutron subnet-update subred1 --host_routes action=clear
+neutron router-update router1 --routes action=clear
+
+
 nova boot --flavor ssd.XXS \
  --image b10a9d97-dce3-48e9-89f5-955362714c5c \
  --security-groups default \
@@ -80,34 +84,25 @@ nova boot --flavor ssd.XXS \
  --nic net-id=4bd341d5-1f75-4a9c-82c5-835218f9bdc7 \
  router
 
+nova floating-ip-associate router 212.231.128.188
+
+
  neutron port-create red2 --fixed-ip ip_address=192.168.2.100
 
  neutron port-list
  nova interface-attach --port-id=xxxxxxxxxxxxxxxxxxxxxxxxx router
 
-Borro las rutas
 
- neutron router-update router2 --routes action=clear
- neutron subnet-update subred1 --host_routes action=clear
+Acceder a i2 desde router
+ 
 
-neutron subnet-update subred2 --no-gateway
-neutron subnet-update subred2 --gateway 192.168.2.100
-
-
-Cambio las rutas para 
-
-neutron router-update router1 --routes type=dict list=true destination=192.168.2.0/24,nexthop=192.168.1.102
-neutron subnet-update subred1 --host_routes type=dict list=true destination=192.168.2.0/24,nexthop=192.168.1.102
-
- Entremos en i2, y cambiamos la puerta de enlace
-
- i2: 
-
-Esto también se puede hacer:
+En i2:
 
 route del -net 0.0.0.0/0 gw 192.168.2.1 dev eth0
 route add -net 0.0.0.0/0 gw 192.168.2.100 dev eth0
 
+En router
 
-
+echo "1">/proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING -j MASQUERADE
 
