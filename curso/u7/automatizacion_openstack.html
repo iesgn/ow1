@@ -50,7 +50,7 @@ nova boot \
 </pre>
   </section>
   <section>
-    <h3>¿Qué podemos hacer con cloud-config (I)?</h3>
+    <h3>¿Qué podemos hacer con cloud-config?</h3>
     <p>Gestionar los paquetes</p>
     <pre>  
          <code data-trim>
@@ -63,7 +63,24 @@ packages:
     </code>
         </pre>
   </section>
-  
+<section>
+    <h3>¿Qué podemos hacer con cloud-config?</h3>
+    <p>Crear usuarios</p>
+    <pre>  
+         <code data-trim>
+#cloud-config
+users:
+- default
+- name: foobar
+  gecos: "Fred Otto Oscar Bar"
+  groups: users,adm
+  lock-passwd: false
+  passwd: $6$rounds=4096$J86aZz0Q$To16RGzWJku0
+  shell: /bin/bash
+  sudo: "ALL=(ALL) NOPASSWD:ALL"
+      </code>
+        </pre>
+  </section>
 
 </section>
 
