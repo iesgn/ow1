@@ -28,8 +28,26 @@ tema: white
     <h2>Cloud-init</h2>
       <ul>
         <li>Cloud-init es la aplicación que se ejecuta en nuestras instancias para obtener la información del servidor de metadatos.</li>
-        <li>Además de los datos preconfigurados que el servidor de metadatos ofrece a la instancia, podemos 
+        <li>Además de los datos preconfigurados que el servidor de metadatos ofrece a la instancia, podemos suministrar más datos cómo "Información de usuario".</li>
+        <li>Coud-config: es el formato (YAML) de fichero que utilizamos para indicar la información adicional.</li>
+      </ul>
 
+  </section>
+  <section>
+      <img src="img/userdata.png"/>
+  </section>
+  <section>
+    <pre>  
+         <code data-trim>
+nova boot \
+  --image trusty-server-cloudimg-amd64 \
+  --key_name mykey \
+  --flavor m1.small \
+  --user-data userdata.txt \
+  --nic net-id=4f0dcc21-4b6c-47db-b283-591fdb9aa5a7 \
+  test0
+</code>
+</pre>
   </section>
 </section>
 

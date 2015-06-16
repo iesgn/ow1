@@ -70,6 +70,7 @@ tittle: Curso de Cloud con OpenStack
 * [Administración de Sistemas y la nube](curso/u8/administracion.html)
 
 * [Presentación: automatización](curso/u7/automatizacion)
+* [Presentación: automatización en OpenStack](curso/u7/automatizacion_openstack)
 * [Introducción a ansible](curso/u7/ansible)
 
 * [Entorno de pruebas con DevStack](curso/devstack/devstack)
