@@ -49,6 +49,22 @@ nova boot \
 </code>
 </pre>
   </section>
+  <section>
+    <h3>¿Qué podemos hacer con cloud-config (I)?</h3>
+    <p>Gestionar los paquetes</p>
+    <pre>  
+         <code data-trim>
+#cloud-config
+
+package_update: true
+package_upgrade: true
+packages:
+  - apache2
+    </code>
+        </pre>
+  </section>
+  
+
 </section>
 
 
@@ -97,9 +113,8 @@ nova boot \
 
   <section>
     <h2>Ejemplo de template</h2>
-<pre>  
+      <pre>  
          <code data-trim>
-
 heat_template_version: 2013-05-23
 
 description: Simple template to deploy a single compute instance
