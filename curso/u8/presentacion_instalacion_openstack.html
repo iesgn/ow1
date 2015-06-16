@@ -1,21 +1,18 @@
 ---
 layout: presentacion
-title: opciones de instalación de Openstack
+title: Opciones de instalación de Openstack
 tema: white
 ---
 <section>
-  <h1>Opciones de instalación de OpenStack</h1>
+  <h2>Opciones de instalación de OpenStack</h2>
   <p>
-    <small><a href="http://albertomolina.wordpress.com">Alberto Molina
-	Coballes</a> / <a
-			  href="http://twitter.com/alberto_molina">@alberto_molina</a> y <a
-											    href="http://josedomingo.org">José Domingo Muñoz
-	Rodríguez</a> / <a
-			   href="http://twitter.com/Pledin_JD">@Pledin_JD</a> </small>
+    <a href="http://albertomolina.wordpress.com">Alberto Molina Coballes</a> y
+    <a href="http://www.josedomingo.org">José Domingo Muñoz Rodríguez</a>
   </p>
-  <p><small>
-      <a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="../../img/cc_by_sa.png"
-								    width="100px" border="0"/></a></small></p>
+  <p>
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/">
+      <img src="../u1/img/cc_by_sa.png" width="100px" border="0"/></a>
+  </p>
   <p><small>
       Theme
       by <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a>
@@ -36,13 +33,18 @@ tema: white
   </ul>
 </section>
 <section>
+  <h2>¿Privado o privado alojado?</h2>
+  <img src="http://a2.res.cloudinary.com/hqq9ey1mh/image/upload/c_limit,w_793/v1414983818/ooqyikaj4jhydld9jqna.png" />
+</section>
+<section>
   <h2>Elegir una versión</h2>
   <ul>
     <li>Elegir qué componentes son necesarios y descartar las versiones de
       OpenStack que nos los incluyan</li>
     <li>Salvo necesidad no utilizar la última versión publicada ya que suelen
       aparecer bastantes "bugs" en los primeros meses</li>
-    <li>Las opciones recomendadas en estos momentos serían Icehouse o Juno</li>
+    <li>Las opciones recomendadas en estos momentos serían Icehouse
+    (2014.1) o Juno (2014.2)</li>
     <li>No es igual elegir una versión para un entorno de pruebas que para un
     entorno en producción</li>
 </section>
@@ -64,7 +66,8 @@ tema: white
 <section>
   <h2>Instalación automática</h2>
   <ul>
-    <li>Existen (recetas|manifiestos|libros de jugadas|encantamientos|...) elaboradas con las herramientas de automatización de la configuración más populares:</li>
+    <li>Existen "recetas" elaboradas con las herramientas de
+    automatización de la configuración más populares:</li> 
       <ul>
         <li><a href="http://docs.opscode.com/openstack.html">Chef</a> - <a href="https://github.com/stackforge/openstack-chef-repo">Repositorio GitHub</a></li>
         <li><a href="http://github.com/puppetlabs/puppetlabs-openstack">Puppet</a> - Ejemplo: <a href="https://www.rdoproject.org/Main_Page">RDO</a> </li>
@@ -73,11 +76,9 @@ tema: white
 	    <li><a href="http://www.openstack.org/news/view/61/ansible-announces-the-simple-openstack-initiative">Anuncio
 		de iniciativa oficial</a></li>
 	    <li>Muy utilizado con libros de jugadas elaborados por los
-	      usuarios,
-	      tomando <a href="https://github.com/openstack-ansible/openstack-ansible">openstack-ansible</a>
-	      de Lorin Hochstein como referencia</li>
-	    <li>Nuestro
-	      caso: <a href="https://github.com/iesgn/openstack-debian-ansible">https://github.com/iesgn/openstack-debian-ansible</a></li>
+	      usuarios. Ejemplo: <a href="https://github.com/openstack-ansible/openstack-ansible">openstack-ansible</a></li>
+	    
+	    <li>Nuestro caso: <a href="https://github.com/iesgn/openstack-debian-ansible">https://github.com/iesgn/openstack-debian-ansible</a></li>
 	  </ul>
 	</li>
       </ul>
@@ -86,19 +87,23 @@ tema: white
 </section>
 
 <section>
-  <h2>Instalación usando herramientas específicas</h2>
+  <h2>Instalación usando distros específicas</h2>
   <ul>
     <li>Existen
     varias <a href="https://www.openstack.org/marketplace/distros/">distribuciones
-    de OpenStack</a>, muchas de ellas te ofrecen herramientas específicas para
-    realizar una implantación, por ejemplo:</li>
+    de OpenStack</a>, libres o no, muchas de ellas te ofrecen
+    herramientas específicas para realizar una implantación, por ejemplo:</li>
       <ul>
-        <li>Mirantis: <a href="https://software.mirantis.com/openstack-download-form/">Fuel</a>,
-        the open source OpenStack control plane, to make it easier to deploy and
-        manage your cloud.</li> 
+        <li><a href="https://software.mirantis.com/openstack-download-form/">Mirantis
+        Fuel</a></li>
         <li><a href="http://www.rackspace.com/cloud/private/openstack/software/">Rackspace
-        Private Cloud Version 10</a></li>
-        <li><a href="http://www.ubuntu.com/download/cloud/install-ubuntu-openstack">Ubuntu OpenStack</a>
+        Private Cloud</a></li>
+        <li><a href="http://www.ubuntu.com/download/cloud/install-ubuntu-openstack">Ubuntu
+            OpenStack</a></li>
+	<li><a href="http://www.vmware.com/products/openstack">VMware
+	    Integrated OpenStack</a></li>
+	<li><a href="http://www8.hp.com/us/en/cloud/hphelion-openstack.html">HP
+	Helion</a></li>
       </ul> 
   </ul>
 </section>
@@ -106,9 +111,12 @@ tema: white
 <section>
   <h2>Instalación de un entorno de pruebas</h2>
   <ul>
-    <li><a href="http://docs.openstack.org/developer/devstack/">Devstack:</a> es un conjunto de script bash que nos permiten instalar OpenStack de forma automática. </li>
-    <li>Es el entorno que usan los desarrolladores de OpenStack para tener una instalación limpia</li>
-    <li>No sirve para entornos en producción</li>
+    <li><a href="http://docs.openstack.org/developer/devstack/">Devstack:</a>
+    es un conjunto de script bash que nos permiten instalar OpenStack
+    de forma automática. </li>
+    <li>Es el entorno que usan los desarrolladores de OpenStack para
+    tener una instalación limpia</li> 
+    <li>No sirve para entornos en producción</li> 
     <li>Tutorial: <a href="http://www.josedomingo.org/pledin/2014/11/instalar-open-stack-juno-con-devstack/">Instalar Open Stack Juno con devstack</a></li>
   </ul>
 </section>
