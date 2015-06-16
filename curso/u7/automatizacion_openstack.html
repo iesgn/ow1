@@ -102,6 +102,29 @@ write_files:
       </code>
         </pre>
   </section>
+  <section>
+    <h3>¿Qué podemos hacer con cloud-config?</h3>
+    <p>Ejecutar comandos</p>
+    <pre>  
+         <code data-trim>
+bootcmd:
+- ntpdate pool.ntp.org
+      </code>
+        </pre>
+        <pre>  
+         <code data-trim>
+runcmd:
+  - >
+    sudo -i -u training
+    ansible-pull -v -i hosts 
+    -U https://github.com/hastexo/academy-ansible 
+    -o site.yml
+      </code>
+        </pre>
+  </section>
+  <section>
+    <h3>Documentación oficial de cloudinit</h3>
+    <p><a href="http://cloudinit.readthedocs.org/en/latest/">http://cloudinit.readthedocs.org/en/latest/</a></p>
 </section>
 
 
