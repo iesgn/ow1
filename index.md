@@ -53,7 +53,7 @@ tittle: Curso de Cloud con OpenStack
 
 * [Introducción a la virtualización de redes](curso/u6/intro)
 * [Ejercicio avanzado de redes con CLI](curso/u6/router2)
-* [Creación automática de un escenario de red en OpenStack](curso/u6/demofinal)
+
 
 ### Conceptos avanzados
 
@@ -71,7 +71,9 @@ tittle: Curso de Cloud con OpenStack
 
 * [Presentación: automatización](curso/u7/automatizacion)
 * [Presentación: automatización en OpenStack](curso/u7/automatizacion_openstack)
+* [Creación automática de un escenario de red en OpenStack](curso/u6/demofinal)
 * [Introducción a ansible](curso/u7/ansible)
+* [Ejemplos de automatización](https://github.com/iesgn/automatizacion_ow1)
 
 * [Entorno de pruebas con DevStack](curso/devstack/devstack)
 
