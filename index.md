@@ -64,8 +64,8 @@ tittle: Curso de Cloud con OpenStack
 * [Presentación Swift](curso/u9/presentacion_objetos)
 * [Introducción a Swift](curso/u9/swift)
 
-* [Implantación de OpenStack](curso/u8/ejemplo)
 * [Opciones de instalación de OpenStack](curso/u8/presentacion_instalacion_openstack.html)
+* [Implantación de OpenStack](curso/u8/ejemplo)
 * [Evolución de las aplicaciones](curso/u8/presentacion_evol_aplicaciones.html)
 * [Administración de Sistemas y la nube](curso/u8/administracion.html)
 
