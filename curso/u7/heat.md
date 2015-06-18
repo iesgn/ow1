@@ -62,6 +62,7 @@ Podemos restringir los valores que el usuario puede introducir en los parámetro
 		      - allowed_values: 
 		        - Debian Jessie (stable)
 		        - Fedora 20
+
 Para más información sobre la sección de parámetros puedes mirar la página [http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#parameters-section](http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#parameters-section).
 
 ### Sección de recursos (resources)
