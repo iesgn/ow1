@@ -101,11 +101,12 @@ Aquí podemos ver un ejemplo de dependencia:
 		  server3:
 		    type: OS::Nova::Server
 
- ### Intrinsic functions
+
+### Intrinsic functions
 
  Existen [diversas funciones](http://docs.openstack.org/user-guide/hot-guide/hot_spec.html#intrinsic-functions) que pueden ser utilizadas para obtener valores de atributos de los recursos del template. Aquí tenemos una lista de algunas de las funciones disponibles:
 
- #### get_attr
+#### get_attr
 
 La función get_attr hace referencia a un atributo de un recurso.
 
