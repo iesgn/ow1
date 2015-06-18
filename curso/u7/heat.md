@@ -47,3 +47,57 @@ Pongamos un ejemplo sencillo:
 
 En el ejemplo anterior el usuario tiene que indicar como parámetro la red a la que se va a conectar la instancia. Vamos a crear un recurso que es una instancia con unas características indicadas en el template y por último vamos a mostrar al usuario la dirección IP de la instancia.
 
+### Sección de parámetros (parameters)
+
+Como hemos dicho antes en esta sección definimos los parámetros de entrada, que serán proporcionados al inicializar el template. Estos parámetros se usan para personalizar cada despliegue, o para utilizar los parámetros en el entorno del despliegue.
+
+Podemos restringir los valores que el usuario puede introducir en los parámetros de entrada utilizando la sección "constraints", por ejemplo:
+
+		parameters:
+		  image:
+		    type: string
+		    description: Image ID or image name to use for the server4
+		    default: Debian Jessie (stable)
+		    constraints:
+		      - allowed_values: 
+		        - Debian Jessie (stable)
+		        - Fedora 20
+Para más información sobre la sección de parámetros puedes mirar la página [http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#parameters-section](http://docs.openstack.org/developer/heat/template_guide/hot_spec.html#parameters-section).
+
+### Sección de recursos (resources)
+
+La sección "Resources" define los recursos que componen un stack o "pila" desplegada desde el template. Tenemos distintos [tipos](http://docs.openstack.org/developer/heat/template_guide/openstack.html) de recursos. Los recursos se definen indicando los siguientes datos:
+
+* resource ID: El nombre del recurso, debe de ser único en la sección "Resources".
+* type:  El tipo del recurso, por ejemplo: OS::Nova::Server o OS::Neutron::Port. Este atributo es obligatorio. 
+* properties: Una lista de las propiedades del recurso. Si se desea el valor puede ser proporcionado por una función. Esta sección es opcional.
+
+Aquí tenemos un ejemplo en el que vemos las propiedades más usadas como el nombre, la clave ssh, la imagen a utilizar, el sabor, si queremos crear un usuario, redes….
+
+    resources:
+        Instancia_de_prueba:
+            type: OS::Nova::Server
+            properties:
+                name: Debian
+                key_name: {get_param: key_name}
+                image: {get_param: image}
+                flavor: {get_param: flavor}
+                admin_user: {get_param: user_name}
+                networks: [{"network":"red1"}]
+
+* depends_on: Dependencia del recurso en uno o más recursos del mismo template. Para más información ver [http://docs.openstack.org/user-guide/hot-guide/hot_spec.html#hot-spec-resources-dependencies](http://docs.openstack.org/user-guide/hot-guide/hot_spec.html#hot-spec-resources-dependencies). Este atributo es opcional.
+
+Aquí podemos ver un ejemplo de dependencia:
+
+		resources:
+		  server1:
+		    type: OS::Nova::Server
+		    depends_on: [ server2, server3 ]		
+
+		  server2:
+		    type: OS::Nova::Server		
+
+		  server3:
+		    type: OS::Nova::Server
+
+ 
