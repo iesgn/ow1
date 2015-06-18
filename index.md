@@ -73,6 +73,7 @@ tittle: Curso de Cloud con OpenStack
 * [Presentación: automatización en OpenStack](curso/u7/automatizacion_openstack)
 * [Creación automática de un escenario de red en OpenStack](curso/u6/demofinal)
 * [Introducción a ansible](curso/u7/ansible)
+* [Introducción a heat](curso/u7/heat)
 * [Ejemplos de automatización](https://github.com/iesgn/automatizacion_ow1)
 
 * [Entorno de pruebas con DevStack](curso/devstack/devstack)

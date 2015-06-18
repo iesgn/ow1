@@ -5,7 +5,7 @@ menu:
   - Unidades
 ---
 
-Heat es el componente de Openstack encargado de la orquestación. Mediante un template podemos automatizar el despliegue de un escenario formado por distintos recursos (instancias, volúmenes, redes, routers, ...) y establecer las realciones entre ellos.
+Heat es el componente de Openstack encargado de la orquestación. Mediante un template podemos automatizar el despliegue de un escenario formado por distintos recursos (instancias, volúmenes, redes, routers, ...) y establecer las relaciones entre ellos.
 
 La sintaxis estándar de los templates llamada HOT usa el lenguaje YAML, aunque también podríamos utilizar la sintaxis en JSON. 
 
@@ -101,4 +101,61 @@ Aquí podemos ver un ejemplo de dependencia:
 		  server3:
 		    type: OS::Nova::Server
 
- 
+ ### Intrinsic functions
+
+ Existen [diversas funciones](http://docs.openstack.org/user-guide/hot-guide/hot_spec.html#intrinsic-functions) que pueden ser utilizadas para obtener valores de atributos de los recursos del template. Aquí tenemos una lista de algunas de las funciones disponibles:
+
+ #### get_attr
+
+La función get_attr hace referencia a un atributo de un recurso.
+
+La sintaxis de la función es la siguiente:
+
+* resource ID: El nombre del recurso del que se necesita conocer el valor del atributo. Este recurso debe existir en la sección resources.
+* attribute name: El nombre del atributo del que se quiere obtener el valor.
+
+Un ejemplo del uso de la función get_attr:
+
+ 		resources:
+		   my_instance:
+		     type: OS::Nova::Server
+		     # ...		
+
+		 outputs:
+		   instance_ip:
+		     description: IP address of the deployed compute instance
+		     value: { get_attr: [my_instance, first_address] }
+		   instance_private_ip:
+		     description: Private IP address of the deployed compute instance
+		    value: { get_attr: [my_instance, networks, private, 0] }
+
+#### get_file
+
+La función get_file obtiene el contenido de un fichero. Se suele usar como mecanismo de inclusión de ficheros de configuración, scripts,... El argumento puede ser representado como ruta estática como absoluta. 
+
+Aquí tenemos el ejemplo:
+
+		resources:
+		  my_instance:
+		    type: OS::Nova::Server
+		    properties:
+		      # general properties ...
+		      user_data:
+		        get_file: my_instance_user_data.sh
+
+#### get_param
+
+La función get_param nos permite obtener los datos que hemos indicado en la sección parámetros del template. Obtiene el valor y lo asigna en la ejecución del template. Utilizar esta función y la sección “parameters” adecuadamente nos puede facilitar las cosas en diferentes despliegues. Ejemplo:
+
+    resources:
+        Instancia_de_prueba:
+            type: OS::Nova::Server
+            properties:
+                name: Debian
+                key_name: {get_param: key_name}
+                image: {get_param: image}
+                flavor: {get_param: flavor}
+                admin_user: {get_param: user_name}
+                networks: [{"network":"red1"}]
+
+Para más información de heat tienes a tu disposición la documentación oficial: [http://docs.openstack.org/developer/heat/template_guide/](http://docs.openstack.org/developer/heat/template_guide/).
