@@ -87,7 +87,7 @@ Para ello creamos un directorio files, y dentro un fichero index.html:
 Añadimos una tarea nueva a nuestro playbook:
 
         ---
-        - hosts: droplets
+        - hosts: servidores
           tasks:
             - name: Installs nginx web server
               apt: pkg=nginx state=installed update_cache=true
