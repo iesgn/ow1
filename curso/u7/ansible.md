@@ -5,11 +5,11 @@ menu:
   - Unidades
 ---
 
-Ansible es un sofware de gestión de la configuración automática. Nos permite centralizar la configuración de numerosos servidores de una forma sencilla y automática.
+Ansible es un software de gestión de la configuración automática. Nos permite centralizar la configuración de numerosos servidores de una forma sencilla y automática.
 
 ### ¿Cómo funciona Ansible?
 
-Ansible configura las máquinas clientes desde otra máuina donde tenemos instalado el software de Ansible. Ansible accede a los clientes por SSH para realizar las diferentes tareas de configuración.
+Ansible configura las máquinas clientes desde otra máquina donde tenemos instalado el software de Ansible. Ansible accede a los clientes por SSH para realizar las diferentes tareas de configuración.
 
 ### Instalación de ansible
 
@@ -20,12 +20,12 @@ Para utilizar la última versión:
 
 ### Configuración de ansible
 
-En el fichero *hosts* se configuran los clientes con los que se van a trabajar, puediendose agrupar:
+En el fichero *hosts* se configuran los clientes con los que se van a trabajar, pudiéndose agrupar:
 
         [servidores]
         seridor1 ansible_ssh_host=212.231.128.33 ansible_ssh_user=debian
 
-Hemos indicado la ip del cliente, y el usuario que se va autilizar para el acceso SSH.
+Hemos indicado la ip del cliente, y el usuario que se va a utilizar para el acceso SSH.
 
 En el fichero *ansible.cfg* se indica la configuración de ansible, por ejemplo:
 
@@ -62,7 +62,7 @@ Un playbook es un fichero de texto escrito en YAML  donde indicamos los comandos
             - name: start nginx
               service: name=nginx state=started
 
-La tareas a realizar (tasks) se van a llevar a cabo en todos los clientes del grupo "servidores". En este caso se va aintsalar el paquete nginx asegurandonos que la lista de paquetes está actualizada (update_cache=true). Sólo si se ha realizado esta tarea (es decir, se ha instalado el paquete) se llama a un "manejador" (handlers) que reinicia el servicio.
+La tareas a realizar (tasks) se van a llevar a cabo en todos los clientes del grupo "servidores". En este caso se va a intsalar el paquete nginx asegurándonos que la lista de paquetes está actualizada (update_cache=true). Sólo si se ha realizado esta tarea (es decir, se ha instalado el paquete) se llama a un "manejador" (handlers) que reinicia el servicio.
 
 Para ejecutar el playbook, suponiendo que lo hemos guardado en un fichero playbook.yml:
 
@@ -101,5 +101,5 @@ Añadimos una tarea nueva a nuestro playbook:
             - name: start nginx
               service: name=nginx state=started
 
-Una de las características de ansible es la idempotencia, es decir, la segunda vez que ejecutamos la receta, si el estado que consegue la ejecución de una tarea ya lo tenemos, dicha tarea no se ejecuta. Por lo tanto, si nginx está instalado en el cliente la primera tarea no se vuelve a realizar.
+Una de las características de ansible es la idempotencia, es decir, la segunda vez que ejecutamos la receta, si el estado que consigue la ejecución de una tarea ya lo tenemos, dicha tarea no se ejecuta. Por lo tanto, si nginx está instalado en el cliente la primera tarea no se vuelve a realizar.
 
