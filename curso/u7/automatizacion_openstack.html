@@ -29,7 +29,7 @@ tema: white
       <ul>
         <li>Cloud-init es la aplicación que se ejecuta en nuestras instancias para obtener la información del servidor de metadatos.</li>
         <li>Además de los datos preconfigurados que el servidor de metadatos ofrece a la instancia, podemos suministrar más datos cómo "Información de usuario".</li>
-        <li>Coud-config: es el formato (YAML) de fichero que utilizamos para indicar la información adicional.</li>
+        <li>Cloud-config: es el formato (YAML) de fichero que utilizamos para indicar la información adicional.</li>
       </ul>
 
   </section>
@@ -70,14 +70,14 @@ packages:
          <code data-trim>
 #cloud-config
 users:
-- default
-- name: foobar
-  gecos: "Fred Otto Oscar Bar"
-  groups: users,adm
-  lock-passwd: false
-  passwd: $6$rounds=4096$J86aZz0Q$To16RGzWJku0
-  shell: /bin/bash
-  sudo: "ALL=(ALL) NOPASSWD:ALL"
+  - default
+  - name: usuario
+    gecos: "Usuario de OpenWebinars"
+    groups: users
+    lock-passwd: false
+    passwd: $6$J.WwuZW.$e/e4gJCJhl22OqCTxwlclX7/C90z7iiNm0x4QYQxlHYcuixpi8ORxZSS6hSuvmNuKKAGD6AEevZaL4TnlchCf.
+    shell: /bin/bash
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
       </code>
         </pre>
   </section>
@@ -86,6 +86,7 @@ users:
     <p>Escribir ficheros</p>
     <pre>  
          <code data-trim>
+#cloud-config
 write_files:
 - path: /etc/hosts
   permissions: '0644'
@@ -102,92 +103,100 @@ write_files:
       </code>
         </pre>
   </section>
-  <section>
-    <h3>¿Qué podemos hacer con cloud-config?</h3>
-    <p>Ejecutar comandos</p>
-    <pre>  
-         <code data-trim>
-bootcmd:
-- ntpdate pool.ntp.org
-      </code>
-        </pre>
-        <pre>  
-         <code data-trim>
-runcmd:
-  - >
-    sudo -i -u training
-    ansible-pull -v -i hosts 
-    -U https://github.com/hastexo/academy-ansible 
-    -o site.yml
-      </code>
-        </pre>
-  </section>
-    <section>
-    <h3>Documentación oficial de cloudinit</h3>
-    <p><a href="http://cloudinit.readthedocs.org/en/latest/">http://cloudinit.readthedocs.org/en/latest/</a>
+<section>
+  <h3>¿Qué podemos hacer con cloud-config?</h3>
+  <p>Ejecutar comandos</p>
+  <pre>  
+    <code data-trim>
+      #cloud-config
+      bootcmd:
+      - ntpdate pool.ntp.org
+    </code>
+  </pre>
+</section>
+<section>
+  <h3>Documentación oficial de cloudinit</h3>
+  <p><a href="http://cloudinit.readthedocs.org/en/latest/">http://cloudinit.readthedocs.org/en/latest/</a>
 </section>
 </section>
-
-
 
 <section>
   <section>
     <h2> OpenStack Heat </h2>
-    <p>Heat es el servicio de orquestación de OpenStack, nos permite gestionar recursos en nuestra infrestructura en la nube (instanicas, volúmenes, redes,...) de forma automática.</p>
-
+    <p>Heat es el servicio de orquestación de OpenStack, nos permite
+    gestionar recursos en nuestra infrestructura en la nube
+    (instancias, volúmenes, redes,...) de forma automática.</p>
   </section>
   <section>
-  
     <h2>Conceptos (I)</h2>
     <ul>
-      <li>Stack: Es el conjunto de recutrsos que se van a crear con Heat (Instanicas, volúmenes, redes, subredes, puertos ...)</li>
-      <li>Template: Sirve para definir los recursos del Stack y sus relaciones.</li>
-      <li>Parámetros: Es una de las secciones del template, y en ella podemos pedir información al usuario (imagen, par de claves, ....)</li>
-      <li>Resources: Siguiente sección del template donde definimos los recursos que vamos a añadir o modificar.</li>
+      <li>Stack: Es el conjunto de recursos que se van a crear con
+      Heat (Instancias, volúmenes, redes, subredes, puertos, etc.)</li>
+      <li>Template: Sirve para definir los recursos del Stack y sus
+      relaciones.</li>
+      <li>Parámetros: Es una de las secciones del template, y en ella
+      podemos pedir información al usuario (imagen, par de claves,
+      ...)</li>
+      <li>Resources: Siguiente sección del template donde definimos
+      los recursos que vamos a añadir o modificar.</li>
     </ul>
   </section>   
   <section>
     <h2>Conceptos (II)</h2>
     <ul>
-      <li>Output: Tercera seccióndel template, que nos permite indicar la información que tenemos que ofrecer al usuario (ip flotente,...)</li>
-      <li>HOT (Heat Orchestration Template), el formato de los templates en heat, escrito en YAML.</li>
-      <li>CFN (AWS CloudFormation), otro formato compatible con Heat, escrito en JSON.</li>
+      <li>Output: Tercera sección del template, que nos permite
+      indicar la información que tenemos que ofrecer al usuario (ip
+      flotente,...)</li>
+      <li>HOT (Heat Orchestration Template), el formato de los
+      templates en heat, escrito en YAML.</li> 
+      <li>CFN (AWS CloudFormation), otro formato compatible con Heat,
+      escrito en JSON.</li>
     </ul>
   </section>
 
   <section>
-
     <h2>¿Cómo funciona Heat? (I)</h2>
     <ul>
-      <li>En el template describimos la la infraestructura que queremos crear.</li>
-      <li>Se describe cada uno de los <a href="http://docs.openstack.org/developer/heat/template_guide/index.html">recursos</a> que necesitamos.</li>
-      <li>Heat ofrece un servicio de autoescalado, utilizanod la información que nos ofrece el componente <a href="https://wiki.openstack.org/wiki/Ceilometer">Ceilometer</a></li>
+      <li>En el template describimos la la infraestructura que
+      queremos crear.</li> 
+      <li>Se describe cada uno de
+      los <a href="http://docs.openstack.org/developer/heat/template_guide/index.html">recursos</a>
+      que necesitamos.</li> 
+      <li>Heat ofrece un servicio de autoescalado, utilizando la
+      información que nos ofrece el
+      componente <a href="https://wiki.openstack.org/wiki/Ceilometer">Ceilometer</a></li> 
     </ul>
-  </section>
+  </section> 
     <section>
       <h2>¿Cómo funciona Heat? (II)</h2>
       <ul>
-        <li>Se puede especificar también las relaciones que hay entre los recursos (volumen conectado a una instancia)</li>
-        <li>Heat maneja el ciclo de vida completo de la infraestructura, cuando necesitas cambiarla, solo hay que modificar el template y realizar la actualización del stack.</li>
-        <li>Heat gestiona infrestructura, pero los templates se pueden integrar con herramientas de automatización para realizar la confiuración de los recursos.</li>
+        <li>Se puede especificar también las relaciones que hay entre
+        los recursos (volumen conectado a una instancia)</li> 
+        <li>Heat maneja el ciclo de vida completo de la
+        infraestructura, cuando necesitas cambiarla, solo hay que
+        modificar el template y realizar la actualización del
+        stack.</li> 
+        <li>Heat gestiona infrestructura, pero los templates se pueden
+        integrar con herramientas de automatización para realizar la
+        configuración de los recursos.</li> 
     </section>
 
-  <section>
-    <h2>Ejemplo de template</h2>
+    <section>
+      <h2>Ejemplo de template</h2>
       <pre>  
-         <code data-trim>
-heat_template_version: 2013-05-23
-
-description: Simple template to deploy a single compute instance
-
-resources:
-  my_instance:
-    type: OS::Nova::Server
-    properties:
-      key_name: my_key
-      image: F18-x86_64-cfntools
-      flavor: m1.small
-</code>
+        <code data-trim>
+	  heat_template_version: 2013-05-23
+	  
+	  description: Simple template to deploy a single compute instance
+	  
+	  resources:
+	    my_instance:
+	     type: OS::Nova::Server
+	     properties:
+	       key_name: my_key
+	       image: F18-x86_64-cfntools
+	       flavor: m1.small
+	</code>
 </pre>
 </section>
 </section>
