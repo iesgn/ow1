@@ -123,7 +123,7 @@ Añadimos una tarea nueva a nuestro playbook:
             - start nginx       
 
         - name: Upload default index.html for host
-          copy: src=files/index.html dest=/var/www/ mode=0644 user=www-data goup=www-data
+          copy: src=files/index.html dest=/var/www/ mode=0644 user=www-data group=www-data
 
       handlers:
         - name: start nginx
