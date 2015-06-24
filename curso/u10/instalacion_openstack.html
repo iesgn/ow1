@@ -82,10 +82,24 @@ tema: white
 <section>
   <h3>Neutron</h3>
   <ul>
-    <li>Si el nodo de computación tiene soporte de virtualización hardware (nova-compute-kvm), sino (nova-compute-qemu)</li>
-    <li>Instalamos python-guestfs, para gestionar y montar las imágenes.</li>
-    <li>Borramos la base de datos sqlite</li>
-    <li>Copiamos el fichero de configuración (nova.conf)</li>
-    
+    <li>Instalamos los paquetes: neutron-server, neutron-plugin-ml2</li>
+    <li>Copiamos el fichero de configuración (neuton.conf,ml2_conf.ini)</li>
+    <li>Generamos las tablas en la base de datos (db_sync)</li>
+  </ul>
+</section>
+<section>
+  <h3>Neutron Agents y Plugins</h3>
+  <ul>
+    <li>Configuración de sysctl (ip forward,...)</li>
+    <li>Instalamos los paquetes:neutron-plugin-ml2, neutron-plugin-openvswitch-agent, neutron-metadata-agent, neutron-lbaas-agent, neutron-l3-agent, neutron-dhcp-agent</li>
+    <li>Copiamos el fichero de configuración de los plugins</li>
+    <ul>
+      <li>l3</li>
+      <li>dhcp</li>
+      <li>lbaas</li>
+      <li>metadata</li>
+      <li>ml2</li>
+    </ul>
+
   </ul>
 </section>
