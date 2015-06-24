@@ -76,7 +76,8 @@ tittle: Curso de Cloud con OpenStack
 * [Introducción a heat](curso/u7/heat)
 * [Ejemplos de automatización](https://github.com/iesgn/automatizacion_ow1)
 
-* [Entorno de pruebas con DevStack](curso/devstack/devstack)
+* [Entorno de pruebas con DevStack](curso/u10/devstack)
+* [Introducción a la instlación de openstack](curso/u10/instalacion_openstack)
 
 ## Sesiones
 Temas que se tratarán en cada sesión:
