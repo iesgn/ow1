@@ -23,7 +23,7 @@ tema: white
     <li>Vamos a usar vagrant para crear una máquina virtual con sistema operativo Debian Jessie, con las siguientes características:
       <ul>
         <li>Dos tarjetas de red: una interna y una externa (bridge)</li>
-        <li>2 Gb de RAM</li>
+        <li>3 Gb de RAM</li>
         <li>Un disco secundario</li>
     </ul>
   </ul>
@@ -43,7 +43,7 @@ tema: white
   <ul>
     <li>Instalamos los paquetes: keystone, python-keystone, python-keystoneclient</li>
     <li>Borramos la base de datos sqlite, el catálogo lo vamos a guardar en mysql</li>
-    <li>Copiamos el fichero de configuración</li>
+    <li>Copiamos el fichero de Configuramos el servicio</li>
     <li>Generamos las tablas en la base de datos (db_sync)</li>
     <li>Creamos los datos de keystone (usuarios, roles, tenants, servicios, endpoints, ...). </li>
   </ul>
@@ -53,7 +53,7 @@ tema: white
   <ul>
     <li>Instalamos los paquetes: glance, glance-api, glance-registry, python-glanceclient</li>
     <li>Borramos la base de datos sqlite</li>
-    <li>Copiamos el fichero de configuración (glance-api.conf, glance-registry.conf)</li>
+    <li>Configuramos el servicio</li>
     <li>Generamos las tablas en la base de datos (db_sync)</li>
     <li>Subimos una imagen CirrOs</li>
   </ul>
@@ -63,7 +63,7 @@ tema: white
   <ul>
     <li>Instalamos los paquetes: nova-api, nova-cert, nova-conductor, nova-consoleauth, nova-scheduler, python-novaclient, nova-consoleproxy</li>
     <li>Borramos la base de datos sqlite</li>
-    <li>Copiamos el fichero de configuración (nova.conf)</li>
+    <li>Configuramos el servicio</li>
     <li>Generamos las tablas en la base de datos (db_sync)</li>
     
   </ul>
@@ -75,7 +75,7 @@ tema: white
     <li>Si el nodo de computación tiene soporte de virtualización hardware (nova-compute-kvm), sino (nova-compute-qemu)</li>
     <li>Instalamos python-guestfs, para gestionar y montar las imágenes.</li>
     <li>Borramos la base de datos sqlite</li>
-    <li>Copiamos el fichero de configuración (nova.conf)</li>
+    <li>Configuramos el servicio</li>
     
   </ul>
 </section>
@@ -83,16 +83,16 @@ tema: white
   <h3>Neutron</h3>
   <ul>
     <li>Instalamos los paquetes: neutron-server, neutron-plugin-ml2</li>
-    <li>Copiamos el fichero de configuración (neuton.conf,ml2_conf.ini)</li>
+    <li>Configuramos el servicio</li>
     <li>Generamos las tablas en la base de datos (db_sync)</li>
   </ul>
 </section>
 <section>
-  <h3>Neutron Agents y Plugins</h3>
+  <h3>Neutron Agents y Plugins (Nodo de Red)</h3>
   <ul>
     <li>Configuración de sysctl (ip forward,...)</li>
     <li>Instalamos los paquetes:neutron-plugin-ml2, neutron-plugin-openvswitch-agent, neutron-metadata-agent, neutron-lbaas-agent, neutron-l3-agent, neutron-dhcp-agent</li>
-    <li>Copiamos el fichero de configuración de los plugins</li>
+    <li>Configuramos el servicio</li>
     <ul>
       <li>l3</li>
       <li>dhcp</li>
@@ -100,6 +100,46 @@ tema: white
       <li>metadata</li>
       <li>ml2</li>
     </ul>
+
+  </ul>
+</section>
+<section>
+  <h3>Openvswitch (Nodo de Red)</h3>
+  <ul>
+    <li>Configuración de los bridge; br-ext, br-int</li>
+    <li>Conectamos la interfaz externa al br-ext</li>
+    <li>Configuramos los parámetros de red de br-ext</li>
+    <li>Creamos un nuevos script de inicio para openvswitch</li>
+    <li>Generamos las tablas en la base de datos (db_sync)</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Horizon</h3>
+  <ul>
+    <li>Instalamos los paquetes: memcached, apache2, libapache2-mod-wsgi, openstack-dashboard</li>
+    <li>Configuramos el servicio</li>
+    <li>Activamos el soporte https</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Cinder</h3>
+  <ul>
+    <li>Instalamos los paquetes: cinder-api, cinder-scheduler </li>
+    <li>Borramos la base de datos sqlite</li>
+    <li>Configuramos el servicio</li>
+    <li>Generamos las tablas en la base de datos (db_sync)</li>
+
+  </ul>
+</section>
+
+<section>
+  <h3>Cinder (Nodo de Almacenamiento)</h3>
+  <ul>
+    <li>Instalamos los paquetes: cinder-volume, lvm2</li>
+    <li>Configuramos lvm: creamos volúmenes fisicos y grupo de volúmenes</li>
+    <li>Configuramos el servicio</li>
 
   </ul>
 </section>
