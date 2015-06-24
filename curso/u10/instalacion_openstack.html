@@ -34,7 +34,7 @@ tema: white
     <li>Actualizamos los respositorios de paquetes</li>
     <li>Instalamos ntp</li>
     <li>Instalamos mysql</li>
-    <li>Creamos un usuario y una base ded datos por cada uno de los componenetes de OpenStack que vamos a instlar (keystone, glance, nova, neutron, ...)</li>
+    <li>Creamos un usuario y una base de datos por cada uno de los componentes de OpenStack que vamos a instalar (keystone, glance, nova, neutron, ...)</li>
     <li>Instalamos rabbitmq</li>
   </ul>
 </section>
@@ -61,124 +61,31 @@ tema: white
 <section>
   <h3>Nova</h3>
   <ul>
-    <li>En cloud computing se refiere a la posibilidad de gestionar de
-      forma automática el aprovisionamiento, la configuración e incluso
-      la respuesta a eventos</li>
-    <li>Específicamente utilizando herramientas propias</li>
-    <li>El componente de OpenStack encargado de la orquestación se
-      denomina heat</li>
-    <li>Amazon CloudFormation</li>
-    <li>OASIS Topology and Orchestration Specification for Cloud
-      Applications (TOSCA)</li>
+    <li>Instalamos los paquetes: nova-api, nova-cert, nova-conductor, nova-consoleauth, nova-scheduler, python-novaclient, nova-consoleproxy</li>
+    <li>Borramos la base de datos sqlite</li>
+    <li>Copiamos el fichero de configuración (nova.conf)</li>
+    <li>Generamos las tablas en la base de datos (db_sync)</li>
+    
   </ul>
 </section>
     
-<!--     <h2>¿Infraestructura o configuración?</h2> -->
-<!--     <ul> -->
-<!--       <li>Orquestación: Despliegue automático de una infraestructura -->
-<!--       en el cloud.</li> -->
-<!--       <li>Configuración automática: Utilizar procesos automáticos para -->
-<!--       aprovisionar, configurar y gestionar el sistema -->
-<!--       informático.</li>  -->
-      
-<!--     </ul> -->
-<!--   </section> -->
-<!--   <section> -->
-<!--     <h2>¿Cómo podemos automatizar? (I)</h2> -->
-<!--     <ul> -->
-<!--       <li>Script</li> -->
-<!--         <ul> -->
-<!--           <li>Ventajas: Se puede probar, control de versiones, es replicable, ...</li> -->
-<!--           <li>Desventajas: La replicación puede ser complicada, se puede quedar obsoleto...</li> -->
-<!--         </ul> -->
-<!--         <p>Con un script indicamos los pasos para que un sistema alcance un determinado estado. Ejemplo: lenguajes de script: bash, python, perl,...</p> -->
-<!--   </section> -->
-<!--   <section> -->
-<!--     <h2>¿Cómo podemos automatizar? (II)</h2> -->
-<!--     <ul> -->
-      
-<!--       <li>Herramientas específicas de automatización</li> -->
-<!--         <ul> -->
-<!--           <li>Temporalización: La tarea se puede programar.</li> -->
-<!--           <li>Replicabilidad: Las acciones deben funcionar el sistemas heterogéneos.</li> -->
-<!--           <li>Monitorización: Según la información obtenida del sistema se pueden ejecutar determinadas acciones.</li> -->
-<!--           <li>Ejemplos: puppet, chef, ansible, heat (openstack),... -->
-<!--         </ul> -->
-<!--         <p>Se indica el estado que queremos que tenga el sistema, y estas herramientas realizan las acciones necesarias para llegar a él.</p> -->
-<!--   </section> -->
-<!-- </section> -->
-
-
-<!--  <section> -->
-<!--  <section> -->
-<!--         <h2>Ansible. Introducción</h2> -->
-<!--          <ul> -->
-<!--      <li>Ansible es una aplicación libre de orquestación escrita en python</li> -->
-<!--      <li>La primera versión se desarrolló en febrero de 2012 (!) -->
-<!--          </ul> -->
-<!--       </section> -->
-<!--       <section> -->
-<!--         <h2>Ansible. Introducción (2)</h2> -->
-<!--         <ul> -->
-<!--      <li>Ventajas frente a otro software de automatización:</li> -->
-<!--      <ul> -->
-<!--        <li>Muy fácil instalación</li> -->
-<!--        <li>Comunidad de desarrolladores muy activa</li> -->
-<!--        <li>Muy pocas dependencias</li> -->
-<!--        <li>Ideal para entornos pequeños y homogéneos</li> -->
-<!--        <li>No es necesario configurar nada en los clientes</li> -->
-<!--        <li><a href="https://galaxy.ansible.com/">Ansible Galaxy</a></li> -->
-<!--      </ul> -->
-<!--       </ul> -->
-<!--         <p>Lo importante no es qué herramienta de gestión de la -->
-<!--         configuración utilizar. Lo importante es utilizar al menos una.</p> -->
-<!--     </section> -->
-<!--     <section> -->
-<!--       <h2>Ansible. Instalación</h2> -->
-<!--       <p>Para utilizar la última versión:</p> -->
-<!--       <pre> -->
-
-<!-- # apt-get install python-pip python-dev -->
-<!-- # pip install ansible -->
-<!--       </pre> -->
-<!--       <p><strong>Voila!</strong></p> -->
-      
-<!--     </section> -->
-<!--     <section> -->
-<!--       <h2>Ansible. Playbooks</h2> -->
-<!--       <p>Las tareas a realizar por ansible se describen en formato yaml en ficheros denominados “playbooks”, que pueden incluir una o varias jugadas, por ejemplo:</p> -->
-      
-<!--        <pre>   -->
-<!--          <code data-trim> -->
-<!-- --- -->
-<!-- - name: Apache installation -->
-<!--   hosts: all -->
-<!--   sudo: True -->
-<!--   tasks: -->
-<!--   - name: Set proper sources.list -->
-<!--     copy: > -->
-<!--       src=files/etc/apt/sources.list -->
-<!--       dest=/etc/apt/sources.list -->
-<!--       owner=root -->
-<!--       mode=644 -->
-<!--   - name: Ensure apache is installed (after updating) -->
-<!--     apt: pkg=apache2 update_cache=yes -->
-<!--          </code> -->
-<!--        </pre> -->
-<!--     </section> -->
+<section>
+  <h3>Nova (en los nodos de computación)</h3>
+  <ul>
+    <li>Si el nodo de computación tiene soporte de virtualización hardware (nova-compute-kvm), sino (nova-compute-qemu)</li>
+    <li>Instalamos python-guestfs, para gestionar y montar las imágenes.</li>
+    <li>Borramos la base de datos sqlite</li>
+    <li>Copiamos el fichero de configuración (nova.conf)</li>
     
-<!--     <section> -->
-<!--       <h2>Automatizar con Ansible</h2> -->
-<!--       <p>Si tenemos varias intancias, podríamos realizar las siguientes tareas de forma automática:</p> -->
-<!--       <ul> -->
-<!--         <li>Configurar la red</li> -->
-<!--         <li>Realizar las actualizaciones de software</li> -->
-<!--         <li>Instalar los paquetes del software que se va a utilizar</li> -->
-<!--         <li>Copiar los ficheros de configuración de plantillas previamente creadas</li> -->
-<!--         <li>Levantar o parar los servicios que se determinen</li> -->
-<!--         <li>Ejecutar cualquier tarea en cada una de las máquinas virtuales</li> -->
-<!--         <li>Dejar el entorno completamente operativo</li> -->
-<!--       </ul> -->
-      
-<!-- </section> -->
-<!-- </section> -->
+  </ul>
+</section>
+<section>
+  <h3>Neutron</h3>
+  <ul>
+    <li>Si el nodo de computación tiene soporte de virtualización hardware (nova-compute-kvm), sino (nova-compute-qemu)</li>
+    <li>Instalamos python-guestfs, para gestionar y montar las imágenes.</li>
+    <li>Borramos la base de datos sqlite</li>
+    <li>Copiamos el fichero de configuración (nova.conf)</li>
+    
+  </ul>
+</section>
