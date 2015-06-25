@@ -4,7 +4,7 @@ title: Instalación de OpenStack
 tema: white
 ---
 <section>
-  <h2>Introducción a la instlación de OpenStack</h2>
+  <h2>Introducción a la instalación de OpenStack</h2>
   <p>
     <a href="http://albertomolina.wordpress.com">Alberto Molina Coballes</a> y
     <a href="http://www.josedomingo.org">José Domingo Muñoz Rodríguez</a>
@@ -23,7 +23,7 @@ tema: white
     <li>Vamos a usar vagrant para crear una máquina virtual con sistema operativo Debian Jessie, con las siguientes características:
       <ul>
         <li>Dos tarjetas de red: una interna y una externa (bridge)</li>
-        <li>3 Gb de RAM</li>
+        <li>3 GiB de RAM</li>
         <li>Un disco secundario</li>
     </ul>
   </ul>
@@ -43,7 +43,7 @@ tema: white
   <ul>
     <li>Instalamos los paquetes: keystone, python-keystone, python-keystoneclient</li>
     <li>Borramos la base de datos sqlite, el catálogo lo vamos a guardar en mysql</li>
-    <li>Copiamos el fichero de Configuramos el servicio</li>
+    <li>Copiamos el fichero de configuración</li>
     <li>Generamos las tablas en la base de datos (db_sync)</li>
     <li>Creamos los datos de keystone (usuarios, roles, tenants, servicios, endpoints, ...). </li>
   </ul>
@@ -72,7 +72,7 @@ tema: white
 <section>
   <h3>Nova (en los nodos de computación)</h3>
   <ul>
-    <li>Si el nodo de computación tiene soporte de virtualización hardware (nova-compute-kvm), sino (nova-compute-qemu)</li>
+    <li>Si el nodo de computación tiene soporte de virtualización hardware (nova-compute-kvm), si no (nova-compute-qemu)</li>
     <li>Instalamos python-guestfs, para gestionar y montar las imágenes.</li>
     <li>Borramos la base de datos sqlite</li>
     <li>Configuramos el servicio</li>
@@ -90,7 +90,7 @@ tema: white
 <section>
   <h3>Neutron Agents y Plugins (Nodo de Red)</h3>
   <ul>
-    <li>Configuración de sysctl (ip forward,...)</li>
+    <li>Configuración de sysctl (ip_forward, etc.)</li>
     <li>Instalamos los paquetes:neutron-plugin-ml2, neutron-plugin-openvswitch-agent, neutron-metadata-agent, neutron-lbaas-agent, neutron-l3-agent, neutron-dhcp-agent</li>
     <li>Configuramos el servicio y los plugins</li>
     <ul>
@@ -109,7 +109,7 @@ tema: white
     <li>Configuración de los bridge; br-ext, br-int</li>
     <li>Conectamos la interfaz externa al br-ext</li>
     <li>Configuramos los parámetros de red de br-ext</li>
-    <li>Creamos un nuevos script de inicio para openvswitch</li>
+    <li>Modificamos el script de inicio para openvswitch</li>
     <li>Generamos las tablas en la base de datos (db_sync)</li>
   </ul>
 </section>
@@ -149,7 +149,7 @@ tema: white
   <ul>
     <li>Configurar la red: red pública, router y red interna de algún proyecto</li>
     <li>Podemos crear algún sabor con características mínimas</li>
-    <li>Hacemos una prueba...</li>
+    <li>Hacemos las pruebas</li>
 
   </ul>
 </section>

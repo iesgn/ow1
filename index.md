@@ -77,7 +77,7 @@ tittle: Curso de Cloud con OpenStack
 * [Ejemplos de automatización](https://github.com/iesgn/automatizacion_ow1)
 
 * [Entorno de pruebas con DevStack](curso/u10/devstack)
-* [Introducción a la instlación de openstack](curso/u10/instalacion_openstack)
+* [Introducción a la instalación de openstack](curso/u10/instalacion_openstack)
 
 ## Sesiones
 Temas que se tratarán en cada sesión:
