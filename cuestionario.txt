@@ -1,0 +1,209 @@
+1. El componente que proporciona la virtualización de redes en OpenStack se denomina:
+
+- neutron *
+- nova
+- cinder
+- glance
+
+2. OpenStack es un proyecto que comenzó en el año:
+
+- 2010 *
+- 2011
+- 2012
+- 2009
+
+3. Los espacios de nombres de red para los routers, servidores DHCP, balanceadores, etc. se definen en:
+
+- Nodo controlador
+- Nodo de red *
+- Nodo de computación
+- Nodo de almacenamiento
+
+4. Cuál de las siguientes instrucciones NO es correcta para asociar la IP flotante 212.84.12.14 (0b78a890-40da-4d66-8486-f9aabce11cb7) al servidor prueba (093e081b-34f2-406f-97be-4f6cb4831a3f) en el puerto 5ca029df72e344499484b2c1767d6472:
+
+- neutron floatingip-associate 0b78a890-40da-4d66-8486-f9aabce11cb7 5ca029df72e344499484b2c1767d6472
+- nova floating-ip-associate 093e081b-34f2-406f-97be-4f6cb4831a3f 212.84.12.14
+- nova floating-ip-associate 212.84.12.14 093e081b-34f2-406f-97be-4f6cb4831a3f *
+- neutron floating-ip-associate prueba 212.84.12.14
+
+5. Una dirección IP flotante es:
+
+- La dirección IP que el servidor DHCP reserva para una instancia en el momento de su creación
+- La dirección IP correspondiente al rango de direcciones de la red externa que el usuario asocia a una instancia para acceder desde el exterior *
+- La dirección IP de la puerta de enlace de las instancias de una red
+- Una dirección IP de enlace local para la comunicación interna entre instancias
+
+6. ¿Qué acciones de las vistas en el curso no se pueden realizar desde el panel web de cirrusflex?
+
+- Asociar una IP flotante a una instancia
+- Crear un balanceador de carga
+- Utilizar el componente swift de almacenamiento de objetos *
+- Realizar una instantánea de una instancia
+
+7. El formato de los ficheros HOT de heat es:
+
+- YAML *
+- JSON
+- XML
+- Markdown
+
+8. El formato de los ficheros de Cloudformation que puede utilizar heat es:
+
+- YAML
+- JSON *
+- XML
+- Markdown
+
+9. Los grupos de seguridad son reglas de cortafuegos que se definen:
+
+- Para cada red en el nodo de red
+- Para cada instancia en el nodo de computación *
+- Para cada proyecto
+- Globalmente en OpenStack para todos los usuarios
+
+10. Cual de las siguientes afirmaciones relativa a cinder NO es correcta:
+
+- Cinder es el componente de OpenStack que proporciona almacenamiento de bloques
+- Un volumen vuelve a estar disponible cuando se termina la instancia a la que estaba asociado
+- Un volumen puede asociarse simultáneamente a más de una instancia *
+- Un volumen puede asociarse a cualquier instancia, independientemente del sistema operativo de la misma.
+
+11. De acuerdo a la última encuesta de uso de OpenStack, el mecanismo más utilizado para proporcionar almacenamiento de bloques a través de cinder es:
+
+- GlusterFS
+- NetApp
+- Ceph RBD *
+- LVM
+
+12. La licencia libre de OpenStack es:
+
+- Apache 2.0
+- GPL versión 2
+- GPL versión 3
+- BSD
+
+13. Una imagen de glance puede almacenarse:
+
+- Sólo como un objeto en swift
+- Sólo como un fichero local en el nodo de almacenamiento
+- Sólo como un volumen
+- Como un objeto en swift, como un fichero local o como un volumen. *
+
+14. ¿Cuál de las siguientes afirmaciones acerca de Keystone no es cierta?
+
+- Es el componente de identificación de OpenStack
+- Almacena la información sobre usuarios, proyectos y roles
+- Puede almacenar la información en LDAP o en SQL
+- Es el encargado de la gestión de instancias
+
+15. OpenStack es más apropiado para el despliegue de aplicaciones:
+
+- Que se ejecutan en una sola instancia
+- Que utilizan escalado vertical para ajustarse a la demanda variable
+- Que utilizan grandes cantidades de datos almacenados localmente
+- Que se ejecutan en un número de instancias variables y escalan horizontalmente
+
+16. ¿Qué relación hay entre una imagen y una instancia?
+
+- Una imagen es una copia de una instancia
+- Una instancia es una instantánea de una imagen
+- Una instancia es una máquina virtual creada a partir de un disco virtual que llamamos imagen *
+- Una instancia se puede descargar como una imagen
+
+17. El sabor de la instancia ...
+
+- Indica el tipo de sistema operativo que vamos a tener en la instancia
+- Indica las características hardware que va a tener la instancia creada *
+- Indica la configuración de red que va a tener la instancia
+- Indica los puertos que tiene abierto la instancia
+
+18. Cuando suspendemos una instancia:
+
+- Guardando su estado en disco *
+- Guardamos su estado en memoria RAM
+- Borramos la instancia
+- Detenemos la instancia
+
+19. El proceso de crear una nueva imagen a partir de una instancia en su estado actual se llama:
+
+- Redimención
+- Copia de seguridad
+- Descarga
+- Instantánea *
+
+20. ¿Qué parámetro no es necesario indicar en la creación de una instancia?
+
+- IP flotante *
+- Red a la que nos conectamos
+- Nombre de la instancia
+- Sabor
+
+21. Una IP Flotante...
+
+- Siempre es una IP pública
+- Siempre es una IP privada
+- Siempre está asignada a una instancia
+- Dependiendo del tipo de cloud, puede ser una IP pública o privada *
+
+22. Al crear un estructura de red, ¿dónde se indican los parámetros del servidor DHCP?
+
+- En la red
+- En la subred
+- En el router
+- En el servidor de metadatos
+
+23. ¿En qué circunstancia no se puede asociar una IP flotante a una instancia?
+
+- Cuando la instancia tiene asignada un IP fija.
+- Cuando la instancia está conectada a una red privada
+- Cuando la instancia está conectada a una red privada que está conectada a otra red interna con un router *
+- Cuando la instancia tiene dos interfaces de red
+
+24. ¿Qué instrucción utilizamos para la creación de una instancia?
+
+- nova start
+- nova boot *
+- nova resume
+- nova resize
+
+25. ¿Qué elementos posee un pool en un balanceador de carga?
+
+- Servidores, subred, algoritmo de balanceo
+- Monitores, servidores web e IP flotantes
+- Monitores, miembros y vip *
+- Protocolos de red, puertos y configuración de red
+
+26. ¿Qué funcionalidad no ofrece Neutron?
+
+- LBaaS
+- FWaaS
+- VPNaaS
+- DNSaaS *
+
+27. Indica que hace el comando "swift upload web1 web2"
+
+- Sube el objeto web2 al contenedor web1 *
+- Sube el objeto web1 al contenedor web2
+- Sube dos ficheros al cloud
+- Crea dos servidores web en el cloud
+
+28. Si tenemos una instancia creada sobre un volumen
+
+- El disco se borra cuando la instancia se termina
+- La instancia tiene dos discos asociados
+- Siempre se puede desaociar el volumen de la instancia
+- El disco raíz de la instancia se considera información persistente *
+
+29. Si queremos configurar la instancia utilizando cloud-init, ¿qué parametro tienes que utilizar en la creación?
+
+- user-data *
+- user-config
+- execute-commands
+- cloud-init-config
+
+30. La instrucción "neutron port-create red --fixed-ip ip_address=10.0.15.39"
+
+- Crea un puerto al que no está conectado ningún dispositivo *
+- Crea un puerto al que se conecta la instancia con IP fija 10.0.15.39
+- Crea un puerto al que se asocia una IP flotante
+- Se crea un nuevo router conectado a la red
