@@ -79,19 +79,6 @@ tittle: Curso de Cloud con OpenStack
 * [Entorno de pruebas con DevStack](curso/u10/devstack)
 * [Introducción a la instalación de openstack](curso/u10/instalacion_openstack)
 
-## Sesiones
-Temas que se tratarán en cada sesión:
-
-* [21 de Mayo](curso/sesion1)
-* [26 de Mayo](curso/sesion2)
-* [28 de Mayo](curso/sesion3)
-* [2 de Junio](curso/sesion4)
-* [9 de Junio](curso/sesion5)
-* [11 de Junio](curso/sesion6)
-* [16 de Junio](curso/sesion7)
-* [18 de Junio](curso/sesion8)
-* [23 de Junio](curso/sesion9)
-* [25 de Junio](curso/sesion10)
 
 ###Licencia
 
