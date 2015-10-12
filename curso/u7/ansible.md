@@ -38,18 +38,12 @@ Hemos indicado la IP del cliente, y el usuario que se va a utilizar para el acce
 
 En el fichero *ansible.cfg* se indica la configuración de ansible, por ejemplo:
 
-<<<<<<< HEAD
+
         [defaults]
         hostfile = hosts
         remote_user = debian
-	sudo = yes
+      	sudo = yes
         private_key_file = ~/.ssh/clave-ow
-=======
-    [defaults]
-    hostfile = hosts
-    remote_user = debian
-    private_key_file = ~/.ssh/clave-ow
->>>>>>> 4e9bbc6839fcc220c5e45d5034d877a2b6e9f94d
 
 Se indica el fichero con el catálogo de clientes, el usuario remoto a
 utilizar y la cavle pública que se va a autilizar para el acceso SSH.
