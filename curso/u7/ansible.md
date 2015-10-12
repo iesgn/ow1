@@ -42,7 +42,7 @@ En el fichero *ansible.cfg* se indica la configuración de ansible, por ejemplo:
         [defaults]
         hostfile = hosts
         remote_user = debian
-      	sudo = yes
+        sudo = yes
         private_key_file = ~/.ssh/clave-ow
 
 Se indica el fichero con el catálogo de clientes, el usuario remoto a
