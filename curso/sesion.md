@@ -7,8 +7,8 @@ tittle: Sesiones online
 |:---:|----------|--------|
 |7 de Octubre| 1,2,3 |José Domingo |
 |14 de Octubre| 3,4,5,6,7,8,9,10,11 |José Domingo  |
-|16 de Octubre| 12,13,14,15,16,17,18,19,20,21 | Alberto |
-|19 de Octubre| 22,23,24,25,26,27,28 | José Domingo |
+|16 de Octubre| 11,12,13,14,15,16,17,18,19,20 | Alberto |
+|19 de Octubre| 21,22,23,24,25,26,27,28 | José Domingo |
 |21 de Octubre | 29,30,31,32,33,34,35,36,37,38,39,40 | José Domingo |
 |26 de Octubre|  | Alberto |
 |28 de Octubre| | José Domingo |
@@ -56,7 +56,6 @@ tittle: Sesiones online
  * OpenStack metadata
 1. Ejercicio: 
  * Lanzar una instancia con la imagen de debian jessie
- * Explicar que es necesario instalar dbus para que funcione el ACPI (es un bug que ya está solucionado pero la imagen oficial todavía no está actualizada). Esto nos dará pie a crear luego una instantánea de esta instancia
 1. Ejercicio: Instantáneas
  * Explicación de lo que es una instantánea y los tipos que hay
  * Instalar alguna aplicación más en la instancia de jessie
