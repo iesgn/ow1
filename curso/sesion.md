@@ -5,16 +5,16 @@ tittle: Sesiones online
 
 |Fecha|Puntos a tratar|Ponente|
 |:---:|----------|--------|
-|21 de Mayo| 1,2,3 |Alberto |
-|26 de Mayo| 3,4,5,6,7,8,9,10,11 |José Domingo  |
-|28 de Mayo| 12,13,14,15,16,17,18,19,20,21 | Alberto |
-|2 de Junio| 22,23,24,25,26,27,28 | José Domingo |
-|9 de Junio| 29,30,31,32,33,34,35,36,37,38,39,40 | José Domingo |
-|11 de Junio|  | Alberto |
-|16 de Junio| | José Domingo |
-|18 de Junio|  | Alberto |
-|23 de Junio|  | José Domingo |
-|25 de Junio|  | Alberto |
+|7 de Octubre| 1,2,3 |José Domingo |
+|14 de Octubre| 3,4,5,6,7,8,9,10,11 |José Domingo  |
+|16 de Octubre| 12,13,14,15,16,17,18,19,20,21 | Alberto |
+|19 de Octubre| 22,23,24,25,26,27,28 | José Domingo |
+|21 de Octubre | 29,30,31,32,33,34,35,36,37,38,39,40 | José Domingo |
+|26 de Octubre|  | Alberto |
+|28 de Octubre| | José Domingo |
+|4 de Noviembre|  | Alberto |
+|9 de Noviembre|  | Alberto |
+|11 de Noviembre|  | Alberto |
 
 # Puntos
 
