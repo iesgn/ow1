@@ -19,24 +19,20 @@ rescate es el siguiente:
 
 * La instancia inicial se apaga.
 * Se crea una nueva instancia con dos discos virtuales:
-  * El primer disco se crea partiendo de una imagen preconfigurada
-  como imagen para rescate.
+  * El primer disco se crea partiendo de la misma imagen desde la que se había creado la instancia a rescatar.
   * El segundo disco contiene el sistema raíz que se quiere rescatar.
 
 
-![rescatar](img/demo1_4.png)
+![rescatar](img/rescate1.png)
 
-
-En el caso del sistema que estamos utilizando, el sistema de rescate
-que se utiliza en un Debian GNU/Linux con usuario "root" y contraseña
-"stackops".
+Podemos acceder a la nueva instancia con nuestra clave privada ssh y arreglar el sistema de archivo de la instancia a rescatar.
  
 Después de resolver los problemas de un servidor en modo rescate, se
 puede detener este modo. Cuando se detiene el rescate del servidor, la
 instancia reparada se vuelve a su estado original.
 
 
-![rescatar](img/demo1_5.png)
+![rescatar](img/rescate2.png)
 
 
 ### Enlaces de interés
