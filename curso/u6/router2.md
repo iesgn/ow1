@@ -77,7 +77,7 @@ De forma equivalente, utilizando *neutron* tendríamos que ejecutar:
     | tenant_id             | 44f5cb63ad34481aab5cc9c2809e4a76                                                  |
     +-----------------------+-----------------------------------------------------------------------------------+
 
-La conexión del router (mi_router) al puerto que acabamos de crear se puede hacer desde cirrusflex desde la ventana "Enalzar subre" y la opción "Unir a un puerto".
+La conexión del router (mi_router) al puerto que acabamos de crear se puede hacer desde cirrusflex desde la ventana "Enalzar subrer" y la opción "Unir a un puerto".
 
 ![red](img/net13.png)
 

@@ -22,15 +22,12 @@ redimensión**.
 * Hemos creado una instancia con un flavor ssd.XXXS, y la vamos a
   redimensionar:
 
-![redimension](img/demo1_1.png)
+![redimension](img/redimension1.png)
 
 * Elegimos otro tipo de instancia (sabor):
-
-![redimension](img/demo1_2.png)
-
 * Terminamos confirmando o revirtiendo la redimensión:
 
-![redimension](img/demo1_3.png)
+![redimension](img/redimension2.png)
 
 Para más información puedes ver este
 [vídeo](https://www.youtube.com/watch?v=p-kNbawLd2U).
