@@ -61,25 +61,20 @@ tipos de despliegue que soporta neutron, en particular debemos saber si:
 
 * Todas las instancias de todos los proyectos estarán dentro de una misma
 VLAN, lo que OpenStack denomina <a
-href="http://docs.openstack.org/grizzly/openstack-network/admin/content/app_demo_flat.html">Single
-Flat Network</a>.
+href="http://docs.openstack.org/icehouse/training-guides/content/figures/13/a/figures/image34.png">Single Flat Network</a>.
 * Cada proyecto podrá definir las redes privadas que quiera, pero compartirán el
 o los routers de acceso al exterior, lo que OpenStack denomina <a
-href="http://docs.openstack.org/grizzly/openstack-network/admin/content/app_demo_single_router.html">
+href="http://docs.openstack.org/icehouse/training-guides/content/figures/13/a/figures/image37.png">
 Provider Router with Private Networks</a>
 * Cada proyecto podrá definir las redes privadas y routers que quiera, de forma
 independiente al resto de proyectos, lo que OpenStack denomina <a
-href="http://docs.openstack.org/grizzly/openstack-network/admin/content/app_demo_routers_with_private_networks.html">
+href="http://docs.openstack.org/icehouse/training-guides/content/figures/13/a/figures/image38.png">
 Per-tenant Routers with Private Networks</a>
 
-En este caso vamos a explicar el caso más habitual de  <a
-href='http://docs.openstack.org/havana/install-guide/install/apt/content/section_networking-routers-with-private-networks.html'>Per
-tenant routers with private networks</a>, que permite que cada proyecto defina
-sus propios routers y por tanto cada proyecto utilice su propio direccionamiento
-IP de forma totalmente independiente al resto de proyectos.
+En este caso vamos a explicar este último caso, que es el más general e interesante para una nube de infraestructura compartida por diferentes usuarios.
 
 <div style="text-align: center;"><img
-src="http://docs.openstack.org/havana/install-guide/install/apt/content/figures/9/a/common/figures/UseCase-MultiRouter.png" alt="neutron setup"/></div>
+src="http://docs.openstack.org/icehouse/training-guides/content/figures/13/a/figures/image38.png" alt="neutron setup"/></div>
 
 ## Redes privadas
 
