@@ -69,6 +69,7 @@ tema: white
     <li>Ceilometer y Heat</li>
     <li>Trove</li>
     <li>Sahara</li>
+    <li>Magnum</li>
     <li>Designate</li>
     <li>...</li>
     <li>En general no repercuten en la arquitectura, salvo swift</li>
@@ -79,9 +80,16 @@ tema: white
   <ul>
     <li>Servidor AMQP: RabbitMQ o QPID</li>
     <li>BBDD:
-      <ul>      
-	<li>Si HA: Galera o MySQL cluster</li>
-	<li>Si no HA: MySQL</li>
+      <ul>
+	<li>MySQL o "derivadas":
+	  <ul>
+	    <li>MySQL o MySQL cluster (HA)</li>
+	    <li>Galera</li>
+	    <li>MariaDB</li>
+	</ul></li>
+	<li>PostgreSQL</li>
+	<li>SQlite (Sólo pruebas)</li>
+	<li>Cualquira soportada por <a href="http://docs.sqlalchemy.org/en/latest/core/engines.html">SQLAlchemy</a></li>
       </ul>
     </li>
   </ul>
@@ -197,6 +205,7 @@ tema: white
       <li>La configuración de nova-compute depende del hipervisor</li>
       <li>nova-scheduler implementa varios algoritmos</li>
       <li>Importante: Definir CPU y RAM allocation-ratio</li>
+      <li>Importante: Con KVM es conveniente configurar KSM</li>
       <li>nova-console: VNC o SPICE</li>
     </ul>
   </section>
